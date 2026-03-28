@@ -83,7 +83,7 @@ const LogoImage = styled(Image)`
 
 const LogoText = styled.div`
   color: #330c00;
-  font-family: "NexaRound", sans-serif;
+  font-family: NexaRound;
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
