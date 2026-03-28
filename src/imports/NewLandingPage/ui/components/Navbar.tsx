@@ -47,6 +47,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  background: #fff;
 `;
 
 const NavLinksContainer = styled.div`
