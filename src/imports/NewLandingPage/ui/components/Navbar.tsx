@@ -34,6 +34,10 @@ const Navbar = () => {
 export default Navbar;
 
 const Container = styled.div`
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 942.5px;
   height: 68.7px;
   border-bottom-left-radius: 12px;
@@ -42,6 +46,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 `;
 
 const NavLinksContainer = styled.div`
