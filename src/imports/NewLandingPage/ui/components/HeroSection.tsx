@@ -65,8 +65,7 @@ export default function HeroSection() {
 }
 
 const Container = styled.div`
-  height: auto;
-  /* min-height: 100dvh; */
+  height: 100dvh;
   width: 100%;
   background-color: white;
   color: white;
