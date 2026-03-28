@@ -4,6 +4,7 @@ export const revalidate = 30;
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
 import "./globals.css";
+import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 
 export const metadata: Metadata = {
   title: "Blip - The Simplest Bulk Ad Uploader for Meta",
@@ -84,18 +85,20 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://abc.withblip.com/ns.html?id=GTM-KTKTNCNG"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
+        <StyledComponentsRegistry>
+          {/* Google Tag Manager (noscript) */}
+          <noscript>
+            <iframe
+              src="https://abc.withblip.com/ns.html?id=GTM-KTKTNCNG"
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            ></iframe>
+          </noscript>
+          {/* End Google Tag Manager (noscript) */}
 
-        {children}
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
