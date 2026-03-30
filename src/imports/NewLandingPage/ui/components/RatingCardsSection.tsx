@@ -15,11 +15,17 @@ const RatingCardsSection = () => {
           People are calling it the best invention since sliced bread
         </Description>
       </HeaderContainer>
-      <Marquee style={{ display: "flex", flexDirection: "row", gap: "24px" }}>
-        <CardContainer>
+      <MarqueeContainer>
+        <Marquee speed={40} pauseOnHover={false} autoFill={true}>
           {TESTIMONIALS.map((testimonial, index) => (
-            <RatingCard key={index}>
-              <RatingText>{testimonial.quote}</RatingText>
+            <RatingCard
+              key={index}
+              $isOdd={index % 2 !== 0}
+              style={{ marginRight: "24px" }}
+            >
+              <RatingText $isOdd={index % 2 !== 0}>
+                {testimonial.quote}
+              </RatingText>
               <UserContainer>
                 <Avatar
                   src={testimonial.avatar}
@@ -28,14 +34,18 @@ const RatingCardsSection = () => {
                   width={50}
                 />
                 <UserInfo>
-                  <UserName>{testimonial.name}</UserName>
-                  <UserRole>{testimonial.role}</UserRole>
+                  <UserName $isOdd={index % 2 !== 0}>
+                    {testimonial.name}
+                  </UserName>
+                  <UserRole $isOdd={index % 2 !== 0}>
+                    {testimonial.role}
+                  </UserRole>
                 </UserInfo>
               </UserContainer>
             </RatingCard>
           ))}
-        </CardContainer>
-      </Marquee>
+        </Marquee>
+      </MarqueeContainer>
     </Container>
   );
 };
@@ -49,6 +59,7 @@ const Container = styled.div`
   align-items: center;
   gap: 47px;
   max-width: 100dvw;
+  overflow: hidden;
 `;
 
 const HeaderContainer = styled.div`
@@ -57,6 +68,23 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  padding: 0 20px;
+`;
+
+const MarqueeContainer = styled.div`
+  width: 100%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
 `;
 
 const Title = styled.div`
@@ -82,19 +110,20 @@ const Description = styled.div`
   text-transform: capitalize;
 `;
 
-const RatingCard = styled.div`
+const RatingCard = styled.div<{ $isOdd: boolean }>`
   display: flex;
   padding: 29px 37px;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 29px;
-  background: #1d1d1d;
+  background: ${(props) => (props.$isOdd ? "#f6eddc" : "#1d1d1d")};
   min-height: 370px;
-  max-width: 370px;
+  width: 370px;
+  margin-bottom: 20px; /* For potential shadow/spacing */
 `;
 
-const UserName = styled.div`
-  color: #f6eddc;
+const UserName = styled.div<{ $isOdd: boolean }>`
+  color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#f6eddc")};
   font-family: NexaRound;
   font-size: 16px;
   font-style: normal;
@@ -102,8 +131,8 @@ const UserName = styled.div`
   line-height: normal;
 `;
 
-const RatingText = styled.div`
-  color: #fffbf2;
+const RatingText = styled.div<{ $isOdd: boolean }>`
+  color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#fffbf2")};
   font-family: NexaRound;
   font-size: 24px;
   font-style: normal;
@@ -124,6 +153,7 @@ const Avatar = styled(Image)`
   height: 50.18px;
   aspect-ratio: 1/1;
   border-radius: 200px;
+  object-fit: cover;
 `;
 
 const UserInfo = styled.div`
@@ -134,33 +164,11 @@ const UserInfo = styled.div`
   gap: 2px;
 `;
 
-const UserRole = styled.div`
-  color: #f6eddc;
+const UserRole = styled.div<{ $isOdd: boolean }>`
+  color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#f6eddc")};
   font-family: NexaRound;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-`;
-
-const CardContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  align-self: stretch;
-
-  ${RatingCard}:nth-child(odd) {
-    background-color: #f6eddc;
-
-    ${RatingText}:nth-child(odd) {
-      color: #1d1d1d;
-    }
-
-    ${UserName}:nth-child(odd) {
-      color: #1d1d1d;
-    }
-    ${UserRole} {
-      color: #1d1d1d;
-    }
-  }
 `;
