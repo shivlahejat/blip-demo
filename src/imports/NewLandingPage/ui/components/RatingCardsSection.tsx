@@ -15,10 +15,7 @@ const RatingCardsSection = () => {
           People are calling it the best invention since sliced bread
         </Description>
       </HeaderContainer>
-      <Marquee
-        style={{ display: "flex", flexDirection: "row", gap: "24px" }}
-        pauseOnHover
-      >
+      <Marquee style={{ display: "flex", flexDirection: "row", gap: "24px" }}>
         <CardContainer>
           {TESTIMONIALS.map((testimonial, index) => (
             <RatingCard key={index}>
@@ -51,6 +48,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 47px;
+  max-width: 100dvw;
 `;
 
 const HeaderContainer = styled.div`

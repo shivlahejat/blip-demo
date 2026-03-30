@@ -14,22 +14,32 @@ import SetUpSection from "@/imports/NewLandingPage/ui/components/SetUpSection";
 import TikTokSection from "@/imports/NewLandingPage/ui/components/TikTokSection";
 import PricingSection from "@/imports/NewLandingPage/ui/components/PricingSection";
 import AnalyticsSection from "@/imports/NewLandingPage/ui/components/AnalyticsSection";
+import FAQsSection from "@/imports/NewLandingPage/ui/components/FAQsSection";
 
 const NewLandingPage = () => {
   return (
-    <Container>
+    <Container id="top">
       <Navbar />
       <HeroSection />
-      <RatingCardsSection />
+      <div id="about">
+        <RatingCardsSection />
+      </div>
       <AdManagementSection />
-      <FeaturesSection />
+      <div id="analytics">
+        <FeaturesSection />
+      </div>
       <SupportSection />
-      <ReviewSection />
+      <div id="blog">
+        <ReviewSection />
+      </div>
       <SetUpSection />
       <MetaPartnersSection />
       <AnalyticsSection />
       <TikTokSection />
-      <PricingSection />
+      <div id="pricing">
+        <PricingSection />
+      </div>
+      <FAQsSection />
     </Container>
   );
 };
@@ -45,4 +55,5 @@ const Container = styled.div`
   justify-content: center;
   padding: 36px 0px 43px 0px;
   gap: 200px;
+  overflow-x: hidden;
 `;

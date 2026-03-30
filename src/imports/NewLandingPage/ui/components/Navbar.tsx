@@ -6,15 +6,28 @@ import React from "react";
 import styled from "styled-components";
 
 const Navbar = () => {
+  const handleScrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <Container>
       <NavLinksContainer>
-        <NavLinks>About</NavLinks>
-        <NavLinks>Pricing</NavLinks>
-        <NavLinks>Blog</NavLinks>
-        <NavLinks>Analytics</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("about")}>About</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("pricing")}>Pricing</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("blog")}>Blog</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("analytics")}>
+          Analytics
+        </NavLinks>
       </NavLinksContainer>
-      <LogoContainer>
+      <LogoContainer onClick={() => handleScrollTo("top")}>
         <LogoImage
           src="/images/landing/logo.webp"
           alt="Logo"
@@ -66,12 +79,14 @@ const NavLinks = styled.div`
   line-height: normal;
   letter-spacing: -0.28px;
   text-transform: capitalize;
+  cursor: pointer;
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 13.04px;
+  cursor: pointer;
 `;
 
 const LogoImage = styled(Image)`
