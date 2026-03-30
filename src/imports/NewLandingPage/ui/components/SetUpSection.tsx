@@ -36,6 +36,7 @@ const Container = styled.div`
   align-items: center;
   gap: 31px;
   max-width: 753px;
+  padding: 0px 56px;
 `;
 
 const HeaderTitle = styled.div`

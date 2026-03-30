@@ -60,6 +60,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
+  padding: 0px 56px;
 `;
 
 const InnerContainer = styled.div`
@@ -100,7 +101,7 @@ const SubHeadingText = styled.div`
 
 const GridContainer = styled.div`
   display: inline-grid;
-  width: 529.232px;
+  max-width: 530px;
   row-gap: 20px;
   column-gap: 68px;
   grid-template-rows: repeat(2, fit-content(100%));

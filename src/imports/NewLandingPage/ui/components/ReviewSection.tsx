@@ -58,6 +58,7 @@ const Container = styled.div`
   align-items: flex-start;
   gap: 36px;
   width: 100%;
+  padding: 0px 56px;
 `;
 
 const ImageWrapper = styled.div`

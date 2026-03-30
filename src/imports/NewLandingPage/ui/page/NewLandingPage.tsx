@@ -13,6 +13,7 @@ import MetaPartnersSection from "@/imports/NewLandingPage/ui/components/MetaPart
 import SetUpSection from "@/imports/NewLandingPage/ui/components/SetUpSection";
 import TikTokSection from "@/imports/NewLandingPage/ui/components/TikTokSection";
 import PricingSection from "@/imports/NewLandingPage/ui/components/PricingSection";
+import AnalyticsSection from "@/imports/NewLandingPage/ui/components/AnalyticsSection";
 
 const NewLandingPage = () => {
   return (
@@ -28,6 +29,7 @@ const NewLandingPage = () => {
       <MetaPartnersSection />
       <TikTokSection />
       <PricingSection />
+      <AnalyticsSection />
     </Container>
   );
 };

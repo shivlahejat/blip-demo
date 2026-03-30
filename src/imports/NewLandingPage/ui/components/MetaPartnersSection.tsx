@@ -57,6 +57,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 54px;
+  padding: 0px 56px;
 `;
 
 const ContentContainer = styled.div`
