@@ -8,6 +8,7 @@ import RatingCardsSection from "@/imports/NewLandingPage/ui/components/RatingCar
 import SupportSection from "@/imports/NewLandingPage/ui/components/SupportSection";
 import React from "react";
 import styled from "styled-components";
+import ReviewSection from "@/imports/NewLandingPage/ui/components/ReviewSection";
 
 const NewLandingPage = () => {
   return (
@@ -18,6 +19,7 @@ const NewLandingPage = () => {
       <AdManagementSection />
       <FeaturesSection />
       <SupportSection />
+      <ReviewSection />
     </Container>
   );
 };
