@@ -5,6 +5,7 @@ import AdManagementSection from "@/imports/NewLandingPage/ui/components/AdManage
 import HeroSection from "@/imports/NewLandingPage/ui/components/HeroSection";
 import Navbar from "@/imports/NewLandingPage/ui/components/Navbar";
 import RatingCardsSection from "@/imports/NewLandingPage/ui/components/RatingCardsSection";
+import SupportSection from "@/imports/NewLandingPage/ui/components/SupportSection";
 import React from "react";
 import styled from "styled-components";
 
@@ -16,6 +17,7 @@ const NewLandingPage = () => {
       <RatingCardsSection />
       <AdManagementSection />
       <FeaturesSection />
+      <SupportSection />
     </Container>
   );
 };
