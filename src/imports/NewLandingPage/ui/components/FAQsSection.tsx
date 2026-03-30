@@ -200,4 +200,5 @@ const BorderBottom = styled.div`
   height: 1px;
   background-color: #000;
   opacity: 0.2;
+  margin-top: 28px;
 `;
