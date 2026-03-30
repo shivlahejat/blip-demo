@@ -29,11 +29,11 @@ export default function HeroSection() {
           />
           <TitleWrapper>
             <SubHeadingText>
-              An operating system for Media Buyers
+              An Operating System for Media Buyers
             </SubHeadingText>
             <HeadingWrapper>
               <HeadingText>
-                The simplest Bulk Launcher powered up with Actually Useful
+                The Simplest Bulk Launcher Powered Up with Actually Useful
                 Analytics
               </HeadingText>
               <CTAContainer>
@@ -135,7 +135,7 @@ const HeadingText = styled.text`
   font-size: 40px;
   font-style: normal;
   font-weight: 900;
-  line-height: 139%;
+  line-height: 1.4;
 `;
 
 const CTAContainer = styled.div`

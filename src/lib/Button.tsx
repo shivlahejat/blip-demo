@@ -1,7 +1,7 @@
 "use client";
 import styled, { css } from "styled-components";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -27,6 +27,10 @@ const variants = {
   ghost: css`
     background: transparent;
     color: #000;
+  `,
+  danger: css`
+    background: #ff3e03;
+    color: #fff;
   `,
 };
 

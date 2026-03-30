@@ -1,6 +1,7 @@
 "use client";
 
 import FeaturesSection from "@/imports/NewLandingPage/ui/components/FeaturesSection";
+import AdManagementSection from "@/imports/NewLandingPage/ui/components/AdManagementSection";
 import HeroSection from "@/imports/NewLandingPage/ui/components/HeroSection";
 import Navbar from "@/imports/NewLandingPage/ui/components/Navbar";
 import RatingCardsSection from "@/imports/NewLandingPage/ui/components/RatingCardsSection";
@@ -13,6 +14,7 @@ const NewLandingPage = () => {
       <Navbar />
       <HeroSection />
       <RatingCardsSection />
+      <AdManagementSection />
       <FeaturesSection />
     </Container>
   );
