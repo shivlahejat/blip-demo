@@ -11,6 +11,8 @@ import styled from "styled-components";
 import ReviewSection from "@/imports/NewLandingPage/ui/components/ReviewSection";
 import MetaPartnersSection from "@/imports/NewLandingPage/ui/components/MetaPartnersSection";
 import SetUpSection from "@/imports/NewLandingPage/ui/components/SetUpSection";
+import TikTokSection from "@/imports/NewLandingPage/ui/components/TikTokSection";
+import PricingSection from "@/imports/NewLandingPage/ui/components/PricingSection";
 
 const NewLandingPage = () => {
   return (
@@ -24,6 +26,8 @@ const NewLandingPage = () => {
       <ReviewSection />
       <SetUpSection />
       <MetaPartnersSection />
+      <TikTokSection />
+      <PricingSection />
     </Container>
   );
 };

@@ -125,3 +125,51 @@ export const FEATURES = [
     ],
   },
 ];
+
+export const PRICING_PLANS = [
+  {
+    id: "starter",
+    title: "Starter",
+    price: 49,
+    duration: "month",
+    badge: "Suited for Brands",
+    features: [
+      "Unlimited Ad Launches",
+      "Unlimited Ad Accounts",
+      "Bulk publish ads using existing Post IDs, or normal duplication",
+      "Supports Standard ads, Carousels, Flex, Partnership ads, and more",
+      "Google Drive and Dropbox Integration",
+    ],
+    cta: "Start your 7 Day Free Trial",
+  },
+  {
+    id: "light",
+    title: "Light",
+    price: 199,
+    duration: "month",
+    badge: "Suited for Brands",
+    features: [
+      "Unlimited Ad Launches",
+      "Unlimited Ad Accounts",
+      "Bulk publish ads using existing Post IDs, or normal duplication",
+      "Supports Standard ads, Carousels, Flex, Partnership ads, and more",
+      "Google Drive and Dropbox Integration",
+    ],
+    cta: "Start your 7 Day Free Trial",
+  },
+  {
+    id: "pro",
+    title: "Pro",
+    price: 370,
+    duration: "month",
+    badge: "Suited for Brands",
+    features: [
+      "Unlimited Ad Launches",
+      "Unlimited Ad Accounts",
+      "Bulk publish ads using existing Post IDs, or normal duplication",
+      "Supports Standard ads, Carousels, Flex, Partnership ads, and more",
+      "Google Drive and Dropbox Integration",
+    ],
+    cta: "Start your 7 Day Free Trial",
+  },
+];
