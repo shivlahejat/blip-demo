@@ -27,9 +27,9 @@ const NewLandingPage = () => {
       <ReviewSection />
       <SetUpSection />
       <MetaPartnersSection />
+      <AnalyticsSection />
       <TikTokSection />
       <PricingSection />
-      <AnalyticsSection />
     </Container>
   );
 };
