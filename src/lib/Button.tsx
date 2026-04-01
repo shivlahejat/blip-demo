@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import React from "react";
 import styled, { css } from "styled-components";
 
 type ButtonVariant =
@@ -10,9 +12,12 @@ type ButtonVariant =
   | "danger";
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  leftIcon?: string;
+  leftIconWidth?: number;
+  leftIconHeight?: number;
 }
 
 const variants = {
@@ -66,7 +71,32 @@ const sizes = {
   `,
 };
 
-export const Button = styled.button<ButtonProps>`
+export const Button = ({
+  leftIcon,
+  leftIconWidth = 21,
+  leftIconHeight = 32,
+  children,
+  variant,
+  size,
+  ...rest
+}: ButtonProps) => {
+  return (
+    <StyledButton variant={variant} size={size} {...rest}>
+      {leftIcon && (
+        <Image
+          src={leftIcon}
+          alt="button icon"
+          width={leftIconWidth}
+          height={leftIconHeight}
+          style={{ width: "auto", height: `${leftIconHeight}px` }}
+        />
+      )}
+      {children}
+    </StyledButton>
+  );
+};
+
+const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>`
   display: inline-flex;
   padding: 8px 39px 9px 39px;
   justify-content: center;

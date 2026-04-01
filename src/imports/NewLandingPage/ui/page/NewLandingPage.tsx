@@ -21,25 +21,27 @@ const NewLandingPage = () => {
     <Container id="top">
       <Navbar />
       <HeroSection />
-      <div id="features">
-        <RatingCardsSection />
-      </div>
-      <AdManagementSection />
-      <div id="analytics">
-        <FeaturesSection />
-      </div>
-      <SupportSection />
-      <div id="blog">
-        <ReviewSection />
-      </div>
-      <SetUpSection />
-      <MetaPartnersSection />
-      <AnalyticsSection />
-      <TikTokSection />
-      <div id="pricing">
-        <PricingSection />
-      </div>
-      <FAQsSection />
+      <ContentWrapper>
+        <div id="features">
+          <RatingCardsSection />
+        </div>
+        <AdManagementSection />
+        <div id="analytics">
+          <FeaturesSection />
+        </div>
+        <SupportSection />
+        <div id="blog">
+          <ReviewSection />
+        </div>
+        <SetUpSection />
+        <MetaPartnersSection />
+        <AnalyticsSection />
+        <TikTokSection />
+        <div id="pricing">
+          <PricingSection />
+        </div>
+        <FAQsSection />
+      </ContentWrapper>
     </Container>
   );
 };
@@ -48,7 +50,15 @@ export default NewLandingPage;
 
 const Container = styled.div`
   width: 100%;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  gap: 200px;
+`;
+
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,6 +66,5 @@ const Container = styled.div`
   padding: 36px 0px 43px 0px;
   gap: 200px;
   overflow-x: hidden;
-
-  font-family: "Alcyone" !important;
+  width: 100%;
 `;
