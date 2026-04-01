@@ -37,10 +37,13 @@ export default function HeroSection() {
                 Analytics
               </HeadingText>
               <CTAContainer>
-                <Button style={{ padding: "14px 23px" }}>
+                <Button style={{ padding: "16px 23px" }}>
                   Start Free Trial
                 </Button>
-                <Button variant="outline" style={{ padding: "14px 23px" }}>
+                <Button
+                  variant="outlineFilled"
+                  style={{ padding: "16px 23px" }}
+                >
                   Get A Demo
                 </Button>
               </CTAContainer>

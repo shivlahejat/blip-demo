@@ -2,10 +2,21 @@
 
 import { Button } from "@/lib/Button";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -18,7 +29,7 @@ const Navbar = () => {
     }
   };
   return (
-    <Container>
+    <Container className={scrolled ? "scrolled" : ""}>
       <NavLinksContainer>
         <NavLinks onClick={() => handleScrollTo("features")}>Features</NavLinks>
         <NavLinks onClick={() => handleScrollTo("pricing")}>Pricing</NavLinks>
@@ -38,7 +49,7 @@ const Navbar = () => {
       </LogoContainer>
       <CTAContainer>
         <Button>Start Free Trial</Button>
-        <Button variant="outline">Login</Button>
+        <Button variant="secondary">Login</Button>
       </CTAContainer>
     </Container>
   );
@@ -55,12 +66,23 @@ const Container = styled.div`
   height: 68.7px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  box-shadow: 0px 1px 10px 0px #0000001a;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   background: #fff;
+  padding: 36px 19px;
+
+  transition:
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  border: 1px solid transparent;
+
+  &.scrolled {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
+  }
 `;
 
 const NavLinksContainer = styled.div`

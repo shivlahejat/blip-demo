@@ -136,6 +136,7 @@ const RatingCard = styled.div<{ $isOdd: boolean }>`
   min-height: 370px;
   width: 370px;
   margin-bottom: 20px; /* For potential shadow/spacing */
+  border: 2px solid #000;
 `;
 
 const UserName = styled.div<{ $isOdd: boolean }>`

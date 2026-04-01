@@ -1,7 +1,13 @@
 "use client";
 import styled, { css } from "styled-components";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "outlineFilled"
+  | "ghost"
+  | "danger";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -11,19 +17,30 @@ interface ButtonProps {
 
 const variants = {
   primary: css`
-    background: #000;
     color: #fff;
+    border: 2px solid #3f3e3e;
+    background: linear-gradient(0deg, #414141 0%, #000 77.88%);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
   `,
   secondary: css`
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
+    border: 1px solid #6c3403;
+    background: #ffbe85;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    color: #6c3403;
   `,
   outline: css`
     background: transparent;
     color: #000;
     border: 1px solid #000;
   `,
+
+  outlineFilled: css`
+    border: 2px solid #1d1d1d;
+    background: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    color: #1d1d1d;
+  `,
+
   ghost: css`
     background: transparent;
     color: #000;
@@ -51,6 +68,7 @@ const sizes = {
 
 export const Button = styled.button<ButtonProps>`
   display: inline-flex;
+  padding: 8px 39px 9px 39px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -58,11 +76,10 @@ export const Button = styled.button<ButtonProps>`
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  font-family: "NexaRound", sans-serif;
+  font-family: Alcyone-SemiBold;
   color: #fff;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
   text-transform: capitalize;
 
@@ -70,7 +87,7 @@ export const Button = styled.button<ButtonProps>`
   ${({ size = "md" }) => sizes[size]}
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
   &:disabled {
