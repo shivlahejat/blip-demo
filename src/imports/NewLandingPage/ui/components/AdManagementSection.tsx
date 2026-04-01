@@ -80,7 +80,7 @@ const HeadingWrapper = styled.div`
 const HeadingText = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -91,7 +91,7 @@ const HeadingText = styled.div`
 const SubHeadingText = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -113,7 +113,7 @@ const GridItem = styled.div`
   align-items: center;
   gap: 12px;
   color: rgba(51, 12, 0, 0.5);
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

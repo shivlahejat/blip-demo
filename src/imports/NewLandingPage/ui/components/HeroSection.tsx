@@ -111,7 +111,7 @@ const TitleWrapper = styled.div`
 
 const SubHeadingText = styled.text`
   color: #674d01;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -131,7 +131,7 @@ const HeadingText = styled.text`
   color: #1d1d1d;
   max-width: 742px;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone-SemiBold;
   font-size: 40px;
   font-style: normal;
   font-weight: 900;

@@ -73,7 +73,7 @@ const FeaturePointsContainer = styled.div`
 
 const Title = styled.div`
   color: #ff3e03;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -83,7 +83,7 @@ const Title = styled.div`
 
 const SubTitle = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -93,7 +93,7 @@ const SubTitle = styled.div`
 
 const Description = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;

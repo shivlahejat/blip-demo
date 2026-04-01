@@ -69,7 +69,7 @@ const ContentContainer = styled.div`
 
 const HeadingText = styled.div`
   color: #ff3e03;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -79,7 +79,7 @@ const HeadingText = styled.div`
 
 const SubHeadingText = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -89,7 +89,7 @@ const SubHeadingText = styled.div`
 
 const DescriptionText = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -124,7 +124,7 @@ const ReviewCard = styled.div`
 
 const ReviewText = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -135,7 +135,7 @@ const ReviewText = styled.div`
 
 const AuthorText = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;

@@ -118,7 +118,7 @@ const HeaderContainer = styled.div`
 
 const Title = styled.div`
   color: #000;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -165,7 +165,7 @@ const FAQQuestionContainer = styled.div`
 
 const FAQQuestion = styled.div`
   color: #000;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -186,7 +186,7 @@ const AnswerContainer = styled(motion.div)`
 
 const AnswerContent = styled.div`
   color: rgba(0, 0, 0, 0.7);
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;

@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "../customcss/Header.module.css";
 import Link from "next/link";
 
-
 type NavigationRoute = {
   label: string;
   href: string;
@@ -19,7 +18,6 @@ const NAVIGATION_ROUTES: NavigationRoute[] = [
   { label: "pricing", href: "#pricing", sectionId: "pricing" },
   // { label: "blog", href: "/blog", sectionId: null, isLink: true },
 ];
-
 
 export default function HeaderSection({ isScrolled }: any) {
   const menuBtnRef = useRef<HTMLButtonElement>(null);
@@ -54,7 +52,7 @@ export default function HeaderSection({ isScrolled }: any) {
         setMenuOpen(false);
       }
     },
-    []
+    [],
   );
   return (
     <div>
@@ -110,7 +108,7 @@ export default function HeaderSection({ isScrolled }: any) {
               >
                 {route.label}
               </a>
-            )
+            ),
           )}
 
           <a href="https://app.withblip.com/signup" className={styles.startBtn}>
@@ -133,7 +131,7 @@ export default function HeaderSection({ isScrolled }: any) {
               >
                 {route.label}
               </a>
-            )
+            ),
           )}
 
           <a href="https://app.withblip.com" className={styles.startBtn}>
@@ -149,4 +147,4 @@ export default function HeaderSection({ isScrolled }: any) {
       </header>
     </div>
   );
-};
+}

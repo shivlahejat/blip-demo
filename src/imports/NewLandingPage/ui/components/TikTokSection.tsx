@@ -51,7 +51,7 @@ const ContentContainer = styled.div`
 
 const Header = styled.div`
   color: #fff;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -63,7 +63,7 @@ const Header = styled.div`
 const Title = styled.div`
   color: #fff;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -73,7 +73,7 @@ const Title = styled.div`
 
 const Description = styled.div`
   color: #fff;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

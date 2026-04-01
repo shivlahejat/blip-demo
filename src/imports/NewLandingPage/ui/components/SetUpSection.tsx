@@ -42,7 +42,7 @@ const Container = styled.div`
 const HeaderTitle = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -54,7 +54,7 @@ const HeaderTitle = styled.div`
 const SubTitle = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

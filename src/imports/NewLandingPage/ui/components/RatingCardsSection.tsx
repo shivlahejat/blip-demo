@@ -74,6 +74,22 @@ const HeaderContainer = styled.div`
 const MarqueeContainer = styled.div`
   width: 100%;
   position: relative;
+  max-width: 1512px;
+  opacity: 1;
+
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 8%,
+    rgba(0, 0, 0, 0.8) 16%,
+    rgba(0, 0, 0, 1) 22%,
+    rgba(0, 0, 0, 1) 78%,
+    rgba(0, 0, 0, 0.8) 84%,
+    rgba(0, 0, 0, 0.3) 92%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -90,7 +106,7 @@ const MarqueeContainer = styled.div`
 const Title = styled.div`
   color: #ff3e03;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -101,7 +117,7 @@ const Title = styled.div`
 const Description = styled.div`
   color: #1d1d1d;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -124,7 +140,7 @@ const RatingCard = styled.div<{ $isOdd: boolean }>`
 
 const UserName = styled.div<{ $isOdd: boolean }>`
   color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#f6eddc")};
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -133,7 +149,7 @@ const UserName = styled.div<{ $isOdd: boolean }>`
 
 const RatingText = styled.div<{ $isOdd: boolean }>`
   color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#fffbf2")};
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -166,7 +182,7 @@ const UserInfo = styled.div`
 
 const UserRole = styled.div<{ $isOdd: boolean }>`
   color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#f6eddc")};
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

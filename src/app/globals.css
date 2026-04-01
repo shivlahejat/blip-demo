@@ -87,6 +87,62 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Alcyone-Thin";
+  src: url("/fonts/Alcyone/Alcyone-Thin.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-ExtraLight";
+  src: url("/fonts/Alcyone/Alcyone-ExtraLight.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-Light";
+  src: url("/fonts/Alcyone/Alcyone-Light.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone";
+  src: url("/fonts/Alcyone/Alcyone-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-Medium";
+  src: url("/fonts/Alcyone/Alcyone-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-SemiBold";
+  src: url("/fonts/Alcyone/Alcyone-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-Bold";
+  src: url("/fonts/Alcyone/Alcyone-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alcyone-Black";
+  src: url("/fonts/Alcyone/Alcyone-Black.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

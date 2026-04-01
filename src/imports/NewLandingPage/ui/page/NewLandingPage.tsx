@@ -21,7 +21,7 @@ const NewLandingPage = () => {
     <Container id="top">
       <Navbar />
       <HeroSection />
-      <div id="about">
+      <div id="features">
         <RatingCardsSection />
       </div>
       <AdManagementSection />
@@ -56,4 +56,6 @@ const Container = styled.div`
   padding: 36px 0px 43px 0px;
   gap: 200px;
   overflow-x: hidden;
+
+  font-family: "Alcyone" !important;
 `;

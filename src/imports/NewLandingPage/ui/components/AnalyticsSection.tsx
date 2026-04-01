@@ -120,7 +120,7 @@ const SvgWrapper = styled.div`
 const Title = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -132,7 +132,7 @@ const Title = styled.div`
 const HeaderTitle = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 800;
@@ -182,7 +182,7 @@ const IconContainer = styled.div`
 
 const ItemTitle = styled.div`
   color: #330c00;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
@@ -191,7 +191,7 @@ const ItemTitle = styled.div`
 
 const ItemDescription = styled.div`
   color: #7a6861;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

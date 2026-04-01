@@ -84,7 +84,7 @@ const CardBadge = styled.div`
 
 const CardBadgeText = styled.div`
   color: #1d1d1d;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -100,7 +100,7 @@ const PlanTypeContainer = styled.div`
 
 const PlanType = styled.div`
   color: #f6eddc;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -123,7 +123,7 @@ const PlanIconWrapper = styled.div`
 
 const PlanPriceText = styled.div`
   color: #f6eddc;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -152,7 +152,7 @@ const PlanFeaturePoint = styled.div`
 
 const PlanFeatureText = styled.div`
   color: #f6eddc;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;

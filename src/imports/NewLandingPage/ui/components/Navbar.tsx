@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <Container>
       <NavLinksContainer>
-        <NavLinks onClick={() => handleScrollTo("about")}>About</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("features")}>Features</NavLinks>
         <NavLinks onClick={() => handleScrollTo("pricing")}>Pricing</NavLinks>
         <NavLinks onClick={() => handleScrollTo("blog")}>Blog</NavLinks>
         <NavLinks onClick={() => handleScrollTo("analytics")}>
@@ -53,8 +53,8 @@ const Container = styled.div`
   transform: translateX(-50%);
   width: 942.5px;
   height: 68.7px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   box-shadow: 0px 1px 10px 0px #0000001a;
   display: flex;
   justify-content: space-between;
@@ -72,7 +72,7 @@ const NavLinksContainer = styled.div`
 
 const NavLinks = styled.div`
   color: #000;
-  font-family: NexaRound;
+  font-family: Alcyone;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
