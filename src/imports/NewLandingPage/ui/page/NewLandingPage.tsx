@@ -15,14 +15,23 @@ import TikTokSection from "@/imports/NewLandingPage/ui/components/TikTokSection"
 import PricingSection from "@/imports/NewLandingPage/ui/components/PricingSection";
 import AnalyticsSection from "@/imports/NewLandingPage/ui/components/AnalyticsSection";
 import FAQsSection from "@/imports/NewLandingPage/ui/components/FAQsSection";
+import { useHeroImageOverflow } from "@/imports/NewLandingPage/hooks/useHeroImageOverflow";
 
 const NewLandingPage = () => {
+  const { heroContainerRef, handleImageRef, handleImageLoad, imageOverflow } =
+    useHeroImageOverflow();
+
   return (
     <Container id="top">
       <Navbar />
-      <HeroSection />
+      <div ref={heroContainerRef} style={{ width: "100%" }}>
+        <HeroSection
+          onImageRef={handleImageRef}
+          onImageLoad={handleImageLoad}
+        />
+      </div>
       <ContentWrapper>
-        <div id="features">
+        <div id="features" style={{ marginTop: imageOverflow }}>
           <RatingCardsSection />
         </div>
         <AdManagementSection />
@@ -63,7 +72,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 36px 0px 43px 0px;
+  padding: 0px 0px 43px 0px;
   gap: 200px;
   overflow-x: hidden;
   width: 100%;

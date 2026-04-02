@@ -11,7 +11,15 @@ const subPointData = [
   "Unlimited Ad Launches & Team Seats",
 ];
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onImageRef?: (el: HTMLDivElement | null) => void;
+  onImageLoad?: () => void;
+}
+
+export default function HeroSection({
+  onImageRef,
+  onImageLoad,
+}: HeroSectionProps) {
   return (
     <Container>
       <ImageContainer>
@@ -86,12 +94,13 @@ export default function HeroSection() {
           />
         </DoodleWrapper>
 
-        <ContentImageWrapper>
+        <ContentImageWrapper ref={onImageRef}>
           <Image
             src="/images/LandingContentImage.png"
             alt="landing content"
             width={731}
             height={455}
+            onLoad={onImageLoad}
             style={{
               width: "100%",
             }}
