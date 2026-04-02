@@ -12,6 +12,7 @@ import {
   StatsData,
   Tabs,
 } from "@/imports/NewLandingPage/constants/constants";
+import { AnimatedList } from "@/components/ui/animated-list";
 
 export default function AnalyticsSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -44,28 +45,30 @@ export default function AnalyticsSection() {
               ))}
             </TabGroup>
             <StatsGroup>
-              {StatsData.map((item, index) => {
-                const Icon = item.svg;
-                return (
-                  <StatsContainer key={index}>
-                    <StatsContentWrapper>
-                      <DetailsWrapper>
-                        <IconWrapper $bg={item.iconBg}>
-                          <Icon />
-                        </IconWrapper>
-                        <StatsText>{item.text}</StatsText>
-                      </DetailsWrapper>
-                      <CTAWrapper
-                        $borderColor={item.buttonBorder}
-                        $bgColor={item.buttonBackground}
-                      >
-                        <BulletIcon color={item.bulletIconColor} />
-                        <CTAText>{item.buttonText}</CTAText>
-                      </CTAWrapper>
-                    </StatsContentWrapper>
-                  </StatsContainer>
-                );
-              })}
+              <AnimatedList delay={1000} className="w-full min-h-[100px]">
+                {StatsData.map((item, index) => {
+                  const Icon = item.svg;
+                  return (
+                    <StatsContainer key={index}>
+                      <StatsContentWrapper>
+                        <DetailsWrapper>
+                          <IconWrapper $bg={item.iconBg}>
+                            <Icon />
+                          </IconWrapper>
+                          <StatsText>{item.text}</StatsText>
+                        </DetailsWrapper>
+                        <CTAWrapper
+                          $borderColor={item.buttonBorder}
+                          $bgColor={item.buttonBackground}
+                        >
+                          <BulletIcon color={item.bulletIconColor} />
+                          <CTAText>{item.buttonText}</CTAText>
+                        </CTAWrapper>
+                      </StatsContentWrapper>
+                    </StatsContainer>
+                  );
+                })}
+              </AnimatedList>
               <StatsContainer>
                 <GraphTextWrapper>
                   <GraphTitle>Daily CPA by Campaign</GraphTitle>
