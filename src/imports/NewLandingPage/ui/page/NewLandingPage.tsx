@@ -16,6 +16,7 @@ import PricingSection from "@/imports/NewLandingPage/ui/components/PricingSectio
 import AnalyticsSection from "@/imports/NewLandingPage/ui/components/AnalyticsSection";
 import FAQsSection from "@/imports/NewLandingPage/ui/components/FAQsSection";
 import { useHeroImageOverflow } from "@/imports/NewLandingPage/hooks/useHeroImageOverflow";
+import FooterSectionV2 from "@/imports/NewLandingPage/ui/components/FooterSectionV2";
 
 const NewLandingPage = () => {
   const { heroContainerRef, handleImageRef, handleImageLoad, imageOverflow } =
@@ -50,6 +51,7 @@ const NewLandingPage = () => {
           <PricingSection />
         </div>
         <FAQsSection />
+        <FooterSectionV2 />
       </ContentWrapper>
     </Container>
   );
@@ -64,7 +66,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 0px 43px 0px;
   gap: 200px;
   overflow-x: hidden;
 `;
@@ -74,7 +75,6 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 0px 43px 0px;
   gap: 200px;
   overflow-x: hidden;
   width: 100%;
