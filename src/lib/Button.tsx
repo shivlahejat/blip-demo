@@ -3,13 +3,15 @@ import Image from "next/image";
 import React from "react";
 import styled, { css } from "styled-components";
 
-type ButtonVariant =
+export type ButtonVariant =
   | "primary"
   | "secondary"
   | "outline"
   | "outlineFilled"
   | "ghost"
-  | "danger";
+  | "danger"
+  | "brand"
+  | "white";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -54,6 +56,18 @@ const variants = {
   danger: css`
     background: #f47200;
     color: #fff;
+  `,
+  brand: css`
+    background: #7b2fbe;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px 0 rgba(123, 47, 190, 0.35);
+  `,
+  white: css`
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    color: #330c00;
   `,
 };
 

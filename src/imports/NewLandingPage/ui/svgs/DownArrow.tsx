@@ -1,6 +1,6 @@
 import React from "react";
 
-const GraphLowerSvg = () => {
+const DownArrow = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,8 +10,8 @@ const GraphLowerSvg = () => {
       fill="none"
     >
       <path
-        d="M20 17L14.154 11.062C12.19 9.079 10.048 13.21 8.001 11.063L4 7M20 17V10M20 17H13"
-        stroke="white"
+        d="M12.4738 4.5V19.5M12.4738 19.5L6.23682 13.875M12.4738 19.5L18.7108 13.875"
+        stroke="#877000"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -20,4 +20,4 @@ const GraphLowerSvg = () => {
   );
 };
 
-export default GraphLowerSvg;
+export default DownArrow;
