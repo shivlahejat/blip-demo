@@ -118,10 +118,9 @@ const HeaderContainer = styled.div`
 
 const Title = styled.div`
   color: #000;
-  font-family: Alcyone;
+  font-family: Alcyone-SemiBold;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.48px;
   z-index: 1;
@@ -165,10 +164,9 @@ const FAQQuestionContainer = styled.div`
 
 const FAQQuestion = styled.div`
   color: #000;
-  font-family: Alcyone;
+  font-family: Alcyone-SemiBold;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.32px;
 `;

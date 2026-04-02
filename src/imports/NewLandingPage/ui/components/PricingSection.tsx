@@ -32,9 +32,12 @@ const PricingSection = () => {
               ))}
             </PlanFeatureContainer>
           </ContentContainer>
-          <Button variant="danger" size="lg" style={{ width: "100%" }}>
-            {plan.cta}
-          </Button>
+          <BottomContainer>
+            <Button variant="danger" size="lg" style={{ width: "100%" }}>
+              {plan.cta}
+            </Button>
+            <BottomText>No CC Required</BottomText>
+          </BottomContainer>
         </PricingCard>
       ))}
     </Container>
@@ -147,8 +150,13 @@ const PlanFeatureContainer = styled.div`
 
 const PlanFeaturePoint = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 9px;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
 `;
 
 const PlanFeatureText = styled.div`
@@ -159,4 +167,25 @@ const PlanFeatureText = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.36px;
+`;
+
+const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+`;
+
+const BottomText = styled.div`
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  text-transform: capitalize;
+  opacity: 0.7;
 `;

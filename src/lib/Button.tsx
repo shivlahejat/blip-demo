@@ -52,7 +52,7 @@ const variants = {
     color: #000;
   `,
   danger: css`
-    background: #ff3e03;
+    background: #f47200;
     color: #fff;
   `,
 };

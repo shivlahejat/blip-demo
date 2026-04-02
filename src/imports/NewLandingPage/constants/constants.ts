@@ -132,7 +132,7 @@ export const PRICING_PLANS = [
     title: "Starter",
     price: 49,
     duration: "month",
-    badge: "Suited for Brands",
+    badge: "Best for Brands",
     features: [
       "Unlimited Ad Launches",
       "Unlimited Ad Accounts",
@@ -147,7 +147,7 @@ export const PRICING_PLANS = [
     title: "Light",
     price: 199,
     duration: "month",
-    badge: "Suited for Brands",
+    badge: "Best for Freelancers",
     features: [
       "Unlimited Ad Launches",
       "Unlimited Ad Accounts",
@@ -162,7 +162,7 @@ export const PRICING_PLANS = [
     title: "Pro",
     price: 370,
     duration: "month",
-    badge: "Suited for Brands",
+    badge: "Best for Agencies",
     features: [
       "Unlimited Ad Launches",
       "Unlimited Ad Accounts",
