@@ -59,12 +59,14 @@ export default NewLandingPage;
 
 const Container = styled.div`
   width: 100%;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  padding: 0px 0px 43px 0px;
   gap: 200px;
+  overflow-x: hidden;
 `;
 
 const ContentWrapper = styled.div`

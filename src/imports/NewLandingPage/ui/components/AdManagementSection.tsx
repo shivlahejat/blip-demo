@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import SwapSvg from "../../../../../public/images/SwapSvg";
-import LaunchSvg from "../../../../../public/images/LaunchSvg";
-import SettingSvg from "../../../../../public/images/SettingSvg";
 import { Button } from "@/lib/Button";
+import { Badge } from "@/lib/Badge";
+import SwapSvg from "../svgs/SwapSvg";
+import LaunchSvg from "../svgs/LaunchSvg";
+import SettingSvg from "../svgs/SettingSvg";
 
 export const GRID_ITEMS = [
   {
@@ -30,6 +31,9 @@ export default function AdManagementSection() {
       <InnerContainer>
         <HeadingWrapper>
           <HeadingText>
+            <BadgeContainer>
+              <Badge>Never Use Ads Manager Again</Badge>
+            </BadgeContainer>
             The fastest way to manage multiple ad accounts.
           </HeadingText>
           <SubHeadingText>
@@ -46,8 +50,8 @@ export default function AdManagementSection() {
           ))}
         </GridContainer>
       </InnerContainer>
-      <Button variant="danger" style={{ padding: "10px 58px" }}>
-        Get A Demo
+      <Button style={{ padding: "12px 53px 12px 48px" }}>
+        Start Free trial
       </Button>
     </Container>
   );
@@ -80,10 +84,9 @@ const HeadingWrapper = styled.div`
 const HeadingText = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
   line-height: 1.2;
   max-width: 615px;
 `;
@@ -97,6 +100,7 @@ const SubHeadingText = styled.div`
   font-weight: 600;
   line-height: 1.4;
   max-width: 570px;
+  opacity: 0.7;
 `;
 
 const GridContainer = styled.div`
@@ -118,4 +122,12 @@ const GridItem = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+`;
+
+const BadgeContainer = styled.div`
+  margin-bottom: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

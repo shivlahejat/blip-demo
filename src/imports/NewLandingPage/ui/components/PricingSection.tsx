@@ -47,6 +47,7 @@ const Container = styled.div`
   display: flex;
   gap: 73px;
   padding: 0px 56px 0px 56px;
+  max-width: 1512px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -100,7 +101,7 @@ const PlanTypeContainer = styled.div`
 
 const PlanType = styled.div`
   color: #f6eddc;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -123,7 +124,7 @@ const PlanIconWrapper = styled.div`
 
 const PlanPriceText = styled.div`
   color: #f6eddc;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;

@@ -63,7 +63,7 @@ const Header = styled.div`
 const Title = styled.div`
   color: #fff;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;

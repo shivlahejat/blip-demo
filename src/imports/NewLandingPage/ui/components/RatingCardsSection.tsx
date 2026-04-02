@@ -1,6 +1,8 @@
 "use client";
 
 import { TESTIMONIALS } from "@/imports/NewLandingPage/constants/constants";
+import RocketIcon from "@/imports/NewLandingPage/ui/svgs/RocketIcon";
+import { Badge } from "@/lib/Badge";
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
@@ -10,13 +12,13 @@ const RatingCardsSection = () => {
   return (
     <Container>
       <HeaderContainer>
-        <Title>Supporting 500+ Ad Launches Daily!</Title>
+        <Badge icon={<RocketIcon />}>Supporting 1000+ Ad Launches Daily</Badge>
         <Description>
           People are calling it the best invention since sliced bread
         </Description>
       </HeaderContainer>
       <MarqueeContainer>
-        <Marquee speed={40} pauseOnHover={false} autoFill={true}>
+        <Marquee speed={30} gradient={true}>
           {TESTIMONIALS.map((testimonial, index) => (
             <RatingCard
               key={index}
@@ -77,7 +79,7 @@ const MarqueeContainer = styled.div`
   max-width: 1512px;
   opacity: 1;
 
-  mask-image: linear-gradient(
+  /* mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.3) 8%,
@@ -87,7 +89,7 @@ const MarqueeContainer = styled.div`
     rgba(0, 0, 0, 0.8) 84%,
     rgba(0, 0, 0, 0.3) 92%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
 
   overflow: hidden;
 
@@ -117,7 +119,7 @@ const Title = styled.div`
 const Description = styled.div`
   color: #1d1d1d;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -150,10 +152,9 @@ const UserName = styled.div<{ $isOdd: boolean }>`
 
 const RatingText = styled.div<{ $isOdd: boolean }>`
   color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#fffbf2")};
-  font-family: Alcyone;
+  font-family: Alcyone-Medium;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
   line-height: 140%;
   letter-spacing: -0.72px;
   text-transform: capitalize;
@@ -188,4 +189,5 @@ const UserRole = styled.div<{ $isOdd: boolean }>`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  opacity: 0.6;
 `;

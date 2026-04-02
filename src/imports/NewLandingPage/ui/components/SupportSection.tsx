@@ -76,10 +76,9 @@ const HeaderContainer = styled.div`
 const HeaderTitle = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
 `;
 

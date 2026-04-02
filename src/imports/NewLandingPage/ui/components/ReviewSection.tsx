@@ -1,3 +1,5 @@
+import HeartIcon from "@/imports/NewLandingPage/ui/svgs/HeartIcon";
+import { Badge } from "@/lib/Badge";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -32,7 +34,7 @@ export default function ReviewSection() {
       </ImageWrapper>
       <ContentContainer>
         <HeaderWrapper>
-          <Title>Meet Jon. Jon loves Blip!</Title>
+          <Badge icon={<HeartIcon />}>Meet Jon. Jon loves Blip!</Badge>
           <Description>
             I love Blip! Before I would spend way too much time launching ads in
             platform which was always an incredibly frustrating experience. Ads
@@ -42,7 +44,7 @@ export default function ReviewSection() {
             a ton of wasted time, and it actually makes me look forward to
             launching new ads.
           </Description>
-        </HeaderWrapper>{" "}
+        </HeaderWrapper>
         <FooterWrapper>
           <FooterTitle>Henry Boldsizar</FooterTitle>
           <FooterDescription>App founder</FooterDescription>
@@ -112,10 +114,9 @@ const Title = styled.div`
 
 const Description = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-Medium;
   font-size: 24px;
   font-style: normal;
-  font-weight: 800;
   letter-spacing: -0.28px;
   text-transform: capitalize;
 `;
@@ -139,4 +140,5 @@ const FooterDescription = styled(Description)`
   font-style: normal;
   font-weight: 600;
   letter-spacing: unset;
+  opacity: 0.6;
 `;

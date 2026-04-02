@@ -1,5 +1,7 @@
 "use client";
 
+import HeartFileIcon from "@/imports/NewLandingPage/ui/svgs/HeartFileIcon";
+import { Badge } from "@/lib/Badge";
 import { Button } from "@/lib/Button";
 import Image from "next/image";
 import React from "react";
@@ -9,7 +11,11 @@ const MetaPartnersSection = () => {
   return (
     <Container>
       <ContentContainer>
-        <HeadingText>Built by the best</HeadingText>
+        <BadgeContainer>
+          <Badge icon={<HeartFileIcon />}>
+            An Operating System For Media Buyers by Media Buyers
+          </Badge>
+        </BadgeContainer>
         <SubHeadingText>
           Blip was built by Meta Agency Partners who have spent over $100M on
           Ads
@@ -19,9 +25,6 @@ const MetaPartnersSection = () => {
           marketing. The experience has been tailored to the absolute essentials
           which will improve your quality of life.
         </DescriptionText>
-        <Button variant="danger" size="lg" style={{ width: "fit-content" }}>
-          Get A Demo
-        </Button>
       </ContentContainer>
       <ReviewContainer>
         <ReviewImage
@@ -79,7 +82,7 @@ const HeadingText = styled.div`
 
 const SubHeadingText = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -89,7 +92,7 @@ const SubHeadingText = styled.div`
 
 const DescriptionText = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-SemiBold;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -99,14 +102,15 @@ const DescriptionText = styled.div`
 `;
 
 const ReviewContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
   align-items: center;
   gap: 42px;
   width: 100%;
 `;
 
 const ReviewImage = styled(Image)`
-  width: 50%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
@@ -119,15 +123,15 @@ const ReviewCard = styled.div`
   gap: 19px;
   border-radius: 30px;
   background: #f6eddc;
-  width: 50%;
+  max-width: 100%;
+  border: 2px solid #000;
 `;
 
 const ReviewText = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-SemiBold;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
   line-height: 140%;
   letter-spacing: -0.48px;
   text-transform: capitalize;
@@ -142,4 +146,10 @@ const AuthorText = styled.div`
   line-height: normal;
   letter-spacing: -0.32px;
   opacity: 0.6;
+`;
+
+const BadgeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;

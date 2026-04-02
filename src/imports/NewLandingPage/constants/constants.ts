@@ -79,10 +79,10 @@ export const FEATURES = [
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
     image: "/images/landing/feature.png",
     actions: [
-      "Launch New Ad Sets",
-      "Duplicate Campaigns",
-      "Import Settings",
-      "All Ad Types Supported",
+      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
+      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
+      { icon: "/images/landing/setting.svg", text: "Import Settings"},
+      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
     ],
   },
   {
@@ -92,10 +92,10 @@ export const FEATURES = [
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
     image: "/images/landing/feature.png",
     actions: [
-      "Launch New Ad Sets",
-      "Duplicate Campaigns",
-      "Import Settings",
-      "All Ad Types Supported",
+      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
+      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
+      { icon: "/images/landing/setting.svg", text: "Import Settings"},
+      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
     ],
   },
   {
@@ -105,10 +105,10 @@ export const FEATURES = [
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
     image: "/images/landing/feature.png",
     actions: [
-      "Launch New Ad Sets",
-      "Duplicate Campaigns",
-      "Import Settings",
-      "All Ad Types Supported",
+      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
+      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
+      { icon: "/images/landing/setting.svg", text: "Import Settings"},
+      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
     ],
   },
   {
@@ -118,10 +118,10 @@ export const FEATURES = [
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
     image: "/images/landing/feature.png",
     actions: [
-      "Launch New Ad Sets",
-      "Duplicate Campaigns",
-      "Import Settings",
-      "All Ad Types Supported",
+      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
+      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
+      { icon: "/images/landing/setting.svg", text: "Import Settings"},
+      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
     ],
   },
 ];

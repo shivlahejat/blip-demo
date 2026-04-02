@@ -1,3 +1,4 @@
+import GoogleIcon from "@/imports/NewLandingPage/ui/svgs/GoogleIcon";
 import { Button } from "@/lib/Button";
 import Image from "next/image";
 import React from "react";
@@ -7,24 +8,21 @@ export default function SetUpSection() {
   return (
     <Container>
       <HeaderTitle>
-        Ad Account Set up faster than Facebook changes its algorithm
+        Set up your ad account preferences once in seconds, then never again.
       </HeaderTitle>
       <SubTitle>
         Watch a quick demo of how easy it is to configure all your existing
         preferences from ads manager to Blip!
       </SubTitle>
-      <Button variant="danger" style={{ padding: "10px 58px" }}>
+      <Button
+        size="lg"
+        icon={<GoogleIcon />}
+        variant="secondary"
+        style={{ padding: "16px 23px" }}
+      >
         Get A Demo
       </Button>
-      <Image
-        src="/images/DemoImage.png"
-        alt="hero"
-        width={753}
-        height={469}
-        style={{
-          width: "100%",
-        }}
-      />
+      <Image src="/images/DemoImage.png" alt="hero" width={753} height={469} />
     </Container>
   );
 }
@@ -42,13 +40,12 @@ const Container = styled.div`
 const HeaderTitle = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
-  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -1.2px;
-  max-width: 660px;
+  max-width: 700.243px;
 `;
 
 const SubTitle = styled.div`
@@ -61,4 +58,5 @@ const SubTitle = styled.div`
   line-height: normal;
   letter-spacing: -0.48px;
   max-width: 538px;
+  opacity: 0.7;
 `;

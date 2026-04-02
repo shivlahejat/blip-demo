@@ -18,6 +18,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   leftIcon?: string;
   leftIconWidth?: number;
   leftIconHeight?: number;
+  icon?: React.ReactNode;
 }
 
 const variants = {
@@ -78,6 +79,7 @@ export const Button = ({
   children,
   variant,
   size,
+  icon,
   ...rest
 }: ButtonProps) => {
   return (
@@ -91,6 +93,7 @@ export const Button = ({
           style={{ width: "auto", height: `${leftIconHeight}px` }}
         />
       )}
+      {icon && <Icon>{icon}</Icon>}
       {children}
     </StyledButton>
   );
@@ -123,5 +126,17 @@ const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>`
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+`;
+
+const Icon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  svg {
+    width: 24px;
+    height: 24px;
   }
 `;

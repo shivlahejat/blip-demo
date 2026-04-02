@@ -19,20 +19,21 @@ const FeaturesSection = () => {
             </FeaturePointsContainer>
             <CTAContainer>
               {feature.actions.map((action, index) => (
-                <CTAButton key={index} variant="outline">
-                  {action}
-                </CTAButton>
+                <BulletPointContainer key={index}>
+                  <BulletPoint>{action.text}</BulletPoint>
+                </BulletPointContainer>
               ))}
             </CTAContainer>
           </FeatureContentContainer>
           <FeatureImageContainer>
-            <Image
+            {/* <Image
               src={"/images/feature_card_1.jpg"}
               alt="feature card 1"
               width={400}
               height={562.801}
               unoptimized
-            />
+            /> */}
+            <EmptyState />
           </FeatureImageContainer>
         </FeatureCardContainer>
       ))}
@@ -60,7 +61,7 @@ const FeatureContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 228px;
+  gap: 32px;
   max-width: 414px;
 `;
 
@@ -83,10 +84,9 @@ const Title = styled.div`
 
 const SubTitle = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -1.2px;
 `;
@@ -105,7 +105,8 @@ const CTAContainer = styled.div`
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
-  gap: 23px 16px;
+  flex-direction: column;
+  gap: 19px;
   align-self: stretch;
   flex-wrap: wrap;
 `;
@@ -114,7 +115,26 @@ const FeatureImageContainer = styled.div`
   width: 400px;
   height: 562.801px;
 `;
-const CTAButton = styled(Button)`
-  border: 1px solid #ff3e03;
-  color: #ff3e03;
+
+const BulletPointContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+const BulletPoint = styled.div`
+  color: #6c3403;
+  font-family: Alcyone;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.28px;
+`;
+
+const EmptyState = styled.div`
+  min-width: 618.656px;
+  min-height: 506.042px;
+  border-radius: 51px;
+  background: #f6eddc;
 `;
