@@ -49,12 +49,27 @@ const Container = styled.div`
   align-items: center;
   gap: 200px;
   padding: 0px 240px 0px 240px;
+
+  @media (max-width: 1040px) {
+    padding: 0px 60px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+  }
 `;
 
 const FeatureCardContainer = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 150px;
+
+  @media (max-width: 1040px) {
+    gap: 45px;
+  }
+  @media (max-width: 768px) {
+    gap: 20px;
+    flex-direction: column;
+  }
 `;
 
 const FeatureContentContainer = styled.div`
@@ -137,4 +152,16 @@ const EmptyState = styled.div`
   min-height: 506.042px;
   border-radius: 51px;
   background: #f6eddc;
+
+  @media (max-width: 768px) {
+    min-width: 400px;
+    min-height: 505.194px;
+    height: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    min-width: 400px;
+    min-height: 500px;
+    height: 100%;
+  }
 `;

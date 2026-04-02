@@ -18,7 +18,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "I Used To Dread Having To Get Into Ads Manager To Upload Ads. Now With Blip, It Takes Just Two Clicks And Anyone On The Team Can Do It Themselves.",
+      "I Used To Dread Having To Get Into Ads Manager To Upload Ads.",
     name: "Henry Boldszar",
     role: "App founder",
     avatar: "/images/landing/Sam.jpeg",

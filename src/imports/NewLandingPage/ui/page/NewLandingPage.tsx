@@ -68,6 +68,14 @@ const Container = styled.div`
   justify-content: center;
   gap: 200px;
   overflow-x: hidden;
+
+  @media (max-width: 1024px) {
+    gap: 150px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 100px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -78,4 +86,12 @@ const ContentWrapper = styled.div`
   gap: 200px;
   overflow-x: hidden;
   width: 100%;
+
+  @media (max-width: 1024px) {
+    gap: 150px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 100px;
+  }
 `;

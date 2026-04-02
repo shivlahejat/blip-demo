@@ -65,6 +65,11 @@ const Container = styled.div`
   justify-content: center;
   gap: 50px;
   padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+    align-items: flex-start;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -72,6 +77,11 @@ const InnerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 54px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    align-items: flex-start;
+  }
 `;
 
 const HeadingWrapper = styled.div`
@@ -79,6 +89,11 @@ const HeadingWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    align-items: flex-start;
+  }
 `;
 
 const HeadingText = styled.div`
@@ -89,6 +104,11 @@ const HeadingText = styled.div`
   font-style: normal;
   line-height: 1.2;
   max-width: 615px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    text-align: left;
+  }
 `;
 
 const SubHeadingText = styled.div`
@@ -101,6 +121,11 @@ const SubHeadingText = styled.div`
   line-height: 1.4;
   max-width: 570px;
   opacity: 0.7;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    text-align: left;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -110,6 +135,10 @@ const GridContainer = styled.div`
   column-gap: 68px;
   grid-template-rows: repeat(2, fit-content(100%));
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 `;
 
 const GridItem = styled.div`
@@ -130,4 +159,8 @@ const BadgeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
 `;

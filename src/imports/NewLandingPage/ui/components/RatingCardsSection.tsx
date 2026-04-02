@@ -7,8 +7,10 @@ import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import styled from "styled-components";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 const RatingCardsSection = () => {
+  const { isMobile } = useIsMobile();
   return (
     <Container>
       <HeaderContainer>
@@ -18,7 +20,7 @@ const RatingCardsSection = () => {
         </Description>
       </HeaderContainer>
       <MarqueeContainer>
-        <Marquee speed={30} gradient={true}>
+        <Marquee speed={130} gradient={!isMobile}>
           {TESTIMONIALS.map((testimonial, index) => (
             <RatingCard
               key={index}
@@ -62,6 +64,14 @@ const Container = styled.div`
   gap: 47px;
   max-width: 100dvw;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -126,6 +136,14 @@ const Description = styled.div`
   line-height: 140%;
   letter-spacing: -0.96px;
   text-transform: capitalize;
+
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const RatingCard = styled.div<{ $isOdd: boolean }>`
@@ -137,8 +155,20 @@ const RatingCard = styled.div<{ $isOdd: boolean }>`
   background: ${(props) => (props.$isOdd ? "#f6eddc" : "#1d1d1d")};
   min-height: 370px;
   width: 370px;
-  margin-bottom: 20px; /* For potential shadow/spacing */
+  margin-bottom: 20px;
   border: 2px solid #000;
+  align-items: stretch;
+
+  @media (max-width: 1024px) {
+    width: 300px;
+    min-height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 320px;
+    min-height: 370px;
+    height: 100%;
+  }
 `;
 
 const UserName = styled.div<{ $isOdd: boolean }>`
