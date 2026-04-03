@@ -2,10 +2,20 @@ import AnalyticsSvg from "@/imports/NewLandingPage/ui/svgs/AnalyticsSvg";
 import AuditIcon from "@/imports/NewLandingPage/ui/svgs/AuditIcon";
 import Copy from "@/imports/NewLandingPage/ui/svgs/Copy";
 import DownArrow from "@/imports/NewLandingPage/ui/svgs/DownArrow";
+import FastIcon from "@/imports/NewLandingPage/ui/svgs/FastIcon";
+import AdTypeIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/AdTypeIcon";
+import AutoMatchIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/AutoMatchIcon";
+import LaunchAdIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/LaunchAdIcon";
+import SettingsIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/SettingsIcon";
 import GraphLowerSvg from "@/imports/NewLandingPage/ui/svgs/GraphLowerSvg";
 import PlayIcon from "@/imports/NewLandingPage/ui/svgs/PlayIcon";
 import SlackIcon from "@/imports/NewLandingPage/ui/svgs/SlackIcon";
 import UpArrow from "@/imports/NewLandingPage/ui/svgs/UpArrow";
+import SaveIcon from "@/imports/NewLandingPage/ui/svgs/SaveIcon";
+import DefaultIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/DefaultIcon";
+import CopyIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/CopyIcon";
+import SyncIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/SyncIcon";
+import InfiniteIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/InfiniteIcon";
 
 
 export const TESTIMONIALS = [
@@ -83,57 +93,35 @@ export const TESTIMONIALS = [
 
 export const FEATURES = [
   {
+    icon: FastIcon,
     tag: "Fast & Furious",
     title: "Upload multiple creatives at once",
     description:
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    image: "/images/landing/feature.png",
+    image: "/images/UploadADImage.webp",
+    showFrameIcon: true,
     actions: [
-      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
-      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
-      { icon: "/images/landing/setting.svg", text: "Import Settings"},
-      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
+      { icon: AdTypeIcon, text: "All ad types supported"},
+      { icon: LaunchAdIcon, text: "Launch in Multiple Ad Sets"},
+      { icon: AutoMatchIcon, text: "Auto-match 1x1 and 9x16 assets"},
+      { icon: SettingsIcon, text: "Import Settings"},
     ],
   },
   {
+    icon: SaveIcon,
     tag: "Saving private templates",
     title: "Apply saved templates for copy, CTA, and links",
     description:
       "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    image: "/images/landing/feature.png",
+    image: "/images/assetsync.webp",
     actions: [
-      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
-      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
-      { icon: "/images/landing/setting.svg", text: "Import Settings"},
-      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
+      { icon: CopyIcon, text: "Launch New Ad Sets"},
+      { icon: SyncIcon, text: "Duplicate Campaigns"},
+      { icon: InfiniteIcon, text: "Import Settings"},
+      { icon: DefaultIcon, text: "All Ad Types Supported"},
     ],
   },
-  {
-    tag: "Every setting everywhere at once",
-    title: "Persistent Settings Per Ad Account",
-    description:
-      "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    image: "/images/landing/feature.png",
-    actions: [
-      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
-      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
-      { icon: "/images/landing/setting.svg", text: "Import Settings"},
-      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
-    ],
-  },
-  {
-    tag: "Arrival",
-    title: "No more upload, download hell.",
-    description:
-      "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    image: "/images/landing/feature.png",
-    actions: [
-      { icon: "/images/landing/launch.svg", text: "Launch New Ad Sets"},
-      { icon: "/images/landing/swap.svg", text: "Duplicate Campaigns"},
-      { icon: "/images/landing/setting.svg", text: "Import Settings"},
-      { icon: "/images/landing/support.svg", text: "All Ad Types Supported"},
-    ],
-  },
+
 ];
 
 export const PRICING_PLANS = [

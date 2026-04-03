@@ -46,6 +46,12 @@ const Wrapper = styled.div<{ variant?: BadgeVariant }>`
     padding: 6px 16px;
     gap: 6px;
   }
+
+  @media (max-width: 520px) {
+    font-size: 12px;
+    padding: 4px 12px;
+    gap: 4px;
+  }
 `;
 
 const Icon = styled.span`
