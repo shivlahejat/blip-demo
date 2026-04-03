@@ -50,12 +50,13 @@ export default function AdManagementSection() {
           ))}
         </GridContainer>
       </InnerContainer>
-      <CTAButton>Start Free trial</CTAButton>
+      <CTAButton leftIcon="/images/rocket2.svg">Start Free trial</CTAButton>
     </Container>
   );
 }
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -63,6 +64,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 50px;
   padding: 0px 56px;
+  max-width: 900px;
 
   @media (max-width: 768px) {
     padding: 0px 20px;
@@ -74,9 +76,31 @@ const Container = styled.div`
 const CTAButton = styled(Button)`
   padding: 12px 53px 12px 48px;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 15px !important;
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-image: url("/images/VectorLines.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    opacity: 0.7;
+  }
+
+  &::before {
+    left: -40px;
+  }
+
+  &::after {
+    right: -40px;
   }
 `;
 
@@ -118,6 +142,11 @@ const HeadingText = styled.div`
     font-size: 28px;
     text-align: center;
   }
+
+  @media (max-width: 520px) {
+    text-align: left;
+    align-self: flex-start;
+  }
 `;
 
 const SubHeadingText = styled.div`
@@ -126,14 +155,20 @@ const SubHeadingText = styled.div`
   font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+
   max-width: 570px;
   opacity: 0.7;
 
   @media (max-width: 768px) {
     font-size: 16px;
     text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 
@@ -167,7 +202,6 @@ const GridItem = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     justify-content: flex-start;
-    padding-left: 20px;
   }
 `;
 
@@ -178,7 +212,7 @@ const BadgeContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
-    justify-content: center;
+  @media (max-width: 520px) {
+    justify-content: flex-start;
   }
 `;

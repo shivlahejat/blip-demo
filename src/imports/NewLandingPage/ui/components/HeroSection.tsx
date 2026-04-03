@@ -75,6 +75,7 @@ export default function HeroSection({
               </Button>
               <Button
                 className="cta-button"
+                style={{ padding: "16px 23px" }}
                 leftIcon="/images/MeetIcon.svg"
                 variant="outlineFilled"
                 leftIconWidth={24}
@@ -123,7 +124,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding-bottom: 50px;
 
   @media (max-width: 768px) {
     padding-bottom: 20px;
@@ -141,7 +141,8 @@ const ContentImageWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   top: 72%;
-  width: 731px;
+  max-width: 731px;
+  width: 100%;
 
   @media (max-width: 1024px) {
     width: 70%;
@@ -159,8 +160,7 @@ const MobileImageWrapper = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
   }
 `;
 
@@ -186,8 +186,12 @@ const ContentContainer = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 100px;
-    gap: 20px;
+    gap: 29px;
     padding: 0 20px;
+  }
+  @media (max-width: 520px) {
+    align-items: unset;
+    justify-content: flex-start;
   }
 `;
 
@@ -206,6 +210,9 @@ const HeadingText = styled.div`
     font-size: 28px;
     max-width: 100%;
   }
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
 const CTAContainer = styled.div`
@@ -220,7 +227,6 @@ const CTAContainer = styled.div`
 
     .cta-button {
       width: 100%;
-      padding: 15px !important;
       justify-content: center;
     }
   }
@@ -238,9 +244,12 @@ const MetaTagWrapper = styled.div`
   display: flex;
   padding: 7px 25px;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   border-radius: 27px;
   background: #ffd7b4;
+  width: 100%;
+  max-width: 250px;
 `;
 
 const MetaTagText = styled.div`
@@ -270,7 +279,7 @@ const SubPointsWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: 12px;
+    gap: 17px;
   }
 `;
 
