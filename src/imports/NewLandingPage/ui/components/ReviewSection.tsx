@@ -61,11 +61,28 @@ const Container = styled.div`
   gap: 36px;
   width: 100%;
   padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+    gap: 40px;
+  }
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
   display: flex;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
 `;
 
 const StyledNameTag = styled(Image)`
@@ -75,6 +92,12 @@ const StyledNameTag = styled(Image)`
   width: 148.057px;
   height: 111px;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: auto;
+    left: 0;
+  }
 `;
 
 const StyledReviewTag = styled(Image)`
@@ -84,6 +107,11 @@ const StyledReviewTag = styled(Image)`
   width: 90px;
   height: auto;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    right: 0;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -92,6 +120,11 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 59px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 30px;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -100,6 +133,11 @@ const HeaderWrapper = styled.div`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Title = styled.div`
@@ -110,6 +148,10 @@ const Title = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.4px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Description = styled.div`
@@ -119,6 +161,10 @@ const Description = styled.div`
   font-style: normal;
   letter-spacing: -0.28px;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const FooterWrapper = styled.div`
@@ -126,6 +172,11 @@ const FooterWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const FooterTitle = styled(Description)`

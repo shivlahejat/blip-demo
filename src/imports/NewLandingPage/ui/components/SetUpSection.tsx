@@ -35,6 +35,16 @@ const Container = styled.div`
   gap: 31px;
   max-width: 753px;
   padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    gap: 20px;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
 `;
 
 const HeaderTitle = styled.div`
@@ -46,6 +56,10 @@ const HeaderTitle = styled.div`
   line-height: 1.2;
   letter-spacing: -1.2px;
   max-width: 700.243px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const SubTitle = styled.div`

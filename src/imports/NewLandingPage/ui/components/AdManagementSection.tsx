@@ -50,9 +50,7 @@ export default function AdManagementSection() {
           ))}
         </GridContainer>
       </InnerContainer>
-      <Button style={{ padding: "12px 53px 12px 48px" }}>
-        Start Free trial
-      </Button>
+      <CTAButton>Start Free trial</CTAButton>
     </Container>
   );
 }
@@ -68,7 +66,17 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 0px 20px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 30px;
+  }
+`;
+
+const CTAButton = styled(Button)`
+  padding: 12px 53px 12px 48px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px !important;
   }
 `;
 
@@ -79,8 +87,9 @@ const InnerContainer = styled.div`
   gap: 54px;
 
   @media (max-width: 768px) {
-    gap: 20px;
-    align-items: flex-start;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
   }
 `;
 
@@ -92,7 +101,7 @@ const HeadingWrapper = styled.div`
 
   @media (max-width: 768px) {
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
   }
 `;
 
@@ -106,8 +115,8 @@ const HeadingText = styled.div`
   max-width: 615px;
 
   @media (max-width: 768px) {
-    font-size: 32px;
-    text-align: left;
+    font-size: 28px;
+    text-align: center;
   }
 `;
 
@@ -124,7 +133,7 @@ const SubHeadingText = styled.div`
 
   @media (max-width: 768px) {
     font-size: 16px;
-    text-align: left;
+    text-align: center;
   }
 `;
 
@@ -138,6 +147,9 @@ const GridContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+    justify-items: center;
+    gap: 15px;
   }
 `;
 
@@ -151,6 +163,12 @@ const GridItem = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
 `;
 
 const BadgeContainer = styled.div`
@@ -161,6 +179,6 @@ const BadgeContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    justify-content: flex-start;
+    justify-content: center;
   }
 `;

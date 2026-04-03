@@ -52,6 +52,11 @@ const Container = styled.div`
   padding: 0px 56px 0px 56px;
   max-width: 1512px;
 
+  @media (max-width: 1024px) {
+    gap: 30px;
+    padding: 0 40px;
+  }
+
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
@@ -67,6 +72,13 @@ const PricingCard = styled.div`
   gap: 87px;
   border-radius: 41px;
   background: #1d1d1d;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+    gap: 40px;
+    border-radius: 30px;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -112,6 +124,10 @@ const PlanType = styled.div`
   letter-spacing: -0.8px;
   text-transform: capitalize;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const PlanIconWrapper = styled.div`
@@ -140,12 +156,20 @@ const PlanPriceText = styled.div`
   text-underline-offset: auto;
   text-underline-position: from-font;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const PlanFeatureContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 34px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const PlanFeaturePoint = styled.div`
@@ -167,6 +191,10 @@ const PlanFeatureText = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.36px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const BottomContainer = styled.div`

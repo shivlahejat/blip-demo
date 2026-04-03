@@ -40,6 +40,21 @@ export default function HeroSection({
           <HeadingText>
             The simplest Bulk Ad Launcher powered up with Actionable Analytics
           </HeadingText>
+
+          <MobileImageWrapper>
+            <Image
+              src="/images/LandingContentImage.png"
+              alt="landing content"
+              width={731}
+              height={455}
+              onLoad={onImageLoad}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </MobileImageWrapper>
+
           <SubPointsWrapper>
             {subPointData.map((item, index) => (
               <SubPoint key={index}>
@@ -51,7 +66,7 @@ export default function HeroSection({
           <FooterContentWrapper>
             <CTAContainer>
               <Button
-                style={{ padding: "9px 53px 12px 48px" }}
+                className="cta-button"
                 leftIcon="/images/rocket2.svg"
                 leftIconWidth={21}
                 leftIconHeight={32}
@@ -59,9 +74,9 @@ export default function HeroSection({
                 Start Free Trial
               </Button>
               <Button
+                className="cta-button"
                 leftIcon="/images/MeetIcon.svg"
                 variant="outlineFilled"
-                style={{ padding: "16px 23px" }}
                 leftIconWidth={24}
                 leftIconHeight={20}
               >
@@ -71,18 +86,6 @@ export default function HeroSection({
             <FooterText>No CC Required. 7 Day free trial.</FooterText>
           </FooterContentWrapper>
         </ContentContainer>
-
-        {/* <ContentImageWrapper>
-          <Image
-            src="/images/LandingContentImage.png"
-            alt="landing content"
-            width={731}
-            height={455}
-            style={{
-              width: "100%",
-            }}
-          />
-        </ContentImageWrapper> */}
 
         <DoodleWrapper>
           <Image
@@ -94,7 +97,7 @@ export default function HeroSection({
           />
         </DoodleWrapper>
 
-        <ContentImageWrapper ref={onImageRef}>
+        <ContentImageWrapper className="desktop-only" ref={onImageRef}>
           <Image
             src="/images/LandingContentImage.png"
             alt="landing content"
@@ -103,6 +106,7 @@ export default function HeroSection({
             onLoad={onImageLoad}
             style={{
               width: "100%",
+              height: "auto",
             }}
           />
         </ContentImageWrapper>
@@ -112,22 +116,24 @@ export default function HeroSection({
 }
 
 const Container = styled.div`
-  /* height: 100dvh; */
   width: 100%;
   background-color: #f5e8d7;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-width: 1512px; */
   margin: 0 auto;
+  padding-bottom: 50px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 20px;
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  /* flex: 1; */
 `;
 
 const ContentImageWrapper = styled.div`
@@ -135,58 +141,57 @@ const ContentImageWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   top: 72%;
-  /* width: 52.22%; */
-  /* overflow: hidden; */
+  width: 731px;
+
+  @media (max-width: 1024px) {
+    width: 70%;
+  }
+
+  &.desktop-only {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+
+const MobileImageWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+  }
 `;
 
 const DoodleWrapper = styled.div`
-  /* position: absolute; */
   align-items: center;
   justify-content: center;
   display: flex;
   width: 100%;
   margin-bottom: 18px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ContentContainer = styled.div`
-  /* position: absolute; */
-  /* top: 19.18%;
-  left: 0;
-  right: 0; */
   margin-top: 172px;
   display: flex;
   gap: 26px;
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    gap: 20px;
+    padding: 0 20px;
+  }
 `;
 
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-`;
-
-const SubHeadingText = styled.text`
-  color: #674d01;
-  font-family: Alcyone;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.28px;
-  text-transform: capitalize;
-`;
-
-const HeadingWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-`;
-
-const HeadingText = styled.text`
+const HeadingText = styled.div`
   color: #1d1d1d;
   max-width: 807px;
   text-align: center;
@@ -196,13 +201,29 @@ const HeadingText = styled.text`
   font-weight: 700;
   line-height: 1.2;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    max-width: 100%;
+  }
 `;
 
 const CTAContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 22px;
-  margin-right: 14px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+
+    .cta-button {
+      width: 100%;
+      padding: 15px !important;
+      justify-content: center;
+    }
+  }
 `;
 
 const FooterContentWrapper = styled.div`
@@ -210,6 +231,7 @@ const FooterContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  width: 100%;
 `;
 
 const MetaTagWrapper = styled.div`
@@ -221,7 +243,7 @@ const MetaTagWrapper = styled.div`
   background: #ffd7b4;
 `;
 
-const MetaTagText = styled.text`
+const MetaTagText = styled.div`
   color: #6c3403;
   font-family: Alcyone;
   font-size: 16px;
@@ -229,6 +251,10 @@ const MetaTagText = styled.text`
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.32px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const SubPointsWrapper = styled.div`
@@ -239,6 +265,13 @@ const SubPointsWrapper = styled.div`
   align-content: flex-start;
   gap: 17px 26px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 12px;
+  }
 `;
 
 const SubPoint = styled.div`
@@ -247,7 +280,7 @@ const SubPoint = styled.div`
   gap: 8px;
 `;
 
-const SubPointsText = styled.text`
+const SubPointsText = styled.div`
   color: #681c04;
   font-family: Alcyone;
   font-size: 15px;
@@ -255,9 +288,14 @@ const SubPointsText = styled.text`
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.3px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    text-align: left;
+  }
 `;
 
-const FooterText = styled.text`
+const FooterText = styled.div`
   color: #674d01;
   text-align: center;
   font-family: Alcyone;

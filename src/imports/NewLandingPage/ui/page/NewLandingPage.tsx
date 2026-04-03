@@ -70,11 +70,11 @@ const Container = styled.div`
   overflow-x: hidden;
 
   @media (max-width: 1024px) {
-    gap: 150px;
+    gap: 100px;
   }
 
   @media (max-width: 768px) {
-    gap: 100px;
+    gap: 60px;
   }
 `;
 
@@ -88,10 +88,10 @@ const ContentWrapper = styled.div`
   width: 100%;
 
   @media (max-width: 1024px) {
-    gap: 150px;
+    gap: 100px;
   }
 
   @media (max-width: 768px) {
-    gap: 100px;
+    gap: 60px;
   }
 `;

@@ -78,6 +78,12 @@ const FeatureContentContainer = styled.div`
   align-items: flex-start;
   gap: 32px;
   max-width: 414px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const FeaturePointsContainer = styled.div`
@@ -85,6 +91,10 @@ const FeaturePointsContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 13px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Title = styled.div`
@@ -95,6 +105,10 @@ const Title = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.72px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -104,6 +118,10 @@ const SubTitle = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -1.2px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Description = styled.div`
@@ -114,6 +132,10 @@ const Description = styled.div`
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.54px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const CTAContainer = styled.div`
@@ -124,11 +146,21 @@ const CTAContainer = styled.div`
   gap: 19px;
   align-self: stretch;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const FeatureImageContainer = styled.div`
   width: 400px;
   height: 562.801px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    order: -1;
+  }
 `;
 
 const BulletPointContainer = styled.div`

@@ -61,6 +61,12 @@ const Container = styled.div`
   align-items: flex-start;
   gap: 54px;
   padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    gap: 30px;
+    align-items: center;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -68,6 +74,11 @@ const ContentContainer = styled.div`
   max-width: 892.855px;
   flex-direction: column;
   gap: 18px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const HeadingText = styled.div`
@@ -88,6 +99,10 @@ const SubHeadingText = styled.div`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -1.44px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const DescriptionText = styled.div`
@@ -99,6 +114,10 @@ const DescriptionText = styled.div`
   line-height: 160%;
   letter-spacing: -0.72px;
   opacity: 0.5;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const ReviewContainer = styled.div`
@@ -107,6 +126,11 @@ const ReviewContainer = styled.div`
   align-items: center;
   gap: 42px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 `;
 
 const ReviewImage = styled(Image)`
@@ -135,6 +159,10 @@ const ReviewText = styled.div`
   line-height: 140%;
   letter-spacing: -0.48px;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const AuthorText = styled.div`

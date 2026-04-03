@@ -80,6 +80,11 @@ const HeaderTitle = styled.div`
   font-size: 40px;
   font-style: normal;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    padding: 0 20px;
+  }
 `;
 
 const HeaderDescription = styled.div`

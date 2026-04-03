@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,17 +28,11 @@ const Navbar = () => {
         behavior: "smooth",
       });
     }
+    setMobileMenuOpen(false);
   };
+
   return (
     <Container className={scrolled ? "scrolled" : ""}>
-      <NavLinksContainer>
-        <NavLinks onClick={() => handleScrollTo("features")}>Features</NavLinks>
-        <NavLinks onClick={() => handleScrollTo("pricing")}>Pricing</NavLinks>
-        <NavLinks onClick={() => handleScrollTo("blog")}>Blog</NavLinks>
-        <NavLinks onClick={() => handleScrollTo("analytics")}>
-          Analytics
-        </NavLinks>
-      </NavLinksContainer>
       <LogoContainer onClick={() => handleScrollTo("top")}>
         <LogoImage
           src="/images/landing/logo.webp"
@@ -47,10 +42,49 @@ const Navbar = () => {
         />
         <LogoText>Blip</LogoText>
       </LogoContainer>
-      <CTAContainer>
-        <Button>Start Free Trial</Button>
+
+      <NavLinksContainer className={mobileMenuOpen ? "open" : ""}>
+        <NavLinks onClick={() => handleScrollTo("features")}>Features</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("pricing")}>Pricing</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("blog")}>Blog</NavLinks>
+        <NavLinks onClick={() => handleScrollTo("analytics")}>
+          Analytics
+        </NavLinks>
+        <MobileCTAContainer>
+          <Button style={{ width: "100%" }}>Start Free Trial</Button>
+          <Button variant="secondary" style={{ width: "100%" }}>
+            Login
+          </Button>
+        </MobileCTAContainer>
+      </NavLinksContainer>
+
+      <DesktopCTAContainer>
+        <Button
+          style={{ padding: "9px 20px" }}
+          leftIcon="/images/rocket2.svg"
+          leftIconWidth={16}
+          leftIconHeight={24}
+        >
+          Start Free Trial
+        </Button>
         <Button variant="secondary">Login</Button>
-      </CTAContainer>
+      </DesktopCTAContainer>
+
+      <MobileNavIcons>
+        <Button
+          style={{ padding: "8px 15px", fontSize: "12px" }}
+          leftIcon="/images/rocket2.svg"
+          leftIconWidth={12}
+          leftIconHeight={18}
+        >
+          Start Free Trial
+        </Button>
+        <Hamburger onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+      </MobileNavIcons>
     </Container>
   );
 };
@@ -71,7 +105,7 @@ const Container = styled.div`
   align-items: center;
   z-index: 1000;
   background: #fff;
-  padding: 36px 19px;
+  padding: 0 19px;
 
   transition:
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -83,13 +117,45 @@ const Container = styled.div`
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid #000;
   }
+
+  @media (max-width: 1024px) {
+    width: 90%;
+    top: 5px;
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 60px;
+    border-radius: 30px;
+  }
 `;
 
 const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 45px;
-  margin-left: 23.23px;
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+    &.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eee;
+      gap: 15px;
+    }
+  }
 `;
 
 const NavLinks = styled.div`
@@ -102,6 +168,10 @@ const NavLinks = styled.div`
   letter-spacing: -0.28px;
   text-transform: capitalize;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -116,6 +186,11 @@ const LogoImage = styled(Image)`
   height: 39.074px;
   aspect-ratio: 1/1;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const LogoText = styled.div`
@@ -127,11 +202,53 @@ const LogoText = styled.div`
   line-height: normal;
   letter-spacing: -0.48px;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
-const CTAContainer = styled.div`
+const DesktopCTAContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 22px;
-  margin-right: 14px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileNavIcons = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+`;
+
+const MobileCTAContainer = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
 `;

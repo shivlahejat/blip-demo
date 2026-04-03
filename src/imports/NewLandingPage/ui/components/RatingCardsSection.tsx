@@ -81,6 +81,13 @@ const HeaderContainer = styled.div`
   align-items: center;
   gap: 10px;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    & > div:first-child {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 `;
 
 const MarqueeContainer = styled.div`
