@@ -73,9 +73,11 @@ const Container = styled.div`
 
   @media (max-width: 1040px) {
     padding: 0px 60px;
+    gap: 100px;
   }
   @media (max-width: 768px) {
     padding: 0px 20px;
+    gap: 50px;
   }
 `;
 
@@ -94,7 +96,11 @@ const FeatureCardContainer = styled.div`
   @media (max-width: 1040px) {
     gap: 45px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
+    gap: 25px;
+    align-items: center;
+  }
+  @media (max-width: 850px) {
     gap: 20px;
     flex-direction: column;
   }
@@ -106,11 +112,19 @@ const FeatureContentContainer = styled.div`
   align-items: flex-start;
   gap: 32px;
   max-width: 458px;
+  width: 100%;
+
+  @media (max-width: 850px) {
+    max-width: 100%;
+  }
 
   @media (max-width: 768px) {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  @media (max-width: 820px) {
+    gap: 20px;
   }
 `;
 
@@ -120,8 +134,12 @@ const FeaturePointsContainer = styled.div`
   align-items: flex-start;
   gap: 13px;
 
+  @media (max-width: 820px) {
+    gap: 10px;
+  }
+
   @media (max-width: 768px) {
-    align-items: center;
+    align-items: flex-start;
   }
 `;
 
@@ -176,7 +194,11 @@ const CTAContainer = styled.div`
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 820px) {
+    gap: 12px;
   }
 `;
 
@@ -185,10 +207,13 @@ const FeatureImageContainer = styled.div`
   width: 100%;
   position: relative;
 
+  @media (max-width: 850px) {
+    /* max-width: 100%; */
+  }
+
   @media (max-width: 768px) {
     width: 100%;
     height: auto;
-    order: -1;
   }
 `;
 
@@ -199,8 +224,17 @@ const IconOverlay = styled.div`
   z-index: 10;
 
   @media (max-width: 768px) {
-    bottom: 40px;
-    right: 20px;
+    bottom: 30px;
+    right: -5px;
+    svg {
+      width: 45px;
+      height: 46px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    bottom: 30px;
+    right: -5px;
     svg {
       width: 45px;
       height: 46px;

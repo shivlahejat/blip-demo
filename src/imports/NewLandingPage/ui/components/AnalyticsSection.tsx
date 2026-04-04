@@ -125,17 +125,7 @@ export default function AnalyticsSection() {
                   <ItemDescription>{item.description}</ItemDescription>
                 </InfoContentWrapper>
               </InfoItem>
-              {index < DataAnalytics.length - 1 && (
-                <DividerContainer>
-                  <Image
-                    src="/images/VectorLines.png"
-                    alt="divider"
-                    width={10}
-                    height={256}
-                    style={{ objectFit: "contain" }}
-                  />
-                </DividerContainer>
-              )}
+              {index < DataAnalytics.length - 1 && <DividerContainer />}
             </React.Fragment>
           );
         })}
@@ -165,6 +155,10 @@ const AnalyticsWrapper = styled.div`
   align-items: center;
   gap: 24px;
   width: 100%;
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -173,6 +167,10 @@ const HeaderWrapper = styled.div`
   justify-content: center;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+  }
 `;
 
 const HeaderTitle = styled.div`
@@ -187,6 +185,10 @@ const HeaderTitle = styled.div`
 
   @media (max-width: 768px) {
     font-size: 28px;
+  }
+
+  @media (max-width: 520px) {
+    text-align: left;
   }
 `;
 
@@ -205,15 +207,22 @@ const SubTitle = styled(HeaderTitle)`
 
 const InfoWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   gap: 74px;
   align-self: stretch;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    gap: 54px;
+  }
+
+  @media (max-width: 800px) {
     flex-direction: column;
     gap: 30px;
     align-items: center;
+  }
+  @media (max-width: 520px) {
+    gap: 20px;
   }
 `;
 
@@ -226,10 +235,15 @@ const InfoItem = styled.div`
   margin: auto;
   gap: 28px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     max-width: 100%;
     align-items: center;
     text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
@@ -268,11 +282,26 @@ const ItemDescription = styled.div`
 
 const DividerContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  height: 256px;
+  align-items: center;
+  width: 10px;
+  background-image: url("/images/VectorLines.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: contain;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (max-width: 800px) {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(
+      to right,
+      #ff3e03 40%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: center;
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
+    margin: 10px 0;
   }
 `;
 
@@ -282,8 +311,12 @@ const InfoContentWrapper = styled.div`
   align-items: flex-start;
   gap: 10px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     align-items: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
   }
 `;
 
@@ -358,6 +391,7 @@ const StatsContainer = styled.div`
   border-radius: 28px;
   width: 100%;
   max-width: 463px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     max-width: 90%;
@@ -381,13 +415,10 @@ const DetailsWrapper = styled.div`
 const StatsGroup = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   width: 100%;
   max-width: 463px;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
 `;
 
 const IconWrapper = styled.div<{ $bg?: string }>`

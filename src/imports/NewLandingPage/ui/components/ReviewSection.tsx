@@ -20,29 +20,22 @@ export default function ReviewSection() {
           width={400}
           height={562}
           style={{
+            width: "100%",
             maxWidth: "400px",
             maxHeight: "562px",
           }}
           priority
-        />
-        <StyledReviewTag
-          src="/images/ReviewTag.png"
-          alt="review tag"
-          width={63}
-          height={75}
         />
       </ImageWrapper>
       <ContentContainer>
         <HeaderWrapper>
           <Badge icon={<HeartIcon />}>Meet Jon. Jon loves Blip!</Badge>
           <Description>
-            I love Blip! Before I would spend way too much time launching ads in
-            platform which was always an incredibly frustrating experience. Ads
-            manager was slow to load, had a million pop-ups, and I had to
-            constantly turn different settings off. Blip makes it super easy and
-            intuitive to upload ads - including partnership and flex. I regained
-            a ton of wasted time, and it actually makes me look forward to
-            launching new ads.
+            Why is he getting so excited over software? Because we're built
+            different - literally. Blip was made by media buyers who spend more
+            than $3 million a month. Our UI is designed to be seamless and
+            intuitive. Our AI-generated recommendations are grounded in best
+            practices. Blip just... works.
           </Description>
         </HeaderWrapper>
         <FooterWrapper>
@@ -57,16 +50,19 @@ export default function ReviewSection() {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 36px;
   width: 100%;
   padding: 0px 56px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0 20px;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
+  }
+  @media (max-width: 520px) {
+    align-items: flex-start;
   }
 `;
 
@@ -89,8 +85,9 @@ const StyledNameTag = styled(Image)`
   position: absolute;
   left: -22.578px;
   top: -13px;
-  width: 148.057px;
-  height: 111px;
+  max-width: 148px;
+  width: 100%;
+  height: auto;
   z-index: 10;
 
   @media (max-width: 768px) {
@@ -116,10 +113,11 @@ const StyledReviewTag = styled(Image)`
 
 const ContentContainer = styled.div`
   display: flex;
-  width: 512.423px;
+  max-width: 512px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 59px;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -137,6 +135,10 @@ const HeaderWrapper = styled.div`
   @media (max-width: 768px) {
     align-items: center;
     text-align: center;
+  }
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
@@ -162,6 +164,10 @@ const Description = styled.div`
   letter-spacing: -0.28px;
   text-transform: capitalize;
 
+  @media (max-width: 1040px) {
+    font-size: 20px;
+  }
+
   @media (max-width: 768px) {
     font-size: 18px;
   }
@@ -177,6 +183,9 @@ const FooterWrapper = styled.div`
     align-items: center;
     width: 100%;
   }
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const FooterTitle = styled(Description)`
@@ -184,6 +193,7 @@ const FooterTitle = styled(Description)`
   font-style: normal;
   font-weight: 800;
   letter-spacing: unset;
+  text-transform: none;
 `;
 
 const FooterDescription = styled(Description)`
@@ -192,4 +202,5 @@ const FooterDescription = styled(Description)`
   font-weight: 600;
   letter-spacing: unset;
   opacity: 0.6;
+  text-transform: none;
 `;

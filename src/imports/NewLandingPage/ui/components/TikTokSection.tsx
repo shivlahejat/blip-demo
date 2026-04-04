@@ -6,32 +6,49 @@ import styled from "styled-components";
 
 const TikTokSection = () => {
   return (
-    <Container>
-      <ContentContainer>
-        <Image
-          src={"/images/tiktok_logo.png"}
-          alt="tiktok_logo"
-          height={34.154}
-          width={37}
+    <OutsideWrapper>
+      <Container>
+        <ContentContainer>
+          <ImageWrapper>
+            <Image
+              src={"/images/tiktokLogo.webp"}
+              alt="tiktok_logo"
+              height={34}
+              width={37}
+              style={{ borderRadius: "9px" }}
+            />
+          </ImageWrapper>
+
+          <Header>Coming soon</Header>
+          <Title>TikTok Launcher</Title>
+          <Description>
+            Through a combination of auto detection and user selection we help
+            you make the right type of ad based on campaign and ad set selected.
+          </Description>
+        </ContentContainer>
+        <LayoutImage
+          src={"/images/tiktok_layout.png"}
+          alt="tiktok_layout"
+          height={460}
+          width={435}
         />
-        <Header>Coming soon</Header>
-        <Title>TikTok Launcher</Title>
-        <Description>
-          Through a combination of auto detection and user selection we help you
-          make the right type of ad based on campaign and ad set selected.
-        </Description>
-      </ContentContainer>
-      <LayoutImage
-        src={"/images/tiktok_layout.png"}
-        alt="tiktok_layout"
-        height={460}
-        width={435}
-      />
-    </Container>
+      </Container>
+    </OutsideWrapper>
   );
 };
 
 export default TikTokSection;
+
+const OutsideWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 60px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -39,16 +56,24 @@ const Container = styled.div`
   gap: 242px;
   border-radius: 34px;
   background: #296455;
+  /* @media (max-width: 1040px) {
+    padding: 26px 60px;
+    gap: 100px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+    gap: 50px;
+  } */
 
   @media (max-width: 1024px) {
     gap: 100px;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
     gap: 40px;
     padding: 30px 20px;
-    width: 95%;
+    width: 100%;
   }
 `;
 
@@ -63,6 +88,11 @@ const ContentContainer = styled.div`
     width: 100%;
     align-items: center;
     text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 
@@ -79,14 +109,21 @@ const Title = styled.div`
   @media (max-width: 768px) {
     font-size: 32px;
   }
+
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
 const LayoutImage = styled(Image)`
   object-fit: cover;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     width: 100%;
     height: auto;
+    background: #094737;
+    border-radius: 29px;
+    padding: 20px;
   }
 `;
 
@@ -116,4 +153,15 @@ const Description = styled.div`
   @media (max-width: 768px) {
     font-size: 14px;
   }
+`;
+
+const ImageWrapper = styled.div`
+  border-radius: 9px;
+  background: #fff;
+  width: 37px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;

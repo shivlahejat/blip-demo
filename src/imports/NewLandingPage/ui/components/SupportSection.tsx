@@ -17,7 +17,7 @@ const SupportSection = () => {
           make the right type of ad based on campaign and ad set selected.
         </HeaderDescription>
         <HeaderSVG
-          src="/images/star_icon.png"
+          src="/images/StarIcon.png"
           alt="Header SVG"
           width={50}
           height={70}
@@ -63,6 +63,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+
+  @media (max-width: 1040px) {
+    padding: 0px 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+    gap: 30px;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -71,6 +84,10 @@ const HeaderContainer = styled.div`
   align-items: center;
   gap: 19px;
   position: relative;
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const HeaderTitle = styled.div`
@@ -85,6 +102,11 @@ const HeaderTitle = styled.div`
     font-size: 32px;
     padding: 0 20px;
   }
+
+  @media (max-width: 520px) {
+    text-align: left;
+    padding: 0;
+  }
 `;
 
 const HeaderDescription = styled.div`
@@ -97,6 +119,10 @@ const HeaderDescription = styled.div`
   line-height: normal;
   letter-spacing: -0.32px;
   max-width: 567.677px;
+
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
 const HeaderSVG = styled(Image)`
@@ -108,8 +134,9 @@ const HeaderSVG = styled(Image)`
   @media (max-width: 768px) {
     width: 50px;
     height: 70px;
-    left: 10px;
-    top: 10px;
+    left: unset;
+    right: 20px;
+    top: 5px;
   }
 `;
 

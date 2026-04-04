@@ -43,7 +43,6 @@ const NewLandingPage = () => {
         <div id="blog">
           <ReviewSection />
         </div>
-        <SetUpSection />
         <MetaPartnersSection />
         <AnalyticsSection />
         <TikTokSection />

@@ -79,6 +79,10 @@ const ContentContainer = styled.div`
     align-items: center;
     text-align: center;
   }
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 const HeadingText = styled.div`
@@ -123,17 +127,22 @@ const DescriptionText = styled.div`
 const ReviewContainer = styled.div`
   display: grid;
   grid-template-columns: 0.6fr 1fr;
+  grid-template-areas: "image card";
   align-items: center;
   gap: 42px;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
     gap: 20px;
+    grid-template-areas:
+      "card"
+      "image";
   }
 `;
 
 const ReviewImage = styled(Image)`
+  grid-area: image;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -141,6 +150,7 @@ const ReviewImage = styled(Image)`
 `;
 
 const ReviewCard = styled.div`
+  grid-area: card;
   display: flex;
   padding: 30px 35px;
   flex-direction: column;
