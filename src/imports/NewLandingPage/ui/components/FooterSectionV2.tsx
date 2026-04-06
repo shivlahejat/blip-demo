@@ -21,7 +21,7 @@ const FooterSectionV2 = () => {
   };
   return (
     <Container>
-      <FooterImage src="/images/footer_image.png" alt="Footer Image" />
+      <FooterImage src="/images/footer_image.webp" alt="Footer Image" />
       <InnerWrapper>
         <RoutesContainer>
           <LogoContainer>

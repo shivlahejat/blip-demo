@@ -28,7 +28,7 @@ const MetaPartnersSection = () => {
       </ContentContainer>
       <ReviewContainer>
         <ReviewImage
-          src="/images/review_image.png"
+          src="/images/review_image.webp"
           alt="review_image"
           height={316}
           width={416}

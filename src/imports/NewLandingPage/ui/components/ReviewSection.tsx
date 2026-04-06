@@ -9,13 +9,13 @@ export default function ReviewSection() {
     <Container>
       <ImageWrapper>
         <StyledNameTag
-          src="/images/NameTag.png"
+          src="/images/NameTag.webp"
           alt="name tag"
           width={146}
           height={63}
         />
         <Image
-          src="/images/ReviewImage.png"
+          src="/images/ReviewImageCard.webp"
           alt="hero"
           width={400}
           height={562}
