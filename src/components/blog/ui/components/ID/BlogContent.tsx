@@ -65,7 +65,6 @@ const Section = styled.section`
 
 const ContentWrapper = styled.div`
   max-width: 1000px;
-  width: 100%;
   display: flex;
   position: relative;
   gap: 40px;

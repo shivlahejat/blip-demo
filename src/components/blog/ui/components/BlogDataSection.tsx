@@ -72,7 +72,7 @@ export const BlogDataSection = ({ data }: { data: BlogPost[] }) => {
                 }
                 alt={latestPost.title}
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "fill" }}
               />
             </PostImageWrapper>
             <PostContentWrapper>

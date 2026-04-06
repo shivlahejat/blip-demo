@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
 
 export const AllBlogsSection = ({ data }: { data: BlogPost[] }) => {
   const otherPosts = data ? data.slice(1) : [];

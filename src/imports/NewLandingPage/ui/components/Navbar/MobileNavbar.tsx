@@ -188,7 +188,7 @@ const NavLinksContainer = styled.div`
 const NavLinks = styled.div`
   color: #000;
   font-family: Alcyone;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   text-transform: capitalize;
@@ -205,7 +205,7 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 30px;
+  width: 26px;
   flex-shrink: 0;
 `;
 

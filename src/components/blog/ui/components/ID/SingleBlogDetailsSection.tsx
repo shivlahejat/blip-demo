@@ -20,7 +20,8 @@ const SingleBlogDetailsSection = ({ data }: { data: BlogPost }) => {
                     data.author?.image?.url || "/images/author-placeholder.png"
                   }
                   alt={data.author?.name || "Author"}
-                  fill
+                  width={48}
+                  height={48}
                   style={{ objectFit: "cover" }}
                 />
               </AvatarWrapper>
@@ -38,8 +39,12 @@ const SingleBlogDetailsSection = ({ data }: { data: BlogPost }) => {
             <Image
               src={data.coverImage?.url || "/images/blog-placeholder.png"}
               alt={data.title}
-              fill
-              style={{ objectFit: "cover" }}
+              width={671}
+              height={630}
+              style={{
+                width: "100%",
+                objectFit: "cover",
+              }}
               priority
             />
           </CoverImageWrapper>
@@ -54,7 +59,7 @@ export default SingleBlogDetailsSection;
 const HeroContainer = styled.section`
   width: 100%;
   background-color: #f5e8d7;
-  padding: 160px 0 80px 0;
+  padding: 160px 60px 80px 60px;
   display: flex;
   justify-content: center;
 
@@ -67,7 +72,7 @@ const ContentWrapper = styled.div`
   display: flex;
   max-width: 1200px;
   width: 100%;
-  gap: 60px;
+  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 1024px) {
@@ -79,20 +84,23 @@ const ContentWrapper = styled.div`
 `;
 
 const LeftSection = styled.div`
-  flex: 1;
+  flex: 0 1 auto;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 `;
 
 const RightSection = styled.div`
-  flex: 1;
+  flex: 0 0 auto;
   width: 100%;
+  max-width: 540px;
   display: flex;
   justify-content: flex-end;
 
   @media (max-width: 1024px) {
     justify-content: center;
+    max-width: 100%;
   }
 `;
 
@@ -130,12 +138,12 @@ const AuthorSection = styled.div`
 `;
 
 const AvatarWrapper = styled.div`
-  position: relative;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 `;
 
 const AuthorDetails = styled.div`
@@ -157,10 +165,8 @@ const AuthorRole = styled.span`
 `;
 
 const CoverImageWrapper = styled.div`
-  position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 540px;
+  max-width: 640px;
   border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
