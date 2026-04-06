@@ -106,6 +106,10 @@ const Container = styled.div`
   width: 100%;
   flex-direction: column;
   gap: 61px;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -114,6 +118,13 @@ const HeaderContainer = styled.div`
   max-width: 438px;
   width: 100%;
   position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 const Title = styled.div`
@@ -124,6 +135,10 @@ const Title = styled.div`
   line-height: normal;
   letter-spacing: -0.48px;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Underline = styled(Image)`
@@ -132,6 +147,10 @@ const Underline = styled(Image)`
   position: absolute;
   left: -0.002px;
   bottom: -30px;
+
+  @media (max-width: 768px) {
+    bottom: -15px;
+  }
 `;
 
 const AccordianContainer = styled.div`
@@ -139,6 +158,10 @@ const AccordianContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 22px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 const AccordianItem = styled.div`

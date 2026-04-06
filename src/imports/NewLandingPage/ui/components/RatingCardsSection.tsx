@@ -81,6 +81,10 @@ const HeaderContainer = styled.div`
   align-items: center;
   gap: 10px;
   padding: 0 20px;
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const MarqueeContainer = styled.div`
@@ -140,9 +144,13 @@ const Description = styled.div`
   @media (max-width: 1024px) {
     font-size: 24px;
   }
-
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 22px;
+  }
+
+  @media (max-width: 520px) {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 

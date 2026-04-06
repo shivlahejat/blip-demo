@@ -84,6 +84,11 @@ const Container = styled.div`
   padding: 64px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+    border-radius: 40px 40px 0 0;
+  }
 `;
 
 const FooterImage = styled.img`
@@ -96,6 +101,11 @@ const FooterImage = styled.img`
   height: 322.681px;
   aspect-ratio: 400/127;
   object-position: left;
+
+  @media (max-width: 768px) {
+    width: 200%;
+    bottom: -10%;
+  }
 `;
 
 const InnerWrapper = styled.div`
@@ -104,6 +114,10 @@ const InnerWrapper = styled.div`
   gap: 45px;
   max-width: 1512px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
 `;
 
 const RoutesContainer = styled.div`
@@ -111,6 +125,12 @@ const RoutesContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -140,6 +160,12 @@ const RoutesTextWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 27px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
 `;
 
 const RouteText = styled.div`
@@ -156,6 +182,11 @@ const RouteText = styled.div`
 const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 40px;
+  }
 `;
 
 const PolicyContainer = styled.div`
@@ -178,12 +209,20 @@ const PolicyText = styled.div`
   line-height: 200%; /* 48px */
   letter-spacing: -0.48px;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 37px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -191,6 +230,10 @@ const ContactContainer = styled.div`
   align-items: center;
   gap: 6px;
   justify-content: end;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
 `;
 
 const ContactText = styled.div`
@@ -200,6 +243,10 @@ const ContactText = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.48px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const FooterText = styled.div`
@@ -212,4 +259,9 @@ const FooterText = styled.div`
   line-height: 150%; /* 21px */
   letter-spacing: -0.28px;
   max-width: 389.424px;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    max-width: 100%;
+  }
 `;

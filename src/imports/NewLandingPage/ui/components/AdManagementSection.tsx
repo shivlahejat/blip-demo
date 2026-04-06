@@ -50,14 +50,13 @@ export default function AdManagementSection() {
           ))}
         </GridContainer>
       </InnerContainer>
-      <Button style={{ padding: "12px 53px 12px 48px" }}>
-        Start Free trial
-      </Button>
+      <CTAButton leftIcon="/images/rocket2.svg">Start Free trial</CTAButton>
     </Container>
   );
 }
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -65,10 +64,43 @@ const Container = styled.div`
   justify-content: center;
   gap: 50px;
   padding: 0px 56px;
+  max-width: 900px;
 
   @media (max-width: 768px) {
     padding: 0px 20px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 30px;
+  }
+`;
+
+const CTAButton = styled(Button)`
+  padding: 12px 53px 12px 48px;
+
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-image: url("/images/VectorLines.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    opacity: 0.7;
+  }
+
+  &::before {
+    left: -40px;
+  }
+
+  &::after {
+    right: -40px;
   }
 `;
 
@@ -79,8 +111,9 @@ const InnerContainer = styled.div`
   gap: 54px;
 
   @media (max-width: 768px) {
-    gap: 20px;
-    align-items: flex-start;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
   }
 `;
 
@@ -92,7 +125,7 @@ const HeadingWrapper = styled.div`
 
   @media (max-width: 768px) {
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
   }
 `;
 
@@ -106,8 +139,13 @@ const HeadingText = styled.div`
   max-width: 615px;
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
     text-align: left;
+    align-self: flex-start;
   }
 `;
 
@@ -117,14 +155,20 @@ const SubHeadingText = styled.div`
   font-family: Alcyone;
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+
   max-width: 570px;
   opacity: 0.7;
 
   @media (max-width: 768px) {
     font-size: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
     text-align: left;
+    align-self: flex-start;
   }
 `;
 
@@ -138,6 +182,9 @@ const GridContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+    justify-items: center;
+    gap: 15px;
   }
 `;
 
@@ -151,6 +198,11 @@ const GridItem = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 const BadgeContainer = styled.div`
@@ -160,7 +212,7 @@ const BadgeContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 520px) {
     justify-content: flex-start;
   }
 `;

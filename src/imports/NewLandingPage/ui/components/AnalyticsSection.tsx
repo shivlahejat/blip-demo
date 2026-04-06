@@ -125,17 +125,7 @@ export default function AnalyticsSection() {
                   <ItemDescription>{item.description}</ItemDescription>
                 </InfoContentWrapper>
               </InfoItem>
-              {index < DataAnalytics.length - 1 && (
-                <DividerContainer>
-                  <Image
-                    src="/images/VectorLines.png"
-                    alt="divider"
-                    width={10}
-                    height={256}
-                    style={{ objectFit: "contain" }}
-                  />
-                </DividerContainer>
-              )}
+              {index < DataAnalytics.length - 1 && <DividerContainer />}
             </React.Fragment>
           );
         })}
@@ -151,6 +141,11 @@ const Container = styled.div`
   justify-content: center;
   gap: 65px;
   padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    gap: 40px;
+  }
 `;
 
 const AnalyticsWrapper = styled.div`
@@ -159,6 +154,11 @@ const AnalyticsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  width: 100%;
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -167,6 +167,10 @@ const HeaderWrapper = styled.div`
   justify-content: center;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+  }
 `;
 
 const HeaderTitle = styled.div`
@@ -178,6 +182,14 @@ const HeaderTitle = styled.div`
   letter-spacing: -0.8px;
   line-height: 1.2;
   max-width: 700px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
 const SubTitle = styled(HeaderTitle)`
@@ -187,14 +199,31 @@ const SubTitle = styled(HeaderTitle)`
   letter-spacing: -0.32px;
   max-width: 548px;
   color: #330c00;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const InfoWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   gap: 74px;
   align-self: stretch;
+
+  @media (max-width: 1024px) {
+    gap: 54px;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  @media (max-width: 520px) {
+    gap: 20px;
+  }
 `;
 
 const InfoItem = styled.div`
@@ -205,6 +234,17 @@ const InfoItem = styled.div`
   max-width: 256px;
   margin: auto;
   gap: 28px;
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 const IconContainer = styled.div`
@@ -242,8 +282,27 @@ const ItemDescription = styled.div`
 
 const DividerContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  height: 256px;
+  align-items: center;
+  width: 10px;
+  background-image: url("/images/VectorLines.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: contain;
+
+  @media (max-width: 800px) {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(
+      to right,
+      #ff3e03 40%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: center;
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
+    margin: 10px 0;
+  }
 `;
 
 const InfoContentWrapper = styled.div`
@@ -251,6 +310,14 @@ const InfoContentWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+
+  @media (max-width: 800px) {
+    align-items: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const AnalyticsContentWrapper = styled.div`
@@ -261,6 +328,11 @@ const AnalyticsContentWrapper = styled.div`
   max-width: 1057px;
   width: 100%;
   padding: 40px 0px;
+
+  @media (max-width: 768px) {
+    border-radius: 30px;
+    padding: 20px 0;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -280,6 +352,12 @@ const TabGroup = styled.div`
   background: #fff;
   /* max-width: 519px; */
   padding: 5px 7px;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const TabCapsule = styled.div<{ $active: boolean }>`
@@ -313,6 +391,11 @@ const StatsContainer = styled.div`
   border-radius: 28px;
   width: 100%;
   max-width: 463px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
 `;
 
 const StatsContentWrapper = styled.div`
@@ -332,6 +415,7 @@ const DetailsWrapper = styled.div`
 const StatsGroup = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   width: 100%;
   max-width: 463px;
@@ -388,7 +472,7 @@ const GraphTextWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const GraphTitle = styled(HeaderTitle)`
+const GraphTitle = styled.div`
   color: #330c00;
   font-family: Alcyone-bold;
   font-size: 16px;
@@ -458,4 +542,14 @@ const CTAfooterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+
+    button {
+      width: 100%;
+    }
+  }
 `;

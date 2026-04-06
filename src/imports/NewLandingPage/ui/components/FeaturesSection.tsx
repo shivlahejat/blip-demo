@@ -5,38 +5,59 @@ import { Button } from "@/lib/Button";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import FrameIcon from "@/imports/NewLandingPage/ui/svgs/FrameIcon";
 
 const FeaturesSection = () => {
   return (
     <Container>
-      {FEATURES.map((feature, index) => (
-        <FeatureCardContainer>
-          <FeatureContentContainer>
-            <FeaturePointsContainer>
-              <Title>{feature.tag}</Title>
-              <SubTitle>{feature.title}</SubTitle>
-              <Description>{feature.description}</Description>
-            </FeaturePointsContainer>
-            <CTAContainer>
-              {feature.actions.map((action, index) => (
-                <BulletPointContainer key={index}>
-                  <BulletPoint>{action.text}</BulletPoint>
-                </BulletPointContainer>
-              ))}
-            </CTAContainer>
-          </FeatureContentContainer>
-          <FeatureImageContainer>
-            {/* <Image
-              src={"/images/feature_card_1.jpg"}
-              alt="feature card 1"
-              width={400}
-              height={562.801}
-              unoptimized
-            /> */}
-            <EmptyState />
-          </FeatureImageContainer>
-        </FeatureCardContainer>
-      ))}
+      {FEATURES.map((feature, index) => {
+        const Icon = feature.icon;
+        return (
+          <FeatureCardContainer>
+            <FeatureContentContainer>
+              <FeaturePointsContainer>
+                <TitleWrapper>
+                  <Icon />
+                  <Title>{feature.tag}</Title>
+                </TitleWrapper>
+
+                <SubTitle>{feature.title}</SubTitle>
+                <Description>{feature.description}</Description>
+              </FeaturePointsContainer>
+              <CTAContainer>
+                {feature.actions.map((action, index) => {
+                  const Icon = action.icon;
+                  return (
+                    <BulletPointContainer key={index}>
+                      <Icon />
+                      <BulletPoint>{action.text}</BulletPoint>
+                    </BulletPointContainer>
+                  );
+                })}
+              </CTAContainer>
+            </FeatureContentContainer>
+            <FeatureImageContainer>
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={618}
+                height={547}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+                unoptimized
+              />
+              {feature?.showFrameIcon && (
+                <IconOverlay>
+                  <FrameIcon />
+                </IconOverlay>
+              )}
+            </FeatureImageContainer>
+          </FeatureCardContainer>
+        );
+      })}
     </Container>
   );
 };
@@ -48,14 +69,23 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 200px;
-  padding: 0px 240px 0px 240px;
+  /* padding: 0px 240px 0px 240px; */
 
   @media (max-width: 1040px) {
     padding: 0px 60px;
+    gap: 100px;
   }
   @media (max-width: 768px) {
     padding: 0px 20px;
+    gap: 50px;
   }
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  align-self: stretch;
 `;
 
 const FeatureCardContainer = styled.div`
@@ -66,7 +96,11 @@ const FeatureCardContainer = styled.div`
   @media (max-width: 1040px) {
     gap: 45px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
+    gap: 25px;
+    align-items: center;
+  }
+  @media (max-width: 850px) {
     gap: 20px;
     flex-direction: column;
   }
@@ -77,7 +111,21 @@ const FeatureContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
-  max-width: 414px;
+  max-width: 458px;
+  width: 100%;
+
+  @media (max-width: 850px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  @media (max-width: 820px) {
+    gap: 20px;
+  }
 `;
 
 const FeaturePointsContainer = styled.div`
@@ -85,6 +133,14 @@ const FeaturePointsContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 13px;
+
+  @media (max-width: 820px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
 `;
 
 const Title = styled.div`
@@ -95,6 +151,10 @@ const Title = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.72px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -104,6 +164,10 @@ const SubTitle = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -1.2px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Description = styled.div`
@@ -114,6 +178,10 @@ const Description = styled.div`
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.54px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const CTAContainer = styled.div`
@@ -124,11 +192,54 @@ const CTAContainer = styled.div`
   gap: 19px;
   align-self: stretch;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+  }
+
+  @media (max-width: 820px) {
+    gap: 12px;
+  }
 `;
 
 const FeatureImageContainer = styled.div`
-  width: 400px;
-  height: 562.801px;
+  max-width: 442px;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 850px) {
+    /* max-width: 100%; */
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+const IconOverlay = styled.div`
+  position: absolute;
+  bottom: 60px;
+  right: -25px;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    bottom: 30px;
+    right: -5px;
+    svg {
+      width: 45px;
+      height: 46px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    bottom: 30px;
+    right: -5px;
+    svg {
+      width: 45px;
+      height: 46px;
+    }
+  }
 `;
 
 const BulletPointContainer = styled.div`
@@ -145,23 +256,4 @@ const BulletPoint = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.28px;
-`;
-
-const EmptyState = styled.div`
-  min-width: 618.656px;
-  min-height: 506.042px;
-  border-radius: 51px;
-  background: #f6eddc;
-
-  @media (max-width: 768px) {
-    min-width: 400px;
-    min-height: 505.194px;
-    height: 100%;
-  }
-
-  @media (max-width: 1024px) {
-    min-width: 400px;
-    min-height: 500px;
-    height: 100%;
-  }
 `;

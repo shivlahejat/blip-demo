@@ -41,6 +41,17 @@ const Wrapper = styled.div<{ variant?: BadgeVariant }>`
   letter-spacing: -0.48px;
 
   ${({ variant = "primary" }) => variants[variant]}
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 6px 16px;
+    gap: 6px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 12px;
+    padding: 4px 12px;
+    gap: 4px;
+  }
 `;
 
 const Icon = styled.span`
