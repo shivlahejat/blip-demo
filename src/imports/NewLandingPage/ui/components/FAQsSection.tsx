@@ -54,10 +54,10 @@ const FAQsSection = () => {
           <br /> I mean... Frequently Asked Questions
         </Title>
         <Underline
-          src={"/images/faq_underline.png"}
+          src={"/images/faq_underline.webp"}
           alt=""
           width={374.56}
-          height={45.544}
+          height={18.544}
         />
       </HeaderContainer>
       <AccordianContainer>
@@ -103,12 +103,15 @@ export default FAQsSection;
 const Container = styled.div`
   display: flex;
   max-width: 937.521px;
+  padding: 0px 56px;
+
   width: 100%;
   flex-direction: column;
   gap: 61px;
 
   @media (max-width: 768px) {
     gap: 40px;
+    padding: 0 40px;
   }
 `;
 
@@ -143,10 +146,11 @@ const Title = styled.div`
 
 const Underline = styled(Image)`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   position: absolute;
   left: -0.002px;
-  bottom: -30px;
+  bottom: -22px;
+  height: 20px;
 
   @media (max-width: 768px) {
     bottom: -15px;

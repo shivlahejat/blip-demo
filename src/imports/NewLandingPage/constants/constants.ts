@@ -16,6 +16,11 @@ import DefaultIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/DefaultIc
 import CopyIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/CopyIcon";
 import SyncIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/SyncIcon";
 import InfiniteIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/InfiniteIcon";
+import ArrivalIcon from "@/imports/NewLandingPage/ui/svgs/ArrivalIcon";
+import { FeatureSettingIcon } from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/FeatureSettingIcon";
+import { ToggleIcon } from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/ToggleIcon";
+import { LinksIcon } from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/LinksIcon";
+import NamingTag from "@/imports/NewLandingPage/ui/svgs/FeatureIcons/NamingTag";
 
 
 export const TESTIMONIALS = [
@@ -108,20 +113,51 @@ export const FEATURES = [
     ],
   },
   {
+    icon: ArrivalIcon,
+    tag: "Arrival",
+    title: "No more upload, download hell.",
+    description:
+      "No need to spend hours downloading hundreds of ad assets. With Blip, you can one-click deploy media from your Google Drive, Dropbox and soon Frame to Meta Ads Manager.",
+    image: "/images/assetsync.webp",
+  actions: [
+      { icon: AdTypeIcon, text: "All ad types supported"},
+      { icon: LaunchAdIcon, text: "Launch in Multiple Ad Sets"},
+      { icon: AutoMatchIcon, text: "Auto-match 1x1 and 9x16 assets"},
+      { icon: SettingsIcon, text: "Import Settings"},
+    ],
+  },
+  {
     icon: SaveIcon,
     tag: "Saving private templates",
     title: "Apply saved templates for copy, CTA, and links",
     description:
-      "Automate your ad creation flow with lightning-fast bulk uploads, saved settings, and ad previews — all in one clean dashboard.",
-    image: "/images/assetsync.webp",
+      "Stop wasting time in Meta Ads Manager's clunky interface. Simply select your ideal settings once. We take care of the rest.",
+    // image: "/images/assetsync.webp",
+    video: "/video/Demo.mp4",
+    videolayout: true,
     actions: [
-      { icon: CopyIcon, text: "Launch New Ad Sets"},
-      { icon: SyncIcon, text: "Duplicate Campaigns"},
-      { icon: InfiniteIcon, text: "Import Settings"},
-      { icon: DefaultIcon, text: "All Ad Types Supported"},
+      { icon: CopyIcon, text: "Import Copy From Meta"},
+      { icon: SyncIcon, text: "Templates Sync Across the team"},
+      { icon: InfiniteIcon, text: "Unlimited Templates"},
+      { icon: DefaultIcon, text: "Set Default values"},
     ],
   },
+  {
+    icon: FeatureSettingIcon,
+    tag: "One Click Settings",
+    title: "Persistent Settings Per Ad Account",
+    description:
+      "Stop wasting time in Meta Ads Manager's clunky interface. Simply select your ideal settings once. We take care of the rest.",
+    // image: "/images/assetsync.webp",
+    video: "/video/Demo.mp4",
 
+    videolayout: true,
+    actions: [
+      { icon: ToggleIcon, text: "Toggle all Meta Creative Enhancements"},
+      { icon: LinksIcon, text: "Import UTMs, Links and set display links"},
+      { icon: NamingTag, text: "Fully Customizable Ad Naming Conventions"},
+    ],
+  },
 ];
 
 export const PRICING_PLANS = [

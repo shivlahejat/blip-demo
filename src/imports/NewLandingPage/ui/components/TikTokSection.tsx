@@ -32,6 +32,7 @@ const TikTokSection = () => {
           height={460}
           width={435}
         />
+        <MobileLayoutBox />
       </Container>
     </OutsideWrapper>
   );
@@ -70,7 +71,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 800px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 40px;
     padding: 30px 20px;
     width: 100%;
@@ -125,6 +126,21 @@ const LayoutImage = styled(Image)`
     border-radius: 29px;
     padding: 20px;
   }
+
+  @media (max-width: 520px) {
+    display: none;
+  }
+`;
+
+const MobileLayoutBox = styled.div`
+  display: none;
+  @media (max-width: 520px) {
+    display: block;
+    width: 100%;
+    height: 387px;
+    border-radius: 29px;
+    background: #094737;
+  }
 `;
 
 const Header = styled.div`
@@ -143,7 +159,7 @@ const Header = styled.div`
 
 const Description = styled.div`
   color: #fff;
-  font-family: Alcyone-Regular;
+  font-family: Alcyone;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

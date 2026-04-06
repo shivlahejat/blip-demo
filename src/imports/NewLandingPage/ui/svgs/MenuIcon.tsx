@@ -12,9 +12,9 @@ const MenuIcon = () => {
       <path
         d="M4.5 12H19.5M4.5 17.5H19.5"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

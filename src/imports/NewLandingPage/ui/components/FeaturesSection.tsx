@@ -12,19 +12,24 @@ const FeaturesSection = () => {
     <Container>
       {FEATURES.map((feature, index) => {
         const Icon = feature.icon;
+        const isVideoLayout = (feature as any).videolayout;
         return (
-          <FeatureCardContainer>
-            <FeatureContentContainer>
-              <FeaturePointsContainer>
-                <TitleWrapper>
+          <FeatureCardContainer key={index} $videolayout={isVideoLayout}>
+            <FeatureContentContainer $videolayout={isVideoLayout}>
+              <FeaturePointsContainer $videolayout={isVideoLayout}>
+                <TitleWrapper $videolayout={isVideoLayout}>
                   <Icon />
                   <Title>{feature.tag}</Title>
                 </TitleWrapper>
 
-                <SubTitle>{feature.title}</SubTitle>
-                <Description>{feature.description}</Description>
+                <SubTitle $videolayout={isVideoLayout}>
+                  {feature.title}
+                </SubTitle>
+                <Description $videolayout={isVideoLayout}>
+                  {feature.description}
+                </Description>
               </FeaturePointsContainer>
-              <CTAContainer>
+              <CTAContainer $videolayout={isVideoLayout}>
                 {feature.actions.map((action, index) => {
                   const Icon = action.icon;
                   return (
@@ -36,19 +41,50 @@ const FeaturesSection = () => {
                 })}
               </CTAContainer>
             </FeatureContentContainer>
-            <FeatureImageContainer>
-              <Image
-                src={feature.image}
-                alt={feature.title}
-                width={618}
-                height={547}
+            <FeatureImageContainer $videolayout={isVideoLayout}>
+              {feature?.image && (
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={isVideoLayout ? 1050 : 618}
+                  height={isVideoLayout ? 540 : 547}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    aspectRatio: isVideoLayout ? "16/9" : "unset",
+                    borderRadius: isVideoLayout ? "40px" : "0px",
+                  }}
+                  unoptimized
+                />
+              )}
+              {feature?.video && (
+                <video
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "5% center",
+                    borderRadius: isVideoLayout ? "40px" : "0px",
+                  }}
+                >
+                  <source src="/video/Demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag
+                </video>
+              )}
+              {/* : (
+              <div
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
+                  borderRadius: "51px",
+                  background: "#F6EDDC",
+                  aspectRatio: "16/9",
                 }}
-                unoptimized
-              />
+              ></div>
+              ) */}
               {feature?.showFrameIcon && (
                 <IconOverlay>
                   <FrameIcon />
@@ -68,7 +104,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 200px;
+  gap: 160px;
   /* padding: 0px 240px 0px 240px; */
 
   @media (max-width: 1040px) {
@@ -81,71 +117,100 @@ const Container = styled.div`
   }
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.div<{ $videolayout?: boolean }>`
   display: flex;
   align-items: center;
   gap: 13px;
   align-self: stretch;
+  justify-content: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
+
+  @media (max-width: 520px) {
+    justify-content: flex-start;
+  }
 `;
 
-const FeatureCardContainer = styled.div`
+const FeatureCardContainer = styled.div<{ $videolayout?: boolean }>`
   display: flex;
-  align-items: flex-start;
-  gap: 150px;
+  align-items: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
+  flex-direction: ${({ $videolayout }) => ($videolayout ? "column" : "row")};
+  gap: ${({ $videolayout }) => ($videolayout ? "48px" : "150px")};
+  max-width: ${({ $videolayout }) => ($videolayout ? "1050px" : "unset")};
+  width: 100%;
 
   @media (max-width: 1040px) {
-    gap: 45px;
+    gap: ${({ $videolayout }) => ($videolayout ? "40px" : "45px")};
   }
   @media (max-width: 920px) {
-    gap: 25px;
+    gap: ${({ $videolayout }) => ($videolayout ? "30px" : "25px")};
     align-items: center;
   }
   @media (max-width: 850px) {
     gap: 20px;
     flex-direction: column;
   }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
-const FeatureContentContainer = styled.div`
+const FeatureContentContainer = styled.div<{ $videolayout?: boolean }>`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
   gap: 32px;
-  max-width: 458px;
+  max-width: ${({ $videolayout }) => ($videolayout ? "830px" : "458px")};
   width: 100%;
+  text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
 
   @media (max-width: 850px) {
     max-width: 100%;
   }
 
   @media (max-width: 768px) {
-    align-items: flex-start;
-    text-align: left;
+    align-items: ${({ $videolayout }) =>
+      $videolayout ? "center" : "flex-start"};
+    text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
   }
 
   @media (max-width: 820px) {
     gap: 20px;
   }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
-const FeaturePointsContainer = styled.div`
+const FeaturePointsContainer = styled.div<{ $videolayout?: boolean }>`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
   gap: 13px;
+  max-width: ${({ $videolayout }) => ($videolayout ? "611px" : "unset")};
 
   @media (max-width: 820px) {
     gap: 10px;
   }
 
   @media (max-width: 768px) {
+    align-items: ${({ $videolayout }) =>
+      $videolayout ? "center" : "flex-start"};
+  }
+
+  @media (max-width: 520px) {
     align-items: flex-start;
   }
 `;
 
 const Title = styled.div`
-  color: #ff3e03;
-  font-family: Alcyone;
+  color: #f47200;
+  font-family: Alcyone-semibold;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -157,20 +222,25 @@ const Title = styled.div`
   }
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled.div<{ $videolayout?: boolean }>`
   color: #330c00;
   font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
   line-height: normal;
   letter-spacing: -1.2px;
+  text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
 
   @media (max-width: 768px) {
     font-size: 28px;
   }
+
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
-const Description = styled.div`
+const Description = styled.div<{ $videolayout?: boolean }>`
   color: #330c00;
   font-family: Alcyone;
   font-size: 18px;
@@ -178,32 +248,49 @@ const Description = styled.div`
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.54px;
+  text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
 
   @media (max-width: 768px) {
     font-size: 16px;
   }
+
+  @media (max-width: 520px) {
+    text-align: left;
+  }
 `;
 
-const CTAContainer = styled.div`
+const CTAContainer = styled.div<{ $videolayout?: boolean }>`
   display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-direction: column;
-  gap: 19px;
+  align-items: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
+  /* align-content: center; */
+  flex-direction: ${({ $videolayout }) => ($videolayout ? "row" : "column")};
+  justify-content: ${({ $videolayout }) =>
+    $videolayout ? "center" : "flex-start"};
+  gap: ${({ $videolayout }) => ($videolayout ? "19px" : "19px")};
   align-self: stretch;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    align-items: flex-start;
+    align-items: ${({ $videolayout }) =>
+      $videolayout ? "center" : "flex-start"};
+    justify-content: ${({ $videolayout }) =>
+      $videolayout ? "center" : "flex-start"};
+    gap: 15px;
   }
 
   @media (max-width: 820px) {
     gap: 12px;
   }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 `;
 
-const FeatureImageContainer = styled.div`
-  max-width: 442px;
+const FeatureImageContainer = styled.div<{ $videolayout?: boolean }>`
+  max-width: ${({ $videolayout }) => ($videolayout ? "1050px" : "442px")};
   width: 100%;
   position: relative;
 

@@ -13,6 +13,31 @@ import {
   Tabs,
 } from "@/imports/NewLandingPage/constants/constants";
 import { AnimatedList } from "@/components/ui/animated-list";
+import DetectIcon from "@/imports/NewLandingPage/ui/svgs/DetectIcon";
+import { CopyIcon } from "lucide-react";
+import AuditIcon from "@/imports/NewLandingPage/ui/svgs/AuditIcon";
+import AcoountIcon from "@/imports/NewLandingPage/ui/svgs/AcoountIcon";
+import SlackIcon from "@/imports/NewLandingPage/ui/svgs/SlackIcon";
+import AnalyticsSvg from "@/imports/NewLandingPage/ui/svgs/AnalyticsSvg";
+
+const RecommendationData = [
+  {
+    title: "Anomaly Detection",
+    icon: <DetectIcon />,
+  },
+  {
+    title: "1 Click Media Buying Recommendations",
+    icon: <AnalyticsSvg color="#F47200" />,
+  },
+  {
+    title: "Account Audits and Summaries",
+    icon: <AcoountIcon />,
+  },
+  {
+    title: "All available within Slack",
+    icon: <SlackIcon color="#F47200" />,
+  },
+];
 
 export default function AnalyticsSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -20,17 +45,30 @@ export default function AnalyticsSection() {
   return (
     <Container>
       <AnalyticsWrapper>
-        <HeaderWrapper>
-          <Badge icon={<BulbIcon />}>Data thats actually useful</Badge>
-        </HeaderWrapper>
-        <HeaderTitle>
-          Analytics, Recommendations, Anomaly Detection, and More
-        </HeaderTitle>
-        <SubTitle>
-          We took the media buying playbook that works on $3 million/month in ad
-          spend and gave it to you. Review media buying recommendations and
-          apply them in one click - or not. It's up to you!
-        </SubTitle>
+        <Wrapper>
+          <HeaderWrapper>
+            <Badge icon={<BulbIcon />}>Data thats actually useful</Badge>
+          </HeaderWrapper>
+          <HeaderTitle>
+            Analytics, Recommendations, Anomaly Detection, and More
+          </HeaderTitle>
+          <SubTitle>
+            We took the media buying playbook that works on $3 million/month in
+            ad spend and gave it to you. Review media buying recommendations and
+            apply them in one click - or not. It's up to you!
+          </SubTitle>
+          <SubPointsContainer>
+            {RecommendationData.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <SubPointsWrapper key={index}>
+                  <SubpointsIconWrapper>{item.icon}</SubpointsIconWrapper>
+                  <SubPointText>{item.title}</SubPointText>
+                </SubPointsWrapper>
+              );
+            })}
+          </SubPointsContainer>
+        </Wrapper>
         <AnalyticsContentWrapper>
           <ContentWrapper>
             <TabGroup>
@@ -111,6 +149,8 @@ export default function AnalyticsSection() {
           </ContentWrapper>
         </AnalyticsContentWrapper>
       </AnalyticsWrapper>
+      <VideoWrapper />
+
       <InfoWrapper>
         {DataAnalytics.map((item, index) => {
           const Icon = item.image;
@@ -139,7 +179,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 65px;
+  gap: 50px;
   padding: 0px 56px;
 
   @media (max-width: 768px) {
@@ -148,23 +188,37 @@ const Container = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+`;
+
 const AnalyticsWrapper = styled.div`
   display: flex;
   /* width: 1017.764px; */
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
-  gap: 24px;
+  gap: 125px;
   width: 100%;
 
   @media (max-width: 520px) {
     align-items: flex-start;
+    gap: 80px;
   }
 `;
 
 const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   width: 100%;
 
@@ -175,13 +229,12 @@ const HeaderWrapper = styled.div`
 
 const HeaderTitle = styled.div`
   color: #330c00;
-  text-align: center;
   font-family: Alcyone-semibold;
   font-size: 40px;
   font-style: normal;
   letter-spacing: -0.8px;
   line-height: 1.2;
-  max-width: 700px;
+  max-width: 453px;
 
   @media (max-width: 768px) {
     font-size: 28px;
@@ -197,7 +250,7 @@ const SubTitle = styled(HeaderTitle)`
   font-size: 16px;
   line-height: normal;
   letter-spacing: -0.32px;
-  max-width: 548px;
+  max-width: 423px;
   color: #330c00;
 
   @media (max-width: 768px) {
@@ -325,7 +378,7 @@ const AnalyticsContentWrapper = styled.div`
   border: 2px solid #000;
   background: #f6eddc;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  max-width: 1057px;
+  max-width: 620px;
   width: 100%;
   padding: 40px 0px;
 
@@ -552,4 +605,46 @@ const CTAfooterWrapper = styled.div`
       width: 100%;
     }
   }
+`;
+
+const SubPointsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+`;
+
+const SubPointsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+const SubPointText = styled.div`
+  color: #6c3403;
+  font-family: Alcyone;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.28px;
+`;
+
+const SubpointsIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+`;
+
+const VideoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 46px;
+  background: #f6eddc;
 `;
