@@ -102,7 +102,7 @@ export default FAQsSection;
 
 const Container = styled.div`
   display: flex;
-  max-width: 937.521px;
+  max-width: 937px;
   padding: 0px 56px;
 
   width: 100%;
@@ -111,7 +111,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     gap: 40px;
-    padding: 0 40px;
+    padding: 0 20px;
   }
 `;
 
@@ -164,7 +164,7 @@ const AccordianContainer = styled.div`
   gap: 22px;
 
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 0;
   }
 `;
 

@@ -32,9 +32,9 @@ const NewLandingPage = () => {
         />
       </div>
       <ContentWrapper>
-        <div id="features" style={{ marginTop: imageOverflow }}>
+        <FeaturesWrapper id="features" $marginTop={imageOverflow}>
           <RatingCardsSection />
-        </div>
+        </FeaturesWrapper>
         <AdManagementSection />
         <div id="analytics">
           <FeaturesSection />
@@ -92,5 +92,14 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     gap: 100px;
+  }
+`;
+
+const FeaturesWrapper = styled.div<{ $marginTop: number }>`
+  margin-top: ${(props) => props.$marginTop}px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
   }
 `;

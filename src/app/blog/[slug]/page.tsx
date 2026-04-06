@@ -1,14 +1,15 @@
-import BlogSingle from "@/components/blog/ui/components/BlogSingleSection";
-import { postBySlug, client } from "@/lib/helper";
+import BlogByIDPage from "@/components/blog/ui/page/BlogByIDPage";
+import { postBySlug, client, allPosts } from "@/lib/helper";
 
 export async function generateMetadata({ params }) {
-  const data = await client.fetch(postBySlug, { slug: params?.slug });
+  const { slug } = await params;
+  const data = await client.fetch(postBySlug, { slug });
 
   const publishedDate = data?.publishedAt
     ? new Date(data.publishedAt).toISOString()
     : "";
 
-  const canonicalUrl = `https://www.withblip.com/${params?.slug}`;
+  const canonicalUrl = `https://www.withblip.com/${slug}`;
 
   return {
     title: data?.seoTitle || data?.title,
@@ -41,11 +42,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const data = await client.fetch(
-    postBySlug,
-    { slug: params?.slug },
-    { next: { revalidate: 10 } },
-  );
+  const { slug } = await params;
+  const [data, morePosts] = await Promise.all([
+    client.fetch(postBySlug, { slug }, { next: { revalidate: 10 } }),
+    client.fetch(allPosts, {}, { next: { revalidate: 10 } }),
+  ]);
 
-  return <BlogSingle data={data} />;
+  return (
+    <>
+      <BlogByIDPage data={data} morePosts={morePosts} />
+    </>
+  );
 }

@@ -61,20 +61,23 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 24px;
   width: 100%;
+  padding: 0px 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding: 0px 56px;
   max-width: 1512px;
   width: 100%;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 0 40px;
 
     & > :last-child {
       grid-column: span 2;
@@ -84,7 +87,6 @@ const Container = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0px 20px 0px 20px;
 
     & > :last-child {
       grid-column: span 1;

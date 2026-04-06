@@ -192,27 +192,43 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: stretch;
   gap: 24px;
 
+  @media (max-width: 1100px) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 20px;
+  }
+
+  @media (max-width: 520px) {
     align-items: flex-start;
+    text-align: left;
   }
 `;
 
 const AnalyticsWrapper = styled.div`
   display: flex;
-  /* width: 1017.764px; */
-  /* flex-direction: column; */
   align-items: center;
   gap: 125px;
   width: 100%;
+  @media (max-width: 1200px) {
+    gap: 50px;
+  }
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    gap: 25px;
+  }
 
   @media (max-width: 520px) {
     align-items: flex-start;
-    gap: 80px;
+    gap: 25px;
   }
 `;
 
@@ -221,6 +237,10 @@ const HeaderWrapper = styled.div`
   align-items: center;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: 1100px) {
+    justify-content: center;
+  }
 
   @media (max-width: 520px) {
     justify-content: flex-start;
@@ -235,6 +255,10 @@ const HeaderTitle = styled.div`
   letter-spacing: -0.8px;
   line-height: 1.2;
   max-width: 453px;
+
+  @media (max-width: 1100px) {
+    max-width: 100%;
+  }
 
   @media (max-width: 768px) {
     font-size: 28px;
@@ -252,6 +276,10 @@ const SubTitle = styled(HeaderTitle)`
   letter-spacing: -0.32px;
   max-width: 423px;
   color: #330c00;
+
+  @media (max-width: 1100px) {
+    max-width: 100%;
+  }
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -380,7 +408,7 @@ const AnalyticsContentWrapper = styled.div`
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   max-width: 620px;
   width: 100%;
-  padding: 40px 0px;
+  padding: 40px 10px;
 
   @media (max-width: 768px) {
     border-radius: 30px;
@@ -613,6 +641,14 @@ const SubPointsContainer = styled.div`
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+
+  @media (max-width: 1100px) {
+    align-items: center;
+  }
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+  }
 `;
 
 const SubPointsWrapper = styled.div`
