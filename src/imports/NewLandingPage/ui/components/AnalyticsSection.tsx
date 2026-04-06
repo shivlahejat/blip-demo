@@ -149,7 +149,24 @@ export default function AnalyticsSection() {
           </ContentWrapper>
         </AnalyticsContentWrapper>
       </AnalyticsWrapper>
-      <VideoWrapper />
+      <VideoWrapper>
+        <video
+          muted
+          autoPlay
+          loop
+          playsInline
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "5% center",
+            borderRadius: "20px",
+            border: "3px solid #000",
+          }}
+        >
+          <source src="/video/Demo.mp4" type="video/mp4" />
+        </video>
+      </VideoWrapper>
 
       <InfoWrapper>
         {DataAnalytics.map((item, index) => {
@@ -680,7 +697,9 @@ const VideoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1000px;
   aspect-ratio: 16 / 9;
   border-radius: 46px;
   background: #f6eddc;
+  overflow: hidden;
 `;

@@ -21,6 +21,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   leftIconWidth?: number;
   leftIconHeight?: number;
   icon?: React.ReactNode;
+  hoverText?: string;
 }
 
 const variants = {
@@ -94,10 +95,16 @@ export const Button = ({
   variant,
   size,
   icon,
+  hoverText,
   ...rest
 }: ButtonProps) => {
   return (
-    <StyledButton variant={variant} size={size} {...rest}>
+    <StyledButton
+      variant={variant}
+      size={size}
+      hasHoverText={!!hoverText}
+      {...rest}
+    >
       {leftIcon && (
         <Image
           src={leftIcon}
@@ -108,14 +115,28 @@ export const Button = ({
         />
       )}
       {icon && <Icon>{icon}</Icon>}
-      {children}
+
+      {hoverText ? (
+        <TextWindow>
+          <InnerStack className="inner-stack">
+            <TextLine>{children}</TextLine>
+            <TextLine>{hoverText}</TextLine>
+          </InnerStack>
+        </TextWindow>
+      ) : (
+        <>{children}</>
+      )}
     </StyledButton>
   );
 };
 
-const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>`
+const StyledButton = styled.button<
+  Pick<ButtonProps, "variant" | "size"> & { hasHoverText?: boolean }
+>`
   display: inline-flex;
-  padding: 8px 39px 9px 39px;
+  padding: ${({ hasHoverText }) =>
+    hasHoverText ? "0 39px" : "8px 39px 9px 39px"};
+  height: ${({ hasHoverText }) => (hasHoverText ? "46px" : "auto")};
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -129,18 +150,42 @@ const StyledButton = styled.button<Pick<ButtonProps, "variant" | "size">>`
   font-style: normal;
   line-height: normal;
   text-transform: capitalize;
+  overflow: hidden;
 
   ${({ variant = "primary" }) => variants[variant]}
   ${({ size = "md" }) => sizes[size]}
 
   &:hover {
     opacity: 0.9;
+    .inner-stack {
+      transform: translateY(-50%);
+    }
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
+`;
+
+const TextWindow = styled.div`
+  position: relative;
+  height: 24px;
+  overflow: hidden;
+`;
+
+const InnerStack = styled.div`
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+const TextLine = styled.span`
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 `;
 
 const Icon = styled.div`

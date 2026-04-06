@@ -1,5 +1,4 @@
 import AnalyticsIcon from "@/imports/NewLandingPage/ui/svgs/AnalyticsIcon";
-import AnalyticsSvg from "@/imports/NewLandingPage/ui/svgs/AnalyticsSvg";
 import BlogIcon from "@/imports/NewLandingPage/ui/svgs/BlogIcon";
 import FeatureIcon from "@/imports/NewLandingPage/ui/svgs/FeatureIcon";
 import PricingIcon from "@/imports/NewLandingPage/ui/svgs/PricingIcon";

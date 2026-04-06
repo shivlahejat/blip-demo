@@ -42,17 +42,22 @@ export default function HeroSection({
           </HeadingText>
 
           <MobileImageWrapper>
-            <Image
-              src="/images/LandingContentImage.png"
-              alt="landing content"
-              width={731}
-              height={455}
-              onLoad={onImageLoad}
+            <video
+              muted
+              autoPlay
+              loop
+              playsInline
               style={{
                 width: "100%",
                 height: "auto",
+                objectFit: "cover",
+                objectPosition: "5% center",
+                borderRadius: "20px",
+                border: "3px solid #000",
               }}
-            />
+            >
+              <source src="/video/Demo.mp4" type="video/mp4" />
+            </video>
           </MobileImageWrapper>
 
           <SubPointsWrapper>
@@ -67,9 +72,11 @@ export default function HeroSection({
             <CTAContainer>
               <Button
                 className="cta-button"
+                style={{ padding: "26px 23px" }}
                 leftIcon="/images/rocket2.svg"
                 leftIconWidth={21}
                 leftIconHeight={32}
+                hoverText="Launch Ads in Bulk"
               >
                 Start Free Trial
               </Button>
@@ -99,17 +106,22 @@ export default function HeroSection({
         </DoodleWrapper>
 
         <ContentImageWrapper className="desktop-only" ref={onImageRef}>
-          <Image
-            src="/images/LandingContentImage.png"
-            alt="landing content"
-            width={731}
-            height={455}
-            onLoad={onImageLoad}
+          <video
+            muted
+            autoPlay
+            loop
+            playsInline
             style={{
-              width: "100%",
-              height: "auto",
+              width: "731px",
+              height: "455px",
+              objectFit: "cover",
+              objectPosition: "5% center",
+              borderRadius: "20px",
+              border: "3px solid #000",
             }}
-          />
+          >
+            <source src="/video/Demo.mp4" type="video/mp4" />
+          </video>
         </ContentImageWrapper>
       </ImageContainer>
     </Container>
