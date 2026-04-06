@@ -237,7 +237,7 @@ const BottomContainer = styled.div`
 const BottomText = styled.div`
   color: #fff;
   text-align: center;
-  font-family: Inter;
+  font-family: Alcyone;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;

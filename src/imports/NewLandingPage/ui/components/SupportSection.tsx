@@ -1,11 +1,35 @@
 "use client";
 
+import {
+  SUPPORT_LEFT_CARDS,
+  SUPPORT_RIGHT_CARDS,
+} from "@/imports/NewLandingPage/constants/constants";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
-const LEFT_CARDS = [1, 4, 6];
-const RIGHT_CARDS = [2, 3, 5, 7];
+const SupportCard = ({ title, description, image, $width }: any) => (
+  <CardContainer $width={$width}>
+    <CardImageWrapper>
+      <Image
+        src={image}
+        alt={title}
+        width={457}
+        height={380}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "top",
+        }}
+      />
+    </CardImageWrapper>
+    <CardContent>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{description}</CardDescription>
+    </CardContent>
+  </CardContainer>
+);
 
 const SupportSection = () => {
   return (
@@ -24,33 +48,18 @@ const SupportSection = () => {
         />
       </HeaderContainer>
 
-      <BentoGrid>
-        <BentoColumn>
-          {LEFT_CARDS.map((n) => (
-            <BentoCard
-              key={n}
-              src={`/images/bento_card_${n}.png`}
-              alt={`Bento Card ${n}`}
-              width={0}
-              height={0}
-              unoptimized
-            />
+      <CardsWrapper>
+        <CardsColumn $maxWidth="497px">
+          {SUPPORT_LEFT_CARDS.map((card) => (
+            <SupportCard key={card.id} {...card} $width="100%" />
           ))}
-        </BentoColumn>
-
-        <BentoColumn>
-          {RIGHT_CARDS.map((n) => (
-            <BentoCard
-              key={n}
-              src={`/images/bento_card_${n}.png`}
-              alt={`Bento Card ${n}`}
-              width={0}
-              height={0}
-              unoptimized
-            />
+        </CardsColumn>
+        <CardsColumn $maxWidth="402px">
+          {SUPPORT_RIGHT_CARDS.map((card) => (
+            <SupportCard key={card.id} {...card} $width="100%" />
           ))}
-        </BentoColumn>
-      </BentoGrid>
+        </CardsColumn>
+      </CardsWrapper>
     </Container>
   );
 };
@@ -140,27 +149,88 @@ const HeaderSVG = styled(Image)`
   }
 `;
 
-const BentoGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
+const CardsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   gap: 20px;
   width: 100%;
-  max-width: 923.781px;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    max-width: 100%;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
-const BentoColumn = styled.div`
+const CardsColumn = styled.div<{ $maxWidth: string }>`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-width: ${(props) => props.$maxWidth};
+
+  @media (max-width: 900px) {
+    max-width: 497px;
+  }
 `;
 
-const BentoCard = styled(Image)`
+const CardContainer = styled.div<{ $width: string }>`
+  background: #fff1dd;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 32px;
+  width: ${(props) => props.$width};
+  justify-content: center;
+
+  @media (max-width: 520px) {
+    padding: 15px;
+    gap: 24px;
+  }
+`;
+
+const CardImageWrapper = styled.div`
   width: 100%;
-  height: auto;
-  display: block;
+  /* aspect-ratio: 457 / 380; */
+  border-radius: 23px;
+  border: 3px solid rgba(57, 103, 255, 0.1);
+  background: #fff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+`;
+
+const CardTitle = styled.div`
+  color: #690314;
+  font-family: Alcyone-bold;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
+`;
+
+const CardDescription = styled.div`
+  color: #6c3403;
+  font-family: Alcyone;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.28px;
 `;

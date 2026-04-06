@@ -289,3 +289,59 @@ export const CTAButtonData = [
 ] as const;
 
 
+export const SUPPORT_LEFT_CARDS = [
+  {
+    id: 1,
+    title: "AI Placement Customization",
+    description:
+      "Upload media of different aspect ratios to group together for one ad. We auto detect assets that go together for different placements with the click of a button!",
+    image: "/images/AiPlacementImage.webp",
+  },
+  {
+    id: 4,
+    title: "Instagram Organic Whitelisting",
+    description:
+      "Boost posts from your instagram feed. Find partnership posts and whitelist tagged content!",
+    image: "/images/PostIDImage.webp",
+  },
+  {
+    id: 7,
+    title: "Post ID Scaling & Ad Duplication",
+    description:
+      "See all your forms and select a form to post when needed. We detect relevant ad sets.",
+    image: "/images/PartnershipADsImage.webp",
+  },
+];
+
+export const SUPPORT_RIGHT_CARDS = [
+  {
+    id: 2,
+    title: "Flex Ads",
+    description:
+      "Upload multiple media and text options to test for the same ad and meta will pick test and pick",
+    image: "/images/FlexAD.webp",
+  },
+  {
+    id: 3,
+    title: "Carousel Ads",
+    description:
+      "Easily rearrange cards, give unique text for each card or apply the same to all",
+    image: "/images/CarouselAds.webp",
+  },
+  {
+    id: 5,
+    title: "Lead Gen Form",
+    description:
+      "See all your forms and select a form to post when needed. We detect relevant ad sets.",
+    image: "/images/FormImage.webp",
+  },
+  {
+    id: 6,
+    title: "Partnership Ads",
+    description:
+      "The team has more than a decade of experience in performance marketing.",
+    image: "/images/PartnershipADsImage.webp",
+  },
+];
+
+
