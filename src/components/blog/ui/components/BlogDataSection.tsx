@@ -389,7 +389,7 @@ const SubtitleText = styled.div`
   /* or 26px */
   letter-spacing: -0.02em;
   text-transform: capitalize;
-
+  text-align: center;
   color: #1d2432;
 
   @media (max-width: 520px) {
