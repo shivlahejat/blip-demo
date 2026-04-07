@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
+import { setLenis } from "@/lib/lenis";
 
 type SmoothScrollProps = {
   children: ReactNode;
@@ -13,7 +14,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.6,
-      easing: (t: number) => 1 - Math.pow(1 - t, 4),
+      easing: (t: number) => 1 - Math.pow(1 - t, 4), // buttery easing
 
       smoothWheel: true,
       smoothTouch: true,
@@ -26,12 +27,13 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
       autoResize: true,
       overscroll: false,
-      anchors: true,
+      anchors: false, // ❗ disable default anchor handling
 
       syncTouch: true,
     });
 
     lenisRef.current = lenis;
+    setLenis(lenis); // ✅ store globally
 
     let rafId: number;
 
