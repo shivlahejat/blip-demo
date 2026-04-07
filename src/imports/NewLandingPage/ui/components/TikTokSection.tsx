@@ -146,12 +146,12 @@ const MobileLayoutBox = styled.div`
 
 const Header = styled.div`
   color: #fff;
-  font-family: Alcyone-Bold;
+  font-family: Alcyone-Medium;
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
   letter-spacing: -0.4px;
+  opacity: 0.7;
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -160,12 +160,12 @@ const Header = styled.div`
 
 const Description = styled.div`
   color: #fff;
-  font-family: Alcyone;
+  font-family: Alcyone-Medium;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
   line-height: 150%;
   letter-spacing: -0.32px;
+  opacity: 0.8;
 
   @media (max-width: 768px) {
     font-size: 14px;
