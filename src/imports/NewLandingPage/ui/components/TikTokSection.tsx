@@ -177,12 +177,9 @@ const ImageWrapper = styled.div`
   background: #fff;
   width: 37px;
   height: 34px;
+  padding: 5.22px 3.8px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
-  @media (max-width: 520px) {
-    align-items: flex-start;
-  }
 `;
