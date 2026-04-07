@@ -111,7 +111,10 @@ export const Button = ({
           alt="button icon"
           width={leftIconWidth}
           height={leftIconHeight}
-          style={{ width: "auto", height: `${leftIconHeight}px` }}
+          style={{
+            width: "auto",
+            height: `${leftIconHeight}px`,
+          }}
         />
       )}
       {icon && <Icon>{icon}</Icon>}

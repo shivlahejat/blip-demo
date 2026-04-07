@@ -20,7 +20,7 @@ const RatingCardsSection = () => {
         </Description>
       </HeaderContainer>
       <MarqueeContainer>
-        <Marquee speed={130} gradient={!isMobile}>
+        <Marquee speed={30} gradient={!isMobile}>
           {TESTIMONIALS.map((testimonial, index) => (
             <RatingCard
               key={index}
@@ -190,11 +190,11 @@ const UserName = styled.div<{ $isOdd: boolean }>`
 
 const RatingText = styled.div<{ $isOdd: boolean }>`
   color: ${(props) => (props.$isOdd ? "#1d1d1d" : "#fffbf2")};
-  font-family: Alcyone-Medium;
-  font-size: 24px;
+  font-family: Alcyone-SemiBold;
+  font-size: 20px;
   font-style: normal;
   line-height: 140%;
-  letter-spacing: -0.72px;
+  letter-spacing: -3%;
   text-transform: capitalize;
 `;
 

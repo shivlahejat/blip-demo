@@ -70,26 +70,24 @@ export default function HeroSection({
           </SubPointsWrapper>
           <FooterContentWrapper>
             <CTAContainer>
-              <Button
+              <CTAButtonWrapper
                 className="cta-button"
-                style={{ padding: "26px 23px" }}
                 leftIcon="/images/rocket2.svg"
                 leftIconWidth={21}
                 leftIconHeight={32}
                 hoverText="Launch Ads in Bulk"
               >
                 Start Free Trial
-              </Button>
-              <Button
+              </CTAButtonWrapper>
+              <GetADemoButtonWrapper
                 className="cta-button"
-                style={{ padding: "16px 23px" }}
                 leftIcon="/images/MeetIcon.svg"
                 variant="outlineFilled"
                 leftIconWidth={24}
                 leftIconHeight={20}
               >
                 Get A Demo
-              </Button>
+              </GetADemoButtonWrapper>
             </CTAContainer>
             <FooterText>No CC Required. 7 Day free trial.</FooterText>
           </FooterContentWrapper>
@@ -228,8 +226,9 @@ const HeadingText = styled.div`
 `;
 
 const CTAContainer = styled.div`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
   gap: 22px;
 
   @media (max-width: 768px) {
@@ -326,4 +325,38 @@ const FooterText = styled.div`
   line-height: normal;
   letter-spacing: -0.24px;
   text-transform: capitalize;
+`;
+
+const CTAButtonWrapper = styled(Button)`
+  display: flex;
+  padding: 16px 53px 16px 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 221px;
+  border: 2px solid #3f3e3e;
+  background: linear-gradient(0deg, #414141 0%, #000 77.88%);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+  max-width: 266px;
+  max-height: 53px;
+  height: 100%;
+
+  span {
+    /* justify-content: unset; */
+  }
+`;
+
+const GetADemoButtonWrapper = styled(Button)`
+  display: flex;
+  padding: 16px 23px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 221px;
+  border: 2px solid #1d1d1d;
+  background: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  max-width: 188px;
+  max-height: 53px;
+  height: 100%;
 `;
