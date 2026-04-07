@@ -39,12 +39,7 @@ const SingleBlogDetailsSection = ({ data }: { data: BlogPost }) => {
             <Image
               src={data.coverImage?.url || "/images/blog-placeholder.png"}
               alt={data.title}
-              width={671}
-              height={630}
-              style={{
-                width: "100%",
-                objectFit: "cover",
-              }}
+              fill
               priority
             />
           </CoverImageWrapper>
@@ -87,6 +82,8 @@ const LeftSection = styled.div`
   flex: 0 1 auto;
   max-width: 600px;
   display: flex;
+  justify-content: end;
+  height: 100%;
   flex-direction: column;
   gap: 24px;
 `;
@@ -165,13 +162,17 @@ const AuthorRole = styled.span`
 `;
 
 const CoverImageWrapper = styled.div`
+  position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 671px;
+  height: 630px;
+
   border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 1024px) {
     max-width: 100%;
+    height: 400px;
   }
 `;

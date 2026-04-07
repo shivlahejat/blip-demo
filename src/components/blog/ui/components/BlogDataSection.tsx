@@ -338,10 +338,9 @@ const HeadingText = styled.div`
   color: #1d1d1d;
   max-width: 807px;
   text-align: center;
-  font-family: Alcyone-bold;
+  font-family: Alcyone-Bold;
   font-size: 40px;
   font-style: normal;
-  font-weight: 700;
   line-height: 1.2;
   text-transform: capitalize;
 
@@ -356,21 +355,24 @@ const HeadingText = styled.div`
 
 const MetaTagWrapper = styled.div`
   display: flex;
-  padding: 10px 41px;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  padding: 10px 41px;
   gap: 10px;
-  border-radius: 27px;
-  background: #fff;
-  max-width: 250px;
+
+  width: 117px;
+  height: 37px;
+
+  background: #ffffff;
+  border-radius: 100px;
 `;
 
 const MetaTagText = styled.div`
-  color: #6c3403;
-  font-family: Alcyone;
+  color: #000;
+  font-family: Alcyone-SemiBold;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
   line-height: normal;
   letter-spacing: -0.32px;
 
@@ -380,15 +382,16 @@ const MetaTagText = styled.div`
 `;
 
 const SubtitleText = styled.div`
-  color: #1d2432;
-  text-align: center;
-  font-family: Alcyone;
-  font-size: 24px;
+  font-family: Alcyone-Medium;
   font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.48px;
+  font-size: 16px;
+  line-height: 160%;
+  /* or 26px */
+  letter-spacing: -0.02em;
   text-transform: capitalize;
+
+  color: #1d2432;
+
   @media (max-width: 520px) {
     text-align: left;
   }

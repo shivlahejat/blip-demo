@@ -22,6 +22,12 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <Container>
+      <CornerImage
+        src={"/images/header_doodle_1.png"}
+        alt="header doodle"
+        width={380}
+        height={247}
+      />
       <ImageContainer>
         <ContentContainer>
           <MetaTagWrapper>
@@ -136,9 +142,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  position: relative;
 
   @media (max-width: 768px) {
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
 `;
 
@@ -184,7 +191,8 @@ const DoodleWrapper = styled.div`
   margin-bottom: 18px;
 
   @media (max-width: 768px) {
-    display: none;
+    display: flex;
+    margin-bottom: 0px;
   }
 `;
 
@@ -328,6 +336,10 @@ const FooterText = styled.div`
   line-height: normal;
   letter-spacing: -0.24px;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const CTAButtonWrapper = styled(Button)`
@@ -369,5 +381,20 @@ const GetADemoButtonWrapper = styled(Button)`
 
   @media (max-width: 768px) {
     max-width: 100%;
+  }
+`;
+
+const CornerImage = styled(Image)`
+  transform: rotate(-23.052deg);
+  aspect-ratio: 103 / 67;
+  border-radius: 204px;
+  position: absolute;
+  top: -100px;
+  right: -250px;
+
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
