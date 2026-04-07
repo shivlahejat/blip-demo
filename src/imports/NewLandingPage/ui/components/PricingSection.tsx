@@ -69,6 +69,32 @@ const Wrapper = styled.div`
   }
 `;
 
+const PlanFeaturePoint = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 270.435px;
+  width: 100%;
+
+  svg {
+    flex-shrink: 0;
+  }
+`;
+
+const PlanFeatureText = styled.div`
+  color: #f6eddc;
+  font-family: Alcyone;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.36px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -85,6 +111,10 @@ const Container = styled.div`
       width: 100%;
       max-width: 100%;
       justify-self: stretch;
+
+      ${PlanFeaturePoint} {
+        max-width: unset;
+      }
     }
   }
 
@@ -95,6 +125,12 @@ const Container = styled.div`
     & > :last-child {
       grid-column: span 1;
       width: 100%;
+      max-width: 419px;
+      justify-self: unset;
+
+      ${PlanFeaturePoint} {
+        max-width: 270.435px;
+      }
     }
   }
 `;
@@ -115,7 +151,6 @@ const PricingCard = styled.div`
     padding: 24px;
     gap: 40px;
     border-radius: 30px;
-    w
   }
 `;
 
@@ -210,32 +245,6 @@ const PlanFeatureContainer = styled.div`
   }
 `;
 
-const PlanFeaturePoint = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  max-width: 270.435px;
-  width: 100%;
-
-  svg {
-    flex-shrink: 0;
-  }
-`;
-
-const PlanFeatureText = styled.div`
-  color: #f6eddc;
-  font-family: Alcyone;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.36px;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
 const BottomContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -278,6 +287,9 @@ const Title = styled.div`
 
   @media (max-width: 768px) {
     font-size: 24px;
+  }
+  @media (max-width: 520px) {
+    text-align: left;
   }
 
   .highlight {

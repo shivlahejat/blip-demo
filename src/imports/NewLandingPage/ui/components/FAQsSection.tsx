@@ -128,6 +128,11 @@ const HeaderContainer = styled.div`
     text-align: center;
     align-items: center;
   }
+  @media (max-width: 520px) {
+    text-align: left;
+    align-items: flex-start;
+    padding: unset;
+  }
 `;
 
 const Title = styled.div`
@@ -141,6 +146,9 @@ const Title = styled.div`
 
   @media (max-width: 768px) {
     font-size: 20px;
+  }
+  @media (max-width: 520px) {
+    text-align: left;
   }
 `;
 
@@ -196,6 +204,10 @@ const FAQQuestion = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.32px;
+
+  @media (max-width: 600px) {
+    max-width: 300px;
+  }
 `;
 
 const IconWrapper = styled(motion.div)`

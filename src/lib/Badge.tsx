@@ -48,7 +48,7 @@ const Wrapper = styled.div<{ variant?: BadgeVariant }>`
   }
 
   @media (max-width: 520px) {
-    font-size: 12px;
+    font-size: 14px;
     padding: 4px 12px;
     gap: 4px;
   }
@@ -57,6 +57,10 @@ const Wrapper = styled.div<{ variant?: BadgeVariant }>`
 const Icon = styled.span`
   display: flex;
   align-items: center;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Badge = ({ icon, children, variant = "primary" }: BadgeProps) => {

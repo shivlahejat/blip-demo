@@ -122,7 +122,7 @@ const Container = styled.div`
 const TitleWrapper = styled.div<{ $videolayout?: boolean }>`
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 8px;
   align-self: stretch;
   justify-content: ${({ $videolayout }) =>
     $videolayout ? "center" : "flex-start"};
@@ -199,7 +199,7 @@ const FeaturePointsContainer = styled.div<{ $videolayout?: boolean }>`
   max-width: ${({ $videolayout }) => ($videolayout ? "611px" : "unset")};
 
   @media (max-width: 820px) {
-    gap: 10px;
+    gap: 13px;
   }
 
   @media (max-width: 800px) {
@@ -243,6 +243,7 @@ const SubTitle = styled.div<{ $videolayout?: boolean }>`
 
   @media (max-width: 520px) {
     text-align: left;
+    max-width: 324px;
   }
 `;
 

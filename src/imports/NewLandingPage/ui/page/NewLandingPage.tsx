@@ -74,7 +74,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 100px;
+    gap: 72px;
   }
 `;
 
@@ -92,7 +92,7 @@ const ContentWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 100px;
+    gap: 72px;
   }
 `;
 

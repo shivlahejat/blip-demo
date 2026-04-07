@@ -376,15 +376,17 @@ const DividerContainer = styled.div`
   @media (max-width: 800px) {
     display: block;
     width: 100%;
-    height: 10px;
-    background-image: linear-gradient(
+    height: 4px;
+    background-image: url("/images/HorizontalLine.svg");
+
+    /* background-image: linear-gradient(
       to right,
       #ff3e03 40%,
       rgba(255, 255, 255, 0) 0%
-    );
+    ); */
     background-position: center;
-    background-size: 20px 2px;
-    background-repeat: repeat-x;
+    background-size: contain;
+    background-repeat: repeat;
     margin: 10px 0;
   }
 `;
@@ -412,6 +414,10 @@ const AnalyticsContentWrapper = styled.div`
   max-width: 620px;
   width: 100%;
   padding: 40px 10px;
+
+  @media (max-width: 1100px) {
+    max-width: 100%;
+  }
 
   @media (max-width: 768px) {
     border-radius: 30px;

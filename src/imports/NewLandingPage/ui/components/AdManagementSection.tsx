@@ -164,6 +164,7 @@ const SubHeadingText = styled.div`
   @media (max-width: 768px) {
     font-size: 16px;
     text-align: center;
+    line-height: 160%;
   }
 
   @media (max-width: 520px) {
@@ -174,7 +175,7 @@ const SubHeadingText = styled.div`
 
 const GridContainer = styled.div`
   display: inline-grid;
-  max-width: 530px;
+  max-width: 580px;
   row-gap: 20px;
   column-gap: 68px;
   grid-template-rows: repeat(2, fit-content(100%));
@@ -184,7 +185,7 @@ const GridContainer = styled.div`
     grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
     justify-items: center;
-    gap: 15px;
+    gap: 16px;
   }
 `;
 
@@ -192,9 +193,10 @@ const GridItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgba(51, 12, 0, 0.5);
-  font-family: Alcyone;
-  font-size: 14px;
+  color: #330c00;
+  opacity: 0.6;
+  font-family: Alcyone-SemiBold;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;

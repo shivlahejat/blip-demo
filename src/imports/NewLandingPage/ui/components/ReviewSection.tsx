@@ -171,7 +171,10 @@ const Description = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  @media (max-width: 480px) {
+    max-width: 333px;
   }
 `;
 

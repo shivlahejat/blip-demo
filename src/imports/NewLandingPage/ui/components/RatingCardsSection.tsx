@@ -196,6 +196,11 @@ const RatingText = styled.div<{ $isOdd: boolean }>`
   line-height: 140%;
   letter-spacing: -3%;
   text-transform: capitalize;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 160%;
+  }
 `;
 
 const UserContainer = styled.div`

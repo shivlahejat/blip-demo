@@ -25,6 +25,15 @@ const MetaPartnersSection = () => {
           marketing. The experience has been tailored to the absolute essentials
           which will improve your quality of life.
         </DescriptionText>
+        <Button
+          className="cta-button"
+          leftIcon="/images/MeetIcon.svg"
+          leftIconWidth={24}
+          leftIconHeight={20}
+          style={{ width: "100%" }}
+        >
+          Get Started
+        </Button>
       </ContentContainer>
       <ReviewContainer>
         <ReviewImage
@@ -82,6 +91,12 @@ const ContentContainer = styled.div`
   @media (max-width: 520px) {
     align-items: flex-start;
     text-align: left;
+  }
+
+  .cta-button {
+    @media (min-width: 600px) {
+      display: none !important;
+    }
   }
 `;
 
