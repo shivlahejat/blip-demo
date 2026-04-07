@@ -12,36 +12,38 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1, // 🔥 higher = faster response (key for speed)
+      duration: 1.6,
+      easing: (t: number) => 1 - Math.pow(1 - t, 4),
 
       smoothWheel: true,
       smoothTouch: true,
 
-      wheelMultiplier: 1.2, // 🔥 faster wheel scroll
-      touchMultiplier: 1.3, // 🔥 better mobile feel
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.1,
 
       orientation: "vertical",
       gestureOrientation: "vertical",
 
       autoResize: true,
-      autoRaf: true,
-
-      overscroll: true,
+      overscroll: false,
       anchors: true,
 
-      allowNestedScroll: true,
+      syncTouch: true,
     });
 
     lenisRef.current = lenis;
 
+    let rafId: number;
+
     const raf = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     };
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
