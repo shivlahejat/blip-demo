@@ -40,7 +40,14 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
 
         <MobileNavIcons>
           <Hamburger onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+            <IconSwap className={mobileMenuOpen ? "open" : ""}>
+              <span className="menu-icon">
+                <MenuIcon />
+              </span>
+              <span className="close-icon">
+                <CloseIcon />
+              </span>
+            </IconSwap>
           </Hamburger>
         </MobileNavIcons>
       </HeaderRow>
@@ -88,7 +95,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 0px;
+    top: -1px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -104,8 +111,8 @@ const Container = styled.div`
     border: 1px solid #000;
 
     transition:
-      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      max-height 0.4s ease-in-out;
+      box-shadow 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+      max-height 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 
     &.scrolled {
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
@@ -171,17 +178,20 @@ const NavLinksContainer = styled.div`
   max-height: 0;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-10px);
   transition:
-    max-height 0.4s ease-in-out,
-    opacity 0.4s ease-in-out,
-    padding 0.4s ease-in-out,
-    visibility 0.4s ease-in-out;
+    max-height 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.08s,
+    padding 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.08s;
 
   &.open {
     max-height: 1000px;
     opacity: 1;
     visibility: visible;
     padding: 25px 20px;
+    transform: translateY(0);
   }
 `;
 
@@ -195,6 +205,49 @@ const NavLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  transform: translateX(-8px);
+
+  /* Exit (close) transition — no delay so items fade out with the panel */
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Staggered enter (open) transitions */
+  ${NavLinksContainer}.open & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  ${NavLinksContainer}.open &:nth-child(1) {
+    transition:
+      opacity 0.45s ease 0.18s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.18s;
+  }
+  ${NavLinksContainer}.open &:nth-child(2) {
+    transition:
+      opacity 0.45s ease 0.24s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.24s;
+  }
+  ${NavLinksContainer}.open &:nth-child(3) {
+    transition:
+      opacity 0.45s ease 0.3s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+  ${NavLinksContainer}.open &:nth-child(4) {
+    transition:
+      opacity 0.45s ease 0.36s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s;
+  }
+  ${NavLinksContainer}.open &:nth-child(5) {
+    transition:
+      opacity 0.45s ease 0.42s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.42s;
+  }
+  ${NavLinksContainer}.open &:nth-child(n+6) {
+    transition:
+      opacity 0.45s ease 0.48s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.48s;
+  }
 
   &:hover {
     opacity: 0.7;
@@ -215,4 +268,57 @@ const MobileCTAContainer = styled.div`
   width: 100%;
   gap: 15px;
   margin-top: 15px;
+  opacity: 0;
+  transform: translateY(6px);
+
+  /* Exit (close) transition — smooth fade out with the panel */
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Enter (open) transition — slides up with a delay */
+  ${NavLinksContainer}.open & {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.45s ease 0.52s,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.52s;
+  }
+`;
+
+const IconSwap = styled.div`
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  .close-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.7);
+  }
+
+  &.open .menu-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.7);
+  }
+  &.open .close-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 `;
