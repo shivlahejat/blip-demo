@@ -232,12 +232,13 @@ const CTAContainer = styled.div`
   gap: 22px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     width: 100%;
     gap: 15px;
 
     .cta-button {
       width: 100%;
+
       justify-content: center;
     }
   }
@@ -341,6 +342,10 @@ const CTAButtonWrapper = styled(Button)`
   max-height: 53px;
   height: 100%;
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+
   span {
     /* justify-content: unset; */
   }
@@ -359,4 +364,8 @@ const GetADemoButtonWrapper = styled(Button)`
   max-width: 188px;
   max-height: 53px;
   height: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
