@@ -59,8 +59,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 24px;
-  width: 100%;
+  width: 100dvw;
   padding: 0px 56px;
 
   @media (max-width: 768px) {
@@ -71,9 +72,9 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
   max-width: 1512px;
   width: 100%;
+  place-items: center;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -81,6 +82,9 @@ const Container = styled.div`
 
     & > :last-child {
       grid-column: span 2;
+      width: 100%;
+      max-width: 100%;
+      justify-self: stretch;
     }
   }
 
@@ -90,6 +94,7 @@ const Container = styled.div`
 
     & > :last-child {
       grid-column: span 1;
+      width: 100%;
     }
   }
 `;
@@ -103,11 +108,14 @@ const PricingCard = styled.div`
   border-radius: 41px;
   background: #1d1d1d;
   width: 100%;
+  max-width: 419px;
+  max-height: 786px;
 
   @media (max-width: 768px) {
     padding: 24px;
     gap: 40px;
     border-radius: 30px;
+    w
   }
 `;
 
@@ -206,6 +214,8 @@ const PlanFeaturePoint = styled.div`
   display: flex;
   align-items: center;
   gap: 9px;
+  max-width: 270.435px;
+  width: 100%;
 
   svg {
     flex-shrink: 0;
