@@ -102,9 +102,16 @@ const FooterImage = styled.img`
   aspect-ratio: 400/127;
   object-position: left;
 
-  @media (max-width: 768px) {
-    width: 200%;
-    bottom: -10%;
+  @media (max-width: 800px) {
+    width: 120%;
+    bottom: -190px;
+    object-position: right;
+    transform: rotate(-28deg);
+    left: 50px;
+    aspect-ratio: 400/127;
+
+    /* left: 0; */
+    z-index: 0;
   }
 `;
 
@@ -115,8 +122,10 @@ const InnerWrapper = styled.div`
   max-width: 1512px;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     gap: 30px;
+    position: relative;
+    z-index: 1;
   }
 `;
 
@@ -126,10 +135,8 @@ const RoutesContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+  @media (max-width: 800px) {
+    display: contents;
   }
 `;
 
@@ -137,6 +144,10 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 14px;
+
+  @media (max-width: 800px) {
+    order: 1;
+  }
 `;
 
 const LogoImage = styled(Image)`
@@ -161,10 +172,11 @@ const RoutesTextWrapper = styled.div`
   align-items: center;
   gap: 27px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    order: 5;
   }
 `;
 
@@ -183,9 +195,8 @@ const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 40px;
+  @media (max-width: 800px) {
+    display: contents;
   }
 `;
 
@@ -193,6 +204,11 @@ const PolicyContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1px;
+
+  @media (max-width: 800px) {
+    order: 3;
+    gap: 10px;
+  }
 `;
 
 const PolicyWrapper = styled.div`
@@ -210,7 +226,7 @@ const PolicyText = styled.div`
   letter-spacing: -0.48px;
   text-transform: capitalize;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 18px;
   }
 `;
@@ -220,8 +236,8 @@ const InfoContainer = styled.div`
   flex-direction: column;
   gap: 37px;
 
-  @media (max-width: 768px) {
-    gap: 20px;
+  @media (max-width: 800px) {
+    display: contents;
   }
 `;
 
@@ -231,8 +247,9 @@ const ContactContainer = styled.div`
   gap: 6px;
   justify-content: end;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     justify-content: flex-start;
+    order: 2;
   }
 `;
 
@@ -244,7 +261,7 @@ const ContactText = styled.div`
   line-height: normal;
   letter-spacing: -0.48px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 18px;
   }
 `;
@@ -260,8 +277,9 @@ const FooterText = styled.div`
   letter-spacing: -0.28px;
   max-width: 389.424px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     text-align: left;
     max-width: 100%;
+    order: 4;
   }
 `;

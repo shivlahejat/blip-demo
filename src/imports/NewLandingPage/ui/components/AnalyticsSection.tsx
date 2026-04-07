@@ -50,7 +50,7 @@ export default function AnalyticsSection() {
             <Badge icon={<BulbIcon />}>Data thats actually useful</Badge>
           </HeaderWrapper>
           <HeaderTitle>
-            Analytics, Recommendations, Anomaly Detection, and More
+            Analytics, Recommendations, Anomaly Detection <br /> & More
           </HeaderTitle>
           <SubTitle>
             We took the media buying playbook that works on $3 million/month in
@@ -160,8 +160,9 @@ export default function AnalyticsSection() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "5% center",
-            borderRadius: "20px",
+            borderRadius: "40px",
             border: "3px solid #000",
+            boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.75)",
           }}
         >
           <source src="/video/Demo.mp4" type="video/mp4" />
@@ -266,7 +267,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderTitle = styled.div`
   color: #330c00;
-  font-family: Alcyone-semibold;
+  font-family: Alcyone-bold;
   font-size: 40px;
   font-style: normal;
   letter-spacing: -0.8px;
@@ -287,12 +288,13 @@ const HeaderTitle = styled.div`
 `;
 
 const SubTitle = styled(HeaderTitle)`
-  font-family: Alcyone;
+  font-family: Alcyone-Medium;
   font-size: 16px;
-  line-height: normal;
+  line-height: 160%;
   letter-spacing: -0.32px;
   max-width: 423px;
   color: #330c00;
+  opacity: 0.7;
 
   @media (max-width: 1100px) {
     max-width: 100%;
@@ -361,10 +363,9 @@ const IconContainer = styled.div`
 
 const ItemTitle = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-semibold;
   font-size: 16px;
   font-style: normal;
-  font-weight: 800;
   letter-spacing: -0.32px;
 `;
 
@@ -374,7 +375,7 @@ const ItemDescription = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 160%;
   letter-spacing: -0.28px;
 `;
 
@@ -676,10 +677,10 @@ const SubPointsWrapper = styled.div`
 
 const SubPointText = styled.div`
   color: #6c3403;
-  font-family: Alcyone;
+  font-family: Alcyone-semibold;
+  opacity: 0.7;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.28px;
 `;
@@ -697,9 +698,6 @@ const VideoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   aspect-ratio: 16 / 9;
-  border-radius: 46px;
-  background: #f6eddc;
-  overflow: hidden;
 `;

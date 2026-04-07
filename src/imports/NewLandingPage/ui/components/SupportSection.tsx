@@ -212,6 +212,7 @@ const CardContent = styled.div`
   align-items: flex-start;
   gap: 12px;
   width: 100%;
+  max-width: 408px;
 `;
 
 const CardTitle = styled.div`
@@ -226,11 +227,12 @@ const CardTitle = styled.div`
 `;
 
 const CardDescription = styled.div`
-  color: #6c3403;
-  font-family: Alcyone;
+  color: #690314;
+  opacity: 0.7;
+  font-family: Alcyone-Medium;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 150%;
   letter-spacing: -0.28px;
 `;

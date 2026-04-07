@@ -69,7 +69,9 @@ const FeaturesSection = () => {
                     height: "100%",
                     objectFit: "cover",
                     objectPosition: "5% center",
+                    border: "3px solid #000",
                     borderRadius: isVideoLayout ? "40px" : "0px",
+                    boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.75)",
                   }}
                 >
                   <source src="/video/Demo.mp4" type="video/mp4" />
@@ -107,7 +109,7 @@ const Container = styled.div`
   gap: 160px;
   /* padding: 0px 240px 0px 240px; */
 
-  @media (max-width: 1040px) {
+  @media (max-width: 1100px) {
     padding: 0px 60px;
     gap: 100px;
   }
@@ -125,6 +127,9 @@ const TitleWrapper = styled.div<{ $videolayout?: boolean }>`
   justify-content: ${({ $videolayout }) =>
     $videolayout ? "center" : "flex-start"};
 
+  @media (max-width: 800px) {
+    justify-content: flex-start;
+  }
   @media (max-width: 520px) {
     justify-content: flex-start;
   }
@@ -170,10 +175,9 @@ const FeatureContentContainer = styled.div<{ $videolayout?: boolean }>`
     max-width: 100%;
   }
 
-  @media (max-width: 768px) {
-    align-items: ${({ $videolayout }) =>
-      $videolayout ? "center" : "flex-start"};
-    text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
+  @media (max-width: 800px) {
+    align-items: flex-start;
+    text-align: left;
   }
 
   @media (max-width: 820px) {
@@ -198,9 +202,8 @@ const FeaturePointsContainer = styled.div<{ $videolayout?: boolean }>`
     gap: 10px;
   }
 
-  @media (max-width: 768px) {
-    align-items: ${({ $videolayout }) =>
-      $videolayout ? "center" : "flex-start"};
+  @media (max-width: 800px) {
+    align-items: flex-start;
   }
 
   @media (max-width: 520px) {
@@ -231,6 +234,9 @@ const SubTitle = styled.div<{ $videolayout?: boolean }>`
   letter-spacing: -1.2px;
   text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
 
+  @media (max-width: 800px) {
+    text-align: left;
+  }
   @media (max-width: 768px) {
     font-size: 28px;
   }
@@ -242,14 +248,17 @@ const SubTitle = styled.div<{ $videolayout?: boolean }>`
 
 const Description = styled.div<{ $videolayout?: boolean }>`
   color: #330c00;
-  font-family: Alcyone;
-  font-size: 18px;
+  font-family: Alcyone-Medium;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: 150%;
-  letter-spacing: -0.54px;
+  letter-spacing: -0.32px;
+  opacity: 0.7;
   text-align: ${({ $videolayout }) => ($videolayout ? "center" : "left")};
 
+  @media (max-width: 800px) {
+    text-align: left;
+  }
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -271,15 +280,14 @@ const CTAContainer = styled.div<{ $videolayout?: boolean }>`
   align-self: stretch;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
-    align-items: ${({ $videolayout }) =>
-      $videolayout ? "center" : "flex-start"};
-    justify-content: ${({ $videolayout }) =>
-      $videolayout ? "center" : "flex-start"};
+  @media (max-width: 800px) {
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 15px;
   }
 
   @media (max-width: 820px) {
+    flex-direction: column;
     gap: 12px;
   }
 
@@ -337,10 +345,10 @@ const BulletPointContainer = styled.div`
 
 const BulletPoint = styled.div`
   color: #6c3403;
-  font-family: Alcyone;
+  opacity: 0.7;
+  font-family: Alcyone-semibold;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.28px;
 `;

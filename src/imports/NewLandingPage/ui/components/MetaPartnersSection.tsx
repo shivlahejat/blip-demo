@@ -56,7 +56,7 @@ export default MetaPartnersSection;
 
 const Container = styled.div`
   display: flex;
-  max-width: 1033.42px;
+  max-width: 1160px;
   flex-direction: column;
   align-items: flex-start;
   gap: 54px;
@@ -98,11 +98,11 @@ const HeadingText = styled.div`
 const SubHeadingText = styled.div`
   color: #330c00;
   font-family: Alcyone-Bold;
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -1.44px;
+  letter-spacing: -1.2px;
 
   @media (max-width: 768px) {
     font-size: 32px;
@@ -117,6 +117,7 @@ const DescriptionText = styled.div`
   font-weight: 600;
   line-height: 160%;
   letter-spacing: -0.72px;
+  max-width: 716px;
   opacity: 0.5;
 
   @media (max-width: 768px) {
@@ -126,7 +127,7 @@ const DescriptionText = styled.div`
 
 const ReviewContainer = styled.div`
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
   grid-template-areas: "image card";
   align-items: center;
   gap: 42px;
@@ -159,6 +160,7 @@ const ReviewCard = styled.div`
   background: #f6eddc;
   max-width: 100%;
   border: 2px solid #000;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 `;
 
 const ReviewText = styled.div`
@@ -177,10 +179,9 @@ const ReviewText = styled.div`
 
 const AuthorText = styled.div`
   color: #330c00;
-  font-family: Alcyone;
+  font-family: Alcyone-semibold;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.32px;
   opacity: 0.6;

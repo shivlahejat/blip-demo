@@ -309,7 +309,7 @@ export const SUPPORT_LEFT_CARDS = [
     title: "Post ID Scaling & Ad Duplication",
     description:
       "See all your forms and select a form to post when needed. We detect relevant ad sets.",
-    image: "/images/PartnershipADsImage.webp",
+    image: "/images/PidDuplicationImg.webp",
   },
 ];
 

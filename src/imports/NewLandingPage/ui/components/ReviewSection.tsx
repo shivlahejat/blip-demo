@@ -15,14 +15,16 @@ export default function ReviewSection() {
           height={63}
         />
         <Image
-          src="/images/ReviewImageCard.webp"
+          src="/images/AboutUSImage.webp"
           alt="hero"
           width={400}
-          height={562}
+          height={552}
           style={{
-            width: "100%",
-            maxWidth: "400px",
-            maxHeight: "562px",
+            width: "400px",
+            maxHeight: "552px",
+            borderRadius: "20px",
+            border: "5px solid rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 2px 10px 0 rgba(0, 0, 0, 0.15)",
           }}
           priority
         />
@@ -158,7 +160,7 @@ const Title = styled.div`
 
 const Description = styled.div`
   color: #330c00;
-  font-family: Alcyone-Medium;
+  font-family: Alcyone-semibold;
   font-size: 24px;
   font-style: normal;
   letter-spacing: -0.28px;
@@ -193,6 +195,7 @@ const FooterTitle = styled(Description)`
   font-style: normal;
   font-weight: 800;
   letter-spacing: unset;
+  font-family: "Cal Sans", sans-serif;
   text-transform: none;
 `;
 
@@ -201,6 +204,7 @@ const FooterDescription = styled(Description)`
   font-style: normal;
   font-weight: 600;
   letter-spacing: unset;
+  font-family: "Cal Sans", sans-serif;
   opacity: 0.6;
   text-transform: none;
 `;

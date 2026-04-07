@@ -54,6 +54,7 @@ export default function HeroSection({
                 objectPosition: "5% center",
                 borderRadius: "20px",
                 border: "3px solid #000",
+                boxShadow: "0px 20px 40px -10px rgba(0, 0, 0, 0.3)",
               }}
             >
               <source src="/video/Demo.mp4" type="video/mp4" />
@@ -116,6 +117,7 @@ export default function HeroSection({
               objectPosition: "5% center",
               borderRadius: "20px",
               border: "3px solid #000",
+              boxShadow: "0px 20px 40px -10px rgba(0, 0, 0, 0.3)",
             }}
           >
             <source src="/video/Demo.mp4" type="video/mp4" />
