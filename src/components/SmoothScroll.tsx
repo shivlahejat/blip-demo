@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { setLenis } from "@/lib/lenis";
 
@@ -9,43 +9,38 @@ type SmoothScrollProps = {
 };
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.6,
-      easing: (t: number) => 1 - Math.pow(1 - t, 4), // buttery easing
+      duration: 1.2, // ↓ shorter = more responsive on mobile
+      easing: (t: number) => 1 - Math.pow(1 - t, 3),
 
       smoothWheel: true,
-      smoothTouch: true,
 
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.1,
+      // ❗ MOBILE FIXES
+      smoothTouch: false, // 🔥 important
+      syncTouch: false, // 🔥 important
+
+      wheelMultiplier: 1,
+      touchMultiplier: 1,
 
       orientation: "vertical",
       gestureOrientation: "vertical",
 
       autoResize: true,
-      overscroll: false,
-      anchors: false, // ❗ disable default anchor handling
-
-      syncTouch: true,
+      overscroll: true, // allow natural bounce on mobile
     });
 
-    lenisRef.current = lenis;
-    setLenis(lenis); // ✅ store globally
+    setLenis(lenis);
 
-    let rafId: number;
-
-    const raf = (time: number) => {
+    // ✅ cleaner RAF (no manual ref needed)
+    function raf(time: number) {
       lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    };
+      requestAnimationFrame(raf);
+    }
 
-    rafId = requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
 
     return () => {
-      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
