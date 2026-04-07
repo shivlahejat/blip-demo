@@ -131,21 +131,6 @@ export default function AnalyticsSection() {
                 </ChartArea>
               </StatsContainer>
             </StatsGroup>
-            <CTAfooterWrapper>
-              {CTAButtonData.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <Button
-                    key={index}
-                    variant={item.variant}
-                    style={{ padding: "15px" }}
-                  >
-                    <Icon />
-                    {item.text}
-                  </Button>
-                );
-              })}
-            </CTAfooterWrapper>
           </ContentWrapper>
         </AnalyticsContentWrapper>
       </AnalyticsWrapper>

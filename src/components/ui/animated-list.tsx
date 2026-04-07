@@ -1,91 +1,77 @@
 "use client";
 
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-  type ComponentPropsWithoutRef,
-} from "react";
-import { AnimatePresence, motion } from "motion/react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
+import { motion, useMotionValue, useAnimation } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export interface AnimatedListProps extends ComponentPropsWithoutRef<"div"> {
+export interface AnimatedListProps {
   children: React.ReactNode;
+  className?: string;
   delay?: number;
-  maxItems?: number;
+  visibleItems?: number;
 }
 
-export const AnimatedList = React.memo(
-  ({
-    children,
-    className,
-    delay = 1500,
-    maxItems = 4,
-    ...props
-  }: AnimatedListProps) => {
-    const [index, setIndex] = useState(0);
+export const AnimatedList = ({
+  children,
+  className,
+  delay = 5000,
+  visibleItems = 3,
+}: AnimatedListProps) => {
+  const childrenArray = useMemo(
+    () => React.Children.toArray(children),
+    [children],
+  );
 
-    const childrenArray = useMemo(
-      () => React.Children.toArray(children),
-      [children],
-    );
+  const total = childrenArray.length;
+  const itemHeight = 80;
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % childrenArray.length);
-      }, delay);
+  // Render 3 copies: we scroll through the middle copy, then snap back
+  const loopItems = [...childrenArray, ...childrenArray, ...childrenArray];
 
-      return () => clearInterval(interval);
-    }, [childrenArray.length, delay]);
+  const controls = useAnimation();
+  const currentIndexRef = useRef(0); // absolute index, never resets
+  const isSnapping = useRef(false);
 
-    const itemsToShow = useMemo(() => {
-      return childrenArray
-        .slice(0, index + 1)
-        .slice(-maxItems)
-        .reverse();
-    }, [index, childrenArray, maxItems]);
+  useEffect(() => {
+    if (total === 0) return;
 
-    return (
-      <div
-        className={cn("relative flex items-center justify-center", className)}
-        {...props}
-      >
-        <AnimatePresence>
-          {itemsToShow.map((item, i) => {
-            const offset = i * -14;
-            const scale = 1 - i * 0.06;
-            const opacity = 1 - i * 0.2;
+    const tick = async () => {
+      if (isSnapping.current) return;
 
-            return (
-              <motion.div
-                layout
-                key={(item as React.ReactElement).key}
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                animate={{
-                  opacity,
-                  y: offset + 20,
-                  scale,
-                  zIndex: 100 - i,
-                }}
-                exit={{ opacity: 0, y: 40, scale: 0.9 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 25,
-                }}
-                className="absolute w-full"
-                style={{
-                  filter: i > 1 ? "blur(3px)" : "blur(0px)",
-                }}
-              >
-                {item}
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </div>
-    );
-  },
-);
+      currentIndexRef.current += 1;
+      const nextY = -(currentIndexRef.current * itemHeight);
 
-AnimatedList.displayName = "AnimatedList";
+      await controls.start({
+        y: nextY,
+        transition: { duration: 0.8, ease: "easeInOut" },
+      });
+
+      // Once we've scrolled through the first copy, snap back to the
+      // equivalent position in the middle copy — invisible because items look identical
+      if (currentIndexRef.current >= total) {
+        isSnapping.current = true;
+        currentIndexRef.current -= total;
+        await controls.set({ y: -(currentIndexRef.current * itemHeight) });
+        isSnapping.current = false;
+      }
+    };
+
+    const interval = setInterval(tick, delay);
+    return () => clearInterval(interval);
+  }, [total, delay, controls, itemHeight]);
+
+  return (
+    <div
+      className={cn("overflow-hidden relative", className)}
+      style={{ height: `${visibleItems * itemHeight}px` }}
+    >
+      <motion.div animate={controls}>
+        {loopItems.map((item, i) => (
+          <div key={i} className="h-[80px] flex items-center justify-center">
+            {item}
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
