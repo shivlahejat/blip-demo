@@ -4,10 +4,21 @@ import {
 } from "@/imports/NewLandingPage/constants/ROUTES";
 import FooterContact from "@/imports/NewLandingPage/ui/svgs/FooterContact";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { CircleCheck } from "lucide-react";
 
 const FooterSectionV2 = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("shree@withblip.com");
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -49,22 +60,42 @@ const FooterSectionV2 = () => {
             {POLICY_ROUTES.map((policy) => {
               const Icon = policy.icon;
               return (
-                <PolicyWrapper key={policy.name}>
-                  <Icon />
+                <PolicyWrapper
+                  key={policy.name}
+                  href={policy.path}
+                  target="_blank"
+                >
+                  <IconWrapper>
+                    <Icon />
+                  </IconWrapper>
                   <PolicyText>{policy.name}</PolicyText>
                 </PolicyWrapper>
               );
             })}
           </PolicyContainer>
           <InfoContainer>
-            <ContactContainer>
-              <FooterContact />
+            <ContactContainer onClick={handleCopyEmail}>
+              <IconWrapper>
+                {isCopied ? <CircleCheck size={24} /> : <FooterContact />}
+              </IconWrapper>
               <ContactText>shree@withblip.com</ContactText>
             </ContactContainer>
             <FooterText>
               Blip use and transfer of information received from Google APIs to
-              any other app will adhere to Workspace API User Data and Developer
-              Policy, including the Limited use of user data.
+              any other app will adhere to{" "}
+              <FooterLink
+                href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy"
+                target="_blank"
+              >
+                Workspace API User Data and Developer Policy
+              </FooterLink>
+              , including the{" "}
+              <FooterLink
+                href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use"
+                target="_blank"
+              >
+                Limited use of user data.
+              </FooterLink>
             </FooterText>
           </InfoContainer>
         </ContentContainer>
@@ -96,7 +127,8 @@ const FooterImage = styled.img`
   bottom: -50%;
   left: 0;
   object-fit: contain;
-  z-index: 100;
+  z-index: 0;
+  pointer-events: none;
   width: 1016.32px;
   height: 322.681px;
   aspect-ratio: 400/127;
@@ -121,6 +153,8 @@ const InnerWrapper = styled.div`
   gap: 45px;
   max-width: 1512px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 800px) {
     gap: 30px;
@@ -175,7 +209,7 @@ const RoutesTextWrapper = styled.div`
   @media (max-width: 800px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 26px;
     order: 5;
   }
 `;
@@ -189,6 +223,11 @@ const RouteText = styled.div`
   letter-spacing: -0.28px;
   text-transform: capitalize;
   cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -208,13 +247,27 @@ const PolicyContainer = styled.div`
   @media (max-width: 800px) {
     order: 3;
     gap: 10px;
+    margin-top: -20px;
   }
 `;
 
-const PolicyWrapper = styled.div`
+const PolicyWrapper = styled.a`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
 `;
 
 const PolicyText = styled.div`
@@ -244,12 +297,14 @@ const InfoContainer = styled.div`
 const ContactContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   justify-content: end;
+  cursor: pointer;
 
   @media (max-width: 800px) {
     justify-content: flex-start;
     order: 2;
+    gap: 8 px;
   }
 `;
 
@@ -281,5 +336,16 @@ const FooterText = styled.div`
     text-align: left;
     max-width: 100%;
     order: 4;
+    margin-top: -20px;
+  }
+`;
+
+const FooterLink = styled.a`
+  color: #1e1e1e;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
   }
 `;

@@ -31,11 +31,11 @@ const NewLandingPage = () => {
         />
       </div>
       <ContentWrapper>
-        <FeaturesWrapper id="features" $marginTop={imageOverflow}>
+        <FeaturesWrapper $marginTop={imageOverflow}>
           <RatingCardsSection />
         </FeaturesWrapper>
         <AdManagementSection />
-        <div id="analytics">
+        <div id="features">
           <FeaturesSection />
         </div>
         <SupportSection />
@@ -43,7 +43,9 @@ const NewLandingPage = () => {
           <ReviewSection />
         </div>
         <MetaPartnersSection />
-        <AnalyticsSection />
+        <div id="analytics">
+          <AnalyticsSection />
+        </div>
         <TikTokSection />
         <div id="pricing">
           <PricingSection />

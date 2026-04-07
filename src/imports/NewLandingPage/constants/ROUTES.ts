@@ -25,12 +25,12 @@ export const POLICY_ROUTES = [
     {
         name: "Privacy Policy",
         icon: PrivacyIcon,
-        path: "privacy-policy",
+        path: "https://app.withblip.com/privacy-policy",
     },
     {
         name: "Terms of Service",
         icon: TermsOfServiceIcon,
-        path: "terms-of-service",
+        path: "https://app.withblip.com/terms-of-service",
     },
 
 ]
