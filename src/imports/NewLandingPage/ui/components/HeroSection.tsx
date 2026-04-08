@@ -106,7 +106,6 @@ export default function HeroSection({
             alt="doodle"
             width={1056}
             height={388}
-            style={{ width: "100%", maxWidth: "1056px", height: "auto" }}
           />
         </DoodleWrapper>
 
@@ -197,6 +196,17 @@ const DoodleWrapper = styled.div`
     bottom: 0px;
     left: 0;
     z-index: 0;
+
+    img {
+      width: 100% !important;
+      max-width: none !important;
+      height: 250px !important;
+      object-fit: cover;
+
+      @media (max-width: 450px) {
+        height: 200px !important;
+      }
+    }
   }
 `;
 
