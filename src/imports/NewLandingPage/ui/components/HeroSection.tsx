@@ -193,6 +193,10 @@ const DoodleWrapper = styled.div`
   @media (max-width: 768px) {
     display: flex;
     margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 0;
   }
 `;
 
@@ -203,11 +207,13 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     margin-top: 100px;
     gap: 29px;
-    padding: 0 20px;
+    padding: 0 20px 80px 20px;
   }
   @media (max-width: 520px) {
     align-items: unset;

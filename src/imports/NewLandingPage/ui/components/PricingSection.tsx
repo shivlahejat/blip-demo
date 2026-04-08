@@ -100,6 +100,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   max-width: 1512px;
   width: 100%;
+  gap: 24px;
   place-items: center;
 
   @media (max-width: 1024px) {
