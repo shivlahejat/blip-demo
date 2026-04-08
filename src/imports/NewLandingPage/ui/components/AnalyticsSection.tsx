@@ -83,7 +83,7 @@ export default function AnalyticsSection() {
               ))}
             </TabGroup>
             <StatsGroup>
-              <AnimatedList delay={1000} className="w-full min-h-[100px]">
+              <AnimatedList className="w-full min-h-[100px]">
                 {StatsData.map((item, index) => {
                   const Icon = item.svg;
                   return (
@@ -107,6 +107,7 @@ export default function AnalyticsSection() {
                   );
                 })}
               </AnimatedList>
+
               <StatsContainer>
                 <GraphTextWrapper>
                   <GraphTitle>Daily CPA by Campaign</GraphTitle>
@@ -131,6 +132,21 @@ export default function AnalyticsSection() {
                 </ChartArea>
               </StatsContainer>
             </StatsGroup>
+            <CTAfooterWrapper>
+              {CTAButtonData.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <Button
+                    key={index}
+                    variant={item.variant}
+                    style={{ padding: "15px" }}
+                  >
+                    <Icon />
+                    {item.text}
+                  </Button>
+                );
+              })}
+            </CTAfooterWrapper>
           </ContentWrapper>
         </AnalyticsContentWrapper>
       </AnalyticsWrapper>
@@ -202,7 +218,6 @@ const Wrapper = styled.div`
     justify-content: center;
     text-align: center;
     max-width: 700px;
-    width: 100%;
   }
 
   @media (max-width: 768px) {
@@ -470,6 +485,11 @@ const TabText = styled.span<{ $active: boolean }>`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.28px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    white-space: nowrap;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -553,6 +573,7 @@ const CTAText = styled.div`
   font-size: 12px;
   line-height: normal;
   letter-spacing: -0.24px;
+  white-space: nowrap;
 `;
 
 const GraphTextWrapper = styled.div`
@@ -632,11 +653,13 @@ const CTAfooterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 0 20px;
+  display: none;
 
   @media (max-width: 768px) {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 20px;
 
     button {
       width: 100%;

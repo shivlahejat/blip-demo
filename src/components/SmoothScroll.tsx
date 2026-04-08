@@ -3,6 +3,7 @@
 import { ReactNode, useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { setLenis } from "@/lib/lenis";
+import { ENABLE_SMOOTH_SCROLLING, SMOOTH_SCROLL_CONFIG } from "@/constants/config";
 
 type SmoothScrollProps = {
   children: ReactNode;
@@ -10,18 +11,21 @@ type SmoothScrollProps = {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
+    // If smooth scrolling is disabled in config, do not initialize Lenis
+    if (!ENABLE_SMOOTH_SCROLLING) return;
+
     const lenis = new Lenis({
-      duration: 1.2, // ↓ shorter = more responsive on mobile
+      duration: SMOOTH_SCROLL_CONFIG.duration,
       easing: (t: number) => 1 - Math.pow(1 - t, 3),
 
-      smoothWheel: true,
+      smoothWheel: SMOOTH_SCROLL_CONFIG.smoothWheel,
 
       // ❗ MOBILE FIXES
-      smoothTouch: false, // 🔥 important
-      syncTouch: false, // 🔥 important
+      smoothTouch: SMOOTH_SCROLL_CONFIG.smoothTouch,
+      syncTouch: false, // keep false usually
 
-      wheelMultiplier: 1,
-      touchMultiplier: 1,
+      wheelMultiplier: SMOOTH_SCROLL_CONFIG.wheelMultiplier,
+      touchMultiplier: SMOOTH_SCROLL_CONFIG.touchMultiplier,
 
       orientation: "vertical",
       gestureOrientation: "vertical",
