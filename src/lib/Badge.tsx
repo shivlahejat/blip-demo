@@ -15,6 +15,7 @@ interface BadgeProps {
   variant?: BadgeVariant;
   icon?: React.ReactNode;
   children: React.ReactNode;
+  hideIconOnMobile?: boolean;
 }
 
 const variants = {
@@ -54,19 +55,28 @@ const Wrapper = styled.div<{ variant?: BadgeVariant }>`
   }
 `;
 
-const Icon = styled.span`
+const Icon = styled.span<{ hideOnMobile?: boolean }>`
   display: flex;
   align-items: center;
 
-  @media (max-width: 600px) {
-    display: none;
-  }
+  ${({ hideOnMobile }) =>
+    hideOnMobile &&
+    css`
+      @media (max-width: 600px) {
+        display: none;
+      }
+    `}
 `;
 
-export const Badge = ({ icon, children, variant = "primary" }: BadgeProps) => {
+export const Badge = ({
+  icon,
+  children,
+  variant = "primary",
+  hideIconOnMobile,
+}: BadgeProps) => {
   return (
     <Wrapper variant={variant}>
-      {icon && <Icon>{icon}</Icon>}
+      {icon && <Icon hideOnMobile={hideIconOnMobile}>{icon}</Icon>}
       {children}
     </Wrapper>
   );

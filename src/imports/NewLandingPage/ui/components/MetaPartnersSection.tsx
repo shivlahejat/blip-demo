@@ -12,7 +12,7 @@ const MetaPartnersSection = () => {
     <Container>
       <ContentContainer>
         <BadgeContainer>
-          <Badge icon={<HeartFileIcon />}>
+          <Badge icon={<HeartFileIcon />} hideIconOnMobile>
             An Operating System For Media Buyers by Media Buyers
           </Badge>
         </BadgeContainer>
