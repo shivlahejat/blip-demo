@@ -518,7 +518,6 @@ const StatsContentWrapper = styled.div`
 const DetailsWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 14px;
 `;
 
@@ -536,11 +535,18 @@ const IconWrapper = styled.div<{ $bg?: string }>`
   align-items: center;
   justify-content: center;
   background-color: ${(props) => props.$bg ?? "#FFB7A2"};
+
   width: 27px;
   height: 27px;
+  min-width: 27px; // ✅ prevents shrinking
+  min-height: 27px; // ✅ prevents distortion
+
   border-radius: 50%;
   overflow: hidden;
   padding: 4px;
+  box-sizing: border-box;
+
+  flex-shrink: 0; // ✅ CRITICAL
 `;
 
 const StatsText = styled.div`
