@@ -152,7 +152,7 @@ const HeadingText = styled.div`
 const SubHeadingText = styled.div`
   color: #330c00;
   text-align: center;
-  font-family: Alcyone;
+  font-family: Alcyone-Medium;
   font-size: 24px;
   font-style: normal;
   line-height: 1.2;

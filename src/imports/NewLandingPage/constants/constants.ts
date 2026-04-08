@@ -295,7 +295,7 @@ export const SUPPORT_LEFT_CARDS = [
     title: "AI Placement Customization",
     description:
       "Upload media of different aspect ratios to group together for one ad. We auto detect assets that go together for different placements with the click of a button!",
-    image: "/images/AiPlacementImage.webp",
+    image: "/images/AIplacementImg.webp",
   },
   {
     id: 4,
@@ -309,7 +309,7 @@ export const SUPPORT_LEFT_CARDS = [
     title: "Post ID Scaling & Ad Duplication",
     description:
       "See all your forms and select a form to post when needed. We detect relevant ad sets.",
-    image: "/images/PidDuplicationImg.webp",
+    image: "/images/PostIDDuplication.webp",
   },
 ];
 
@@ -319,28 +319,28 @@ export const SUPPORT_RIGHT_CARDS = [
     title: "Flex Ads",
     description:
       "Upload multiple media and text options to test for the same ad and meta will pick test and pick",
-    image: "/images/FlexAD.webp",
+    image: "/images/AdsImage.webp",
   },
   {
     id: 3,
     title: "Carousel Ads",
     description:
       "Easily rearrange cards, give unique text for each card or apply the same to all",
-    image: "/images/CarouselAds.webp",
+    image: "/images/CarouselAdImg.webp",
   },
   {
     id: 5,
     title: "Lead Gen Form",
     description:
       "See all your forms and select a form to post when needed. We detect relevant ad sets.",
-    image: "/images/FormImage.webp",
+    image: "/images/FormValidationImg.webp",
   },
   {
     id: 6,
     title: "Partnership Ads",
     description:
       "The team has more than a decade of experience in performance marketing.",
-    image: "/images/PartnershipADsImage.webp",
+    image: "/images/PartnerAdImg.webp",
   },
 ];
 
