@@ -3,11 +3,11 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { motion, useMotionValue, useAnimation } from "motion/react";
 import { cn } from "@/lib/utils";
-import { 
-  ANIMATED_LIST_DELAY_MS, 
-  ENABLE_ANIMATED_LIST, 
-  ANIMATED_LIST_TRANSITION_DURATION, 
-  ANIMATED_LIST_EASING 
+import {
+  ANIMATED_LIST_DELAY_MS,
+  ENABLE_ANIMATED_LIST,
+  ANIMATED_LIST_TRANSITION_DURATION,
+  ANIMATED_LIST_EASING,
 } from "@/constants/config";
 
 export interface AnimatedListProps {
@@ -44,7 +44,7 @@ export const AnimatedList = ({
     if (total === 0 || !ENABLE_ANIMATED_LIST) return;
 
     if (!hasInitialized.current) {
-      // Start at the exact middle copy so backwards-dipping easing (like backInOut) 
+      // Start at the exact middle copy so backwards-dipping easing (like backInOut)
       // doesn't show blank empty space above the first item.
       currentIndexRef.current = total;
       controls.set({ y: -(total * itemHeight) });
@@ -59,9 +59,9 @@ export const AnimatedList = ({
 
       await controls.start({
         y: nextY,
-        transition: { 
-          duration: ANIMATED_LIST_TRANSITION_DURATION, 
-          ease: ANIMATED_LIST_EASING 
+        transition: {
+          duration: ANIMATED_LIST_TRANSITION_DURATION,
+          ease: ANIMATED_LIST_EASING,
         },
       });
 

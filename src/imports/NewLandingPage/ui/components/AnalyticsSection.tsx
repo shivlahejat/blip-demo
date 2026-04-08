@@ -452,15 +452,12 @@ const TabGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap: 24px; */
   border-radius: 22px;
   background: #fff;
-  /* max-width: 519px; */
   padding: 5px 7px;
 
   @media (max-width: 768px) {
     max-width: 90%;
-    flex-wrap: wrap;
     justify-content: center;
   }
 `;
@@ -487,8 +484,7 @@ const TabText = styled.span<{ $active: boolean }>`
   letter-spacing: -0.28px;
 
   @media (max-width: 768px) {
-    font-size: 12px;
-    white-space: nowrap;
+    font-size: 8px;
   }
 `;
 
@@ -505,6 +501,7 @@ const StatsContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 90%;
+    /* padding: 10px 15px; */
   }
 `;
 
@@ -558,6 +555,10 @@ const StatsText = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.24px;
+
+  @media (max-width: 768px) {
+    font-size: 9px;
+  }
 `;
 
 const CTAWrapper = styled.div<{ $borderColor?: string; $bgColor?: string }>`
@@ -580,6 +581,10 @@ const CTAText = styled.div`
   line-height: normal;
   letter-spacing: -0.24px;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 9px;
+  }
 `;
 
 const GraphTextWrapper = styled.div`
@@ -597,6 +602,10 @@ const GraphTitle = styled.div`
   line-height: normal;
   letter-spacing: -0.32px;
   max-width: unset;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const ChartArea = styled.div`
@@ -659,16 +668,19 @@ const CTAfooterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 0 20px;
-  display: none;
 
   @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: 90%;
 
     button {
       width: 100%;
+      font-size: 6px;
+      padding: 7px !important;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
     }
   }
 `;
