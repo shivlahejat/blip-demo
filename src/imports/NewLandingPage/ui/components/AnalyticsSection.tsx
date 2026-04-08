@@ -484,7 +484,7 @@ const TabText = styled.span<{ $active: boolean }>`
   letter-spacing: -0.28px;
 
   @media (max-width: 768px) {
-    font-size: 8px;
+    font-size: 7px;
   }
 `;
 
