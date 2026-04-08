@@ -44,7 +44,7 @@ export default function AdManagementSection() {
         <GridContainer>
           {GRID_ITEMS.map((item, index) => (
             <Wrapper key={index}>
-              {item.icon}
+              <IconWrapper>{item.icon}</IconWrapper>
               <GridItem>{item.title}</GridItem>
             </Wrapper>
           ))}
@@ -76,7 +76,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
+  height: fit-content;
+`;
+
+const IconWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 `;
 
 const CTAButton = styled(Button)`
@@ -117,7 +127,7 @@ const InnerContainer = styled.div`
   gap: 54px;
 
   @media (max-width: 768px) {
-    gap: 30px;
+    gap: 32px;
     align-items: center;
     width: 100%;
   }
@@ -130,7 +140,7 @@ const HeadingWrapper = styled.div`
   gap: 40px;
 
   @media (max-width: 768px) {
-    gap: 20px;
+    gap: 24px;
     align-items: center;
   }
 `;
@@ -186,12 +196,18 @@ const GridContainer = styled.div`
   column-gap: 68px;
   grid-template-rows: repeat(2, fit-content(100%));
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  align-content: start;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
     justify-items: center;
     gap: 16px;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    justify-items: flex-start;
   }
 `;
 
@@ -211,7 +227,7 @@ const GridItem = styled.div`
 `;
 
 const BadgeContainer = styled.div`
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   width: 100%;
   display: flex;
   justify-content: center;
