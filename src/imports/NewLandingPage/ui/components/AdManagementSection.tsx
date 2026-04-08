@@ -43,10 +43,10 @@ export default function AdManagementSection() {
         </HeadingWrapper>
         <GridContainer>
           {GRID_ITEMS.map((item, index) => (
-            <GridItem key={index}>
+            <Wrapper key={index}>
               {item.icon}
-              <span>{item.title}</span>
-            </GridItem>
+              <GridItem>{item.title}</GridItem>
+            </Wrapper>
           ))}
         </GridContainer>
       </InnerContainer>
@@ -71,6 +71,12 @@ const Container = styled.div`
     align-items: center;
     gap: 30px;
   }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
 `;
 
 const CTAButton = styled(Button)`
@@ -190,9 +196,6 @@ const GridContainer = styled.div`
 `;
 
 const GridItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
   color: #330c00;
   opacity: 0.6;
   font-family: Alcyone-SemiBold;

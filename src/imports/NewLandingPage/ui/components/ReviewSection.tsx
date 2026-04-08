@@ -8,26 +8,21 @@ export default function ReviewSection() {
   return (
     <Container>
       <ImageWrapper>
-        <StyledNameTag
-          src="/images/NameTag.webp"
-          alt="name tag"
-          width={146}
-          height={63}
-        />
-        <Image
-          src="/images/AboutUSImage.webp"
-          alt="hero"
-          width={400}
-          height={552}
-          style={{
-            width: "400px",
-            maxHeight: "552px",
-            borderRadius: "20px",
-            border: "5px solid rgba(0, 0, 0, 0.1)",
-            boxShadow: "0 2px 10px 0 rgba(0, 0, 0, 0.15)",
-          }}
-          priority
-        />
+        <RelativeWrapper>
+          <StyledNameTag
+            src="/images/NameTag.webp"
+            alt="name tag"
+            width={146}
+            height={63}
+          />
+          <StyledImage
+            src="/images/AboutUSImage.webp"
+            alt="hero"
+            width={400}
+            height={552}
+            priority
+          />
+        </RelativeWrapper>
       </ImageWrapper>
       <ContentContainer>
         <HeaderWrapper>
@@ -75,11 +70,32 @@ const ImageWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     justify-content: center;
+  }
+`;
 
-    img {
-      max-width: 100% !important;
-      height: auto !important;
-    }
+const RelativeWrapper = styled.div`
+  position: relative;
+  width: fit-content;
+  display: flex;
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 400px;
+  }
+`;
+
+const StyledImage = styled(Image)`
+  width: 400px;
+  max-height: 552px;
+  height: auto;
+  border-radius: 20px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 400 / 552;
   }
 `;
 
@@ -93,9 +109,9 @@ const StyledNameTag = styled(Image)`
   z-index: 10;
 
   @media (max-width: 768px) {
-    width: 100px;
-    height: auto;
-    left: 0;
+    width: 110px;
+    left: -10px;
+    top: -10px;
   }
 `;
 
@@ -198,7 +214,7 @@ const FooterTitle = styled(Description)`
   font-style: normal;
   font-weight: 800;
   letter-spacing: unset;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Alcyone-semibold;
   text-transform: none;
 `;
 
@@ -207,7 +223,7 @@ const FooterDescription = styled(Description)`
   font-style: normal;
   font-weight: 600;
   letter-spacing: unset;
-  font-family: "Cal Sans", sans-serif;
+  font-family: Alcyone-semibold;
   opacity: 0.6;
   text-transform: none;
 `;
