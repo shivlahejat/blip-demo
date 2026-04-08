@@ -200,11 +200,12 @@ const GridContainer = styled.div`
   align-content: start;
 
   @media (max-width: 768px) {
-    width: 100%;
     justify-items: center;
     gap: 16px;
   }
   @media (max-width: 600px) {
+    width: 100%;
+
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
     justify-items: flex-start;
