@@ -325,6 +325,10 @@ const SubPoint = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  svg {
+    flex-shrink: 0;
+  }
 `;
 
 const SubPointsText = styled.div`
