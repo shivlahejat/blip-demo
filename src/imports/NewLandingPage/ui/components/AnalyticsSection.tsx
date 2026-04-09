@@ -510,6 +510,7 @@ const StatsContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 4px;
 `;
 
 const DetailsWrapper = styled.div`
@@ -535,20 +536,20 @@ const IconWrapper = styled.div<{ $bg?: string }>`
 
   width: 27px;
   height: 27px;
-  min-width: 27px; // ✅ prevents shrinking
-  min-height: 27px; // ✅ prevents distortion
+  min-width: 27px;
+  min-height: 27px;
 
   border-radius: 50%;
   overflow: hidden;
   padding: 4px;
   box-sizing: border-box;
 
-  flex-shrink: 0; // ✅ CRITICAL
+  flex-shrink: 0;
 `;
 
 const StatsText = styled.div`
   color: #330c00;
-  text-align: center;
+  text-align: left;
   font-family: Alcyone-semibold;
   font-size: 12px;
   font-style: normal;
